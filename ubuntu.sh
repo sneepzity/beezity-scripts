@@ -6,6 +6,9 @@ if [ "$(whoami)" != "root" ]; then
 	exit
 fi
 
+
+sleep 5
+
 echo "
 Install basic apps? (1/2)"
 read input
