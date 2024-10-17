@@ -71,7 +71,7 @@ else
 echo "Thanks for looking at my scripts!"
 fi
 
-echo 'Set Gnome to dark mode, performance mode, 12 hour idle and clock format, no idle dimming, no mouse acceleration, do not disturb and install gnome-tweaks (1/2)'
+echo 'Set Gnome to dark mode, performance mode, 12 hour idle and clock format, no idle dimming, no mouse acceleration, do not disturb, show seconds in clock and install gnome-tweaks (1/2)'
 read input
 if [ "$input" -gt 0 -a "$input" -lt 2 ]
 then
@@ -81,6 +81,7 @@ gsettings set org.gnome.settings-daemon.plugins.power idle-dim false
 gsettings set org.gnome.desktop.session idle-delay 86400
 gsettings set org.gnome.desktop.peripherals.mouse accel-profile 'flat'
 gsettings set org.gnome.desktop.notifications show-banners false
+gsettings set org.gnome.desktop.interface clock-show-seconds true
 sudo apt install gnome-tweaks gnome-shell-extensions chrome-gnome-shell
 else
 echo "Thanks for using my scripts!"
