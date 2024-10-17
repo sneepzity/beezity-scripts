@@ -99,12 +99,11 @@ if [ "$input" -gt 0 -a "$input" -lt 2 ]
 then
 sudo apt-add-repository ppa:apt-fast/stable -y
 sudo apt update -y 
-sudo apt install -y preload apt-fast 
+sudo apt install -y preload apt-fast
+sudo apt remove *thunderbird* *libreoffice* *vim* aisleriot gnome-mahjongg gnome-mines gnome-sudoku 
 else
 echo 'Thanks for looking at my scripts!'
 fi
-
-sudo apt remove *thunderbird* *libreoffice* *vim*
 
 exit
 
