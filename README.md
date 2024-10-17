@@ -1,6 +1,8 @@
 # beezity-scripts
 Very poor bash scripts
 
+this is made specifically in mind for linux, not windows or wsl, don't try it on them
+
 clone repo:
 git clone https://github.com/sneepzity/beezity-scripts
 
