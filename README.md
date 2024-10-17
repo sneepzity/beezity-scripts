@@ -12,3 +12,5 @@ only works for ubuntu 22.04 minimal and arch, even then the arch one is very poo
 don't expect frequent updates but if you ask something of me, I might add it to here
 
 i don't guarantee in anyway that the scripts even work, i just made them in my free time
+
+i might also host a few other files here for my sake
