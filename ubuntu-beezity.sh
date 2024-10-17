@@ -85,7 +85,7 @@ sudo apt install gnome-tweaks gnome-shell-extensions chrome-gnome-shell
 else
 echo "Thanks for using my scripts!"
 fi
-sudo apt-add-repository ppa:cubic-wizard/release
+
 echo 'Install Custom Ubuntu and Debian ISO Creator (CUBIC)?(1/2)'
 read input
 if [ "$input" -gt 0 -a "$input" -lt 2 ]
