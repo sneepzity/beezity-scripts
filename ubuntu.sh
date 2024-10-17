@@ -104,6 +104,8 @@ else
 echo 'Thanks for looking at my scripts!'
 fi
 
+sudo apt remove *thunderbird* *libreoffice* *vim*
+
 exit
 
 
