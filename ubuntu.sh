@@ -78,9 +78,10 @@ echo 'Install kitty terminal and change shell to Zsh with p10k theme? (1/2)'
 read input
 if [ "$input" -gt 0 -a "$input" -lt 2 ]
 then
-sudo apt install zsh kitty
+sudo apt install -y zsh kitty
 chsh -s /usr/bin/zsh
 echo 'Make sure to log out and log back LATER in to apply changes'
+sleep 2
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 echo 'You have to manually install fonts if you use Gnome Terminal :('
