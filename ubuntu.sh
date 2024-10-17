@@ -86,7 +86,7 @@ echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 echo 'You have to manually install fonts if you use Gnome Terminal :('
 echo 'Dont worry if the script freezes because I have it set to sleep for a few seconds :)'
 sleep 3
-echo 'IF you use kitty, then you can edit ~/.config/kitty/kitty.conf and search up how to add fonts (https://reddit.com/r/KittyTerminal/comments/11qexp6/how_to_use_my_own_custom_font/)"'
+echo 'IF you use kitty, then you can edit ~/.config/kitty/kitty.conf and search up how to add fonts (https://reddit.com/r/KittyTerminal/comments/11qexp6/how_to_use_my_own_custom_font/)'
 sleep 5
 else
 echo 'Thanks for looking at my scripts!'
