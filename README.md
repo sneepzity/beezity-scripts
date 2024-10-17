@@ -23,3 +23,9 @@ warehouse toolbox (flatpak management)
 chimeraos app
 game mode
 auto-cpufreq
+
+to be done:
+script for regular 22.04
+script for 24.04 in general
+script for lm 22
+script for windows???
