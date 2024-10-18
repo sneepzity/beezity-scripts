@@ -34,7 +34,7 @@ echo 'Now installing brave browser...'
 sleep 2
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt update
+sudo apt update -y
 sudo apt install -y brave-browser
 
 # All the snap related commands down below uninstall firefox snap and snap store and disables snap, but doesn't uninstall
@@ -106,7 +106,8 @@ $SHELL
 echo 'You have to manually install fonts if you use Gnome Terminal :('
 echo 'Dont worry if the script freezes because I have it set to sleep for a few seconds :)'
 sleep 3
-echo 'IF you use kitty, then you can edit ~/.config/kitty/kitty.conf and search up how to add fonts (https://reddit.com/r/KittyTerminal/comments/11qexp6/how_to_use_my_own_custom_font/)'
+echo "IF you use kitty, then you can edit ~/.config/kitty/kitty.conf and search up how to add fonts 
+(https://reddit.com/r/KittyTerminal/comments/11qexp6/how_to_use_my_own_custom_font/)"
 sleep 3
 else
 echo 'Thanks for looking at my scripts!'
