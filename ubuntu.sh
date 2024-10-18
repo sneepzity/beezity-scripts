@@ -13,9 +13,9 @@ echo 'Waiting 5 seconds...'
 sleep 5
 
 echo "
-Install basic apps? (1/2)"
+Install basic apps? ( 1 for install / 2 for no )"
 read input
-if [ "$input" -gt 0 -a "$input" -lt 2 ]
+if [ "$input" -eq 1 ]
 then
 
 # You can comment out using # and make sure to know what you're doing before hand!
@@ -99,9 +99,9 @@ else
 echo 'Thanks for looking at my scripts!'
 fi
 
-echo 'Install kitty terminal and change shell to Zsh with p10k theme? (1/2)'
+echo 'Install kitty terminal and change shell to Zsh with p10k theme? ( 1 for install / 2 for no )'
 read input
-if [ "$input" -gt 0 -a "$input" -lt 2 ]
+if [ "$input" -eq 1 ]
 then
 echo 'Now installing kitty, zsh and p10k...'
 sudo apt-get install -y zsh kitty > /dev/null
@@ -123,9 +123,9 @@ else
 echo 'Thanks for looking at my scripts!'
 fi
 
-echo 'Make Ubuntu faster? (1/2)'
+echo 'Make Ubuntu faster? ( 1 for install / 2 for no )'
 read input
-if [ "$input" -gt 0 -a "$input" -lt 2 ]
+if [ "$input" -eq 1 ]
 # Preload loads commonly used apps into RAM and apt-fast uses parallel (multiple) downloads to make apt faster
 # Also removing a few useless applications like thunderbird, libreoffice, vim (sorry vim users) and the gnome games
 then
