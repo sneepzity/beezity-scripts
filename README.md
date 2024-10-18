@@ -135,7 +135,7 @@ sets ubuntu to turn off mouse acceleration
 sets ubuntu to show seconds in the top bar clock
 
 
-# Flatpak
+# Flatpak:
 
 it sets all of them to have a terminal shortcut meaning:
 
@@ -214,6 +214,9 @@ this is just a shortcut to install his version of hyprland
 runs the same commands straight from the repo
 
 only works on 24.04 due to outdated packages on everything before
+
+i have no hand in the development there, i am just releasing a small script to download his hyprland config because i think it is good
+
 
 # linux-mint-22.sh
 
