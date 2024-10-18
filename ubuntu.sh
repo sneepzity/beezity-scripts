@@ -34,7 +34,7 @@ sudo mkdir -pm755 /etc/apt/keyrings
 echo 'Now installing brave browser...'
 sleep 2
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg > /dev/null
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" > /dev/null | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt-get update -y > /dev/null
 sudo apt-get install -y brave-browser > /dev/null
 echo 'Brave installed!'
@@ -50,10 +50,10 @@ sudo apt-get update -y > /dev/null
 sudo apt-get upgrade -y > /dev/null
 sudo snap remove --purge firefox > /dev/null
 sudo snap remove --purge snap-store > /dev/null
-sudo systemctl disable snapd.service
-sudo systemctl disable snapd.socket
-sudo systemctl disable snapd.seeded.service
-sudo systemctl mask snapd.service
+sudo systemctl disable snapd.service > /dev/null
+sudo systemctl disable snapd.socket > /dev/null
+sudo systemctl disable snapd.seeded.service > /dev/null
+sudo systemctl mask snapd.service > /dev/null
 echo 'Snap disabled!'
 
 
@@ -77,6 +77,7 @@ sleep 2
 sudo dpkg --add-architecture i386
 sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key > /dev/null
 sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources > /dev/null
+sudo apt-get update -y > /dev/null
 sudo apt-get install -y --install-recommends winehq-stable wine-stable wine-stable-amd64 wine-stable-i386:i386 > /dev/null
 echo 'Wine installed!'
 
@@ -110,6 +111,7 @@ echo 'Make sure to log out and log back LATER in to apply changes'
 sleep 2
 # The next few commands below clone the latest release of p10k and add it to zshrc file and restart shell to let it apply
 # Fonts may be broken, you may want to use something like JetbrainMonoNerd font in gnome-terminal or kitty
+cd ~
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k > /dev/null
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 $SHELL
