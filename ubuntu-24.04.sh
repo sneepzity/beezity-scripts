@@ -109,6 +109,7 @@ sudo apt-get install -y zsh kitty > /dev/null
 chsh -s /usr/bin/zsh
 echo 'Make sure to log out and log back LATER in to apply changes'
 sleep 2
+cd ~
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k > /dev/null
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 $SHELL
