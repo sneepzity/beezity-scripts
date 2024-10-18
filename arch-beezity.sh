@@ -1,8 +1,9 @@
 #!/bin/bash
 
-echo 'Install yay, kitty, base-devel, network-manager, bluez-utils, brave browser, nautilus, flatpak, ncspot, adobe reader, space cadet pinball, vesktop, vlc, flatseal and sober? (1/2)'
+echo "Install yay, kitty, base-devel, network-manager, bluez-utils, brave browser, nautilus, flatpak, ncspot, adobe reader, space cadet pinball, vesktop, vlc, flatseal and sober? 
+( 1 for install / 2 for no )"
 read input
-if [ "$input" -gt 0 -a "$input" -lt 2 ]
+if [ "$input" -eq 1 ]
 then
 sudo pacman -S --noconfirm --needed kitty base-devel networkmanager bluez-utils
 sudo systemctl enable --now NetworkManager.service
