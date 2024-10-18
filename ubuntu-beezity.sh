@@ -71,7 +71,14 @@ else
 echo "Thanks for looking at my scripts!"
 fi
 
-echo 'Set Gnome to dark mode, performance mode, 12 hour idle and clock format, no idle dimming, no mouse acceleration, do not disturb, show seconds in clock and install gnome-tweaks (1/2)'
+echo "Set Gnome to dark mode, 
+performance mode, 
+12 hour idle and clock format, 
+no idle dimming, 
+no mouse acceleration, 
+do not disturb, 
+show seconds in clock and 
+install gnome-tweaks? (1/2)"
 read input
 if [ "$input" -gt 0 -a "$input" -lt 2 ]
 then
@@ -84,7 +91,7 @@ gsettings set org.gnome.desktop.notifications show-banners false
 gsettings set org.gnome.desktop.interface clock-show-seconds true
 sudo apt install gnome-tweaks gnome-shell-extensions chrome-gnome-shell
 else
-echo "Thanks for using my scripts!"
+echo "Thanks for looking at my scripts!"
 fi
 
 echo 'Install Custom Ubuntu and Debian ISO Creator (CUBIC)?(1/2)'
@@ -95,7 +102,25 @@ sudo apt-add-repository ppa:cubic-wizard/release -y
 sudo apt update -y
 sudo apt install -y --no-install-recommends cubic
 else
-echo "Thanks for using my scripts!"
+echo "Thanks for looking at my scripts!"
+fi
+
+
+echo 'Remove snaps and do general debloating?(1/2)'
+read input
+if [ "$input" -gt 0 -a "$input" -lt 2 ]
+then
+# More advisable to remove one snap at a time and already assuming you removed firtefox and snap-store with ubuntu.sh
+sudo snap remove --purge gtk-common-themes
+sudo snap remove --purge gnome-42-2204
+sudo snap remove --purge snapd-desktop-integration
+sudo snap remove --purge core22
+sudo snap remove --purge bare
+sudo rm -rf /var/cache/snapd
+sudo apt autoremove --purge snapd
+rm -rf ~/snap
+else
+echo "Thanks for looking at my scripts!"
 fi
 
 exit
