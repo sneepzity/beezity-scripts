@@ -3,6 +3,8 @@ Very poor bash scripts
 
 this is made specifically in mind for linux, not windows or wsl, don't try it on them
 
+the only dependency required is git, all other dependencies will be installed themselves inside the script
+
 clone repo:
 git clone https://github.com/sneepzity/beezity-scripts
 
