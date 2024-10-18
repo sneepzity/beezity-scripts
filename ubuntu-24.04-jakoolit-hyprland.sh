@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "
 Install JaKooLit's Hyprland Config? [https://github.com/JaKooLit/Ubuntu-Hyprland/tree/24.04] ( 1 for install / 2 for no )"
 read input
