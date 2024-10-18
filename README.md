@@ -17,12 +17,13 @@ i don't guarantee in anyway that the scripts even work, i just made them in my f
 i might also host a few other files here for my sake
 
 to be added:
-auto-cpufreq
 
 to be done:
-script for regular 22.04
+
 script for 24.04 in general
+
 script for lm 22
+
 script for windows???
 
 i might also include other tweaks from other repos
