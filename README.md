@@ -18,9 +18,6 @@ i don't guarantee in anyway that the scripts even work, i just made them in my f
 i might also host a few other files here for my sake
 
 to be added:
-full snap removal
-warehouse toolbox (flatpak management)
-chimeraos app
 game mode
 auto-cpufreq
 
