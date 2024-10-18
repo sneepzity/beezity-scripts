@@ -10,28 +10,31 @@ echo 'Do you want to install Playonlinux? (1/2)'
 read input
 if [ "$input" -gt 0 -a "$input" -lt 2 ]
 then
-sudo apt install playonlinux
+sudo apt install playonlinux &> /dev/null
 
-echo 'Do you want to install VS Code, ncspot, Adobe Reader, Space Cadet Pinball, Vesktop, VLC, Flatseal, Sober and Gnome extension-manager? (1/2)'
+echo "Do you want to install VS Code, ncspot, Adobe Reader, 
+Space Cadet Pinball, Vesktop, VLC, Flatseal, Sober and Gnome extension-manager?
+(From Flatpak) (1/2)"
 read input
 if [ "$input" -gt 0 -a "$input" -lt 2 ]
 then
-echo 'Nothing much will seem to be happening, please give it time especially if your internet is slow'
+echo 'Nothing much might seem to be happening, please give it time especially if your internet is slow...'
 flatpak install -y --user --noninteractive io.github.hrkfdn.ncspot
-flatpak install -y --user --noninteractive com.adobe.Reader
-flatpak install -y --user --noninteractive com.github.k4zmu2a.spacecadetpinball
-flatpak install -y --user --noninteractive dev.vencord.Vesktop
-flatpak install -y --user --noninteractive org.videolan.VLC
+flatpak install -y --user --noninteractive com.adobe.Reader 
+flatpak install -y --user --noninteractive com.github.k4zmu2a.spacecadetpinball 
+flatpak install -y --user --noninteractive dev.vencord.Vesktop 
+flatpak install -y --user --noninteractive org.videolan.VLC 
 flatpak install -y --user --noninteractive com.visualstudio.code
-flatpak install -y --user --noninteractive com.github.tchx84.Flatseal
-flatpak install -y --user --noninteractive us.zoom.Zoom
+flatpak install -y --user --noninteractive com.github.tchx84.Flatseal 
+flatpak install -y --user --noninteractive us.zoom.Zoom 
 flatpak install -y --user --noninteractive com.mattjakeman.ExtensionManager
-flatpak install -y --user --noninteractive https://sober.vinegarhq.org.sober.flatpakref
+flatpak install -y --user --noninteractive https://sober.vinegarhq.org.sober.flatpakref 
+flatpak install -y --user --noninteractive io.github.flattool.Warehouse
 else
 echo 'Thanks for looking at my scripts!'
 fi
 
-echo 'Make terminal shortcuts (can launch from terminal) for flatpak apps? (1/2)'
+echo 'Make terminal app shortcuts (can launch from terminal) for flatpak apps? (1/2)'
 read input
 if [ "$input" -gt 0 -a "$input" -lt 2 ]
 then
@@ -42,17 +45,19 @@ echo 'PATH="/home/$USER/bin:$PATH"' >> ~/.zshrc
 echo 'PATH="/home/$USER/bin:$PATH"' >> ~/.bashrc
 cd bin
 # These are the apps themselves, the output is directed towards a file and the output is the command to run flatpak apps
-echo 'flatpak run io.github.hrkfdn.ncspot' >> ncspot
-echo 'flatpak run com.adobe.Reader' >> adobe-reader
-echo 'flatpak run com.github.k4zmu2a.spacecadetpinball' >> spacecadetpinball
-echo 'flatpak run dev.Vencord.Vesktop' >> vesktop
-echo 'flatpak run org.videolan.VLC' >> vlc
-echo 'flatpak run com.visualstudio.code' >> vscode
-echo 'flatpak run com.github.tchx84.Flatseal' >> flatseal
-echo 'flatpak run us.zoom.Zoom' >> zoom
-echo 'flatpak run org.vinegarhq.Sober' >> sober
-echo 'flatpak run org.vinegarhq.Sober' >> roblox
-echo 'flatpak run com.mattjakeman.ExtensionManager' >> extension-manager
+'Creating apps...'
+echo 'flatpak run io.github.hrkfdn.ncspot' >> ncspot &> /dev/null
+echo 'flatpak run com.adobe.Reader' >> adobe-reader &> /dev/null
+echo 'flatpak run com.github.k4zmu2a.spacecadetpinball' >> spacecadetpinball &> /dev/null
+echo 'flatpak run dev.Vencord.Vesktop' >> vesktop &> /dev/null
+echo 'flatpak run org.videolan.VLC' >> vlc &> /dev/null
+echo 'flatpak run com.visualstudio.code' >> vscode &> /dev/null
+echo 'flatpak run com.github.tchx84.Flatseal' >> flatseal &> /dev/null
+echo 'flatpak run us.zoom.Zoom' >> zoom &> /dev/null
+echo 'flatpak run org.vinegarhq.Sober' >> sober &> /dev/null
+echo 'flatpak run org.vinegarhq.Sober' >> roblox &> /dev/null
+echo 'flatpak run com.mattjakeman.ExtensionManager' >> extension-manager &> /dev/null
+echo 'flatpak run io.github.flattool.Warehouse' >> warehouse &> /dev/null
 # chmod +x makes them executables instead of just plain text files
 chmod +x ncspot
 chmod +x adobe-reader
@@ -65,6 +70,7 @@ chmod +x zoom
 chmod +x sober
 chmod +x roblox
 chmod +x extension-manager
+Chmod +x warehouse
 cd
 echo 'Make sure to check the commands inside the bin folder using a terminal text-editor like vim or nano as they might be wrong and also subject to change which both can cause breakage!'
 else
@@ -89,7 +95,7 @@ gsettings set org.gnome.desktop.session idle-delay 86400
 gsettings set org.gnome.desktop.peripherals.mouse accel-profile 'flat'
 gsettings set org.gnome.desktop.notifications show-banners false
 gsettings set org.gnome.desktop.interface clock-show-seconds true
-sudo apt install gnome-tweaks gnome-shell-extensions chrome-gnome-shell
+sudo apt install gnome-tweaks gnome-shell-extensions chrome-gnome-shell &> /dev/null 
 else
 echo "Thanks for looking at my scripts!"
 fi
@@ -98,9 +104,9 @@ echo 'Install Custom Ubuntu and Debian ISO Creator (CUBIC)?(1/2)'
 read input
 if [ "$input" -gt 0 -a "$input" -lt 2 ]
 then
-sudo apt-add-repository ppa:cubic-wizard/release -y
-sudo apt update -y
-sudo apt install -y --no-install-recommends cubic
+sudo apt-add-repository ppa:cubic-wizard/release -y &> /dev/null
+sudo apt update -y &> /dev/null 
+sudo apt install -y --no-install-recommends cubic &> /dev/null
 else
 echo "Thanks for looking at my scripts!"
 fi
@@ -110,17 +116,33 @@ echo 'Remove snaps?(1/2)'
 read input
 if [ "$input" -gt 0 -a "$input" -lt 2 ]
 then
-# More advisable to remove one snap at a time and already assuming you removed firtefox and snap-store with ubuntu.sh
-sudo snap remove --purge gtk-common-themes
-sudo snap remove --purge gnome-42-2204
-sudo snap remove --purge snapd-desktop-integration
-sudo snap remove --purge core22
-sudo snap remove --purge bare
+# More advisable to remove one snap at a time and already assuming you removed firefox and snap-store with ubuntu.sh
+echo 'Close all snap apps before uninstalling if you have any installed'
+sudo snap remove --purge gtk-common-themes &> /dev/null
+sudo snap remove --purge gnome-42-2204 &> /dev/null
+sudo snap remove --purge snapd-desktop-integration &> /dev/null
+sudo snap remove --purge core22 &> /dev/null
+sudo snap remove --purge bare &> /dev/null
 sudo rm -rf /var/cache/snapd
-sudo apt autoremove --purge snapd
+sudo apt autoremove --purge snapd &> /dev/null
 rm -rf ~/snap
 else
 echo "Thanks for looking at my scripts!"
 fi
 
+echo 'Install gamemode? (https://github.com/FeralInteractive/gamemode) (1/2)'
+read input
+if [ "$input" -gt 0 -a "$input" -lt 2 ]
+then
+# Install required dependencies 
+echo 'Installing dependencies...'
+sudo apt install meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev build-essential &> /dev/null
+echo 'Cloning repository and installing gamemode via ./bootstrap.sh...'
+git clone https://github.com/FeralInteractive/gamemode.git &> /dev/null
+cd gamemode
+./bootstrap.sh
+echo 'Run gamemoded -t to see if it insalled correctly!'
+else
+echo "Thanks for looking at my scripts!"
+fi
 exit
