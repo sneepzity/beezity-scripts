@@ -22,6 +22,7 @@ flatpak install -y --user --noninteractive com.visualstudio.code
 flatpak install -y --user --noninteractive com.github.tchx84.Flatseal
 flatpak install -y --user --noninteractive us.zoom.Zoom
 flatpak install -y --user --noninteractive https://sober.vinegarhq.org.sober.flatpakref
+flatpak install -y --user --noninteractive io.github.flattool.Warehouse
 mkdir ~/bin
 echo 'PATH="/home/$USER/bin:$PATH"' >> ~/.zshrc
 echo 'PATH="/home/$USER/bin:$PATH"' >> ~/.bashrc
@@ -36,6 +37,7 @@ echo 'flatpak run com.github.tchx84.Flatseal' >> flatseal
 echo 'flatpak run us.zoom.Zoom' >> zoom
 echo 'flatpak run org.vinegarhq.Sober' >> sober
 echo 'flatpak run org.vinegarhq.Sober' >> roblox
+echo 'flatpak run io.github.flattool.Warehouse' >> warehouse
 chmod +x ncspot
 chmod +x adobe-reader
 chmod +x spacecadetpinball
@@ -46,6 +48,7 @@ chmod +x flatseal
 chmod +x zoom
 chmod +x sober
 chmod +x roblox
+chmod +x warehouse
 else
 echo "Thanks for looking at my scripts!"
 fi
