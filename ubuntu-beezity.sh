@@ -106,7 +106,7 @@ echo "Thanks for looking at my scripts!"
 fi
 
 
-echo 'Remove snaps and do general debloating?(1/2)'
+echo 'Remove snaps?(1/2)'
 read input
 if [ "$input" -gt 0 -a "$input" -lt 2 ]
 then
