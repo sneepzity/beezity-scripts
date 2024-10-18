@@ -5,7 +5,7 @@ read input
 if [ "$input" -gt 0 -a "$input" -lt 2 ]
 then
 sudo pacman -S --noconfirm --needed kitty base-devel networkmanager bluez-utils
-sudo systemctl enble --now NetworkManager.service
+sudo systemctl enable --now NetworkManager.service
 sudo systemctl enable --now bluetooth
 git clone https://aur.archlinux.org/yay.git ~/yay
 cd yay
