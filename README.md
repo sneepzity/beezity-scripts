@@ -8,6 +8,8 @@ git clone https://github.com/sneepzity/beezity-scripts
 
 cd beezity-scripts
 
+chmod +x *.sh
+
 sh (script).sh or sudo ./(script).sh
 
 
@@ -17,6 +19,7 @@ i don't guarantee in anyway that the scripts even work, i just made them in my f
 i might also host a few other files here for my sake
 
 to be added:
+none for now
 
 to be done:
 
