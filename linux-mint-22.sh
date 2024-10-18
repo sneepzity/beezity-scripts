@@ -21,7 +21,7 @@ then
 	sudo apt-get purge xreader -y
 	sudo apt-get purge onboard -y
 	sudo apt-get purge gnome-calendar -y
-  sudo apt-get purge celluloid -y
+        sudo apt-get purge celluloid -y
 	sudo apt-get purge gnome-logs -y
 	sudo apt-get purge gnome-power-manager -y
 	sudo apt-get purge onboard -y
