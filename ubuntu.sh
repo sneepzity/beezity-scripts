@@ -67,7 +67,7 @@ sudo apt-add-repository universe -y > /dev/null
 sudo apt-get update -y > /dev/null
 sudo apt-add-repository multiverse -y > /dev/null
 sudo apt-get update -y > /dev/null
-sudo apt upgrade -y > /dev/null
+sudo apt-get upgrade -y > /dev/null
 echo 'Universe and multiverse repository added!'
 
 # This adds 32-bit architecture as by default Ubuntu only supports 64-bit, it also installs wine-stable,
