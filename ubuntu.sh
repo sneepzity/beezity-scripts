@@ -3,11 +3,6 @@
 echo "This script is for Ubuntu 22.04 (MINIMAL) ONLY. 
 Make sure to read all scripts you download before executing them, 
 especially ones running as root."
-if [ "$(whoami)" != "root" ]; then
-	echo "
-Please run this script as root (sudo ./ubuntu.sh)."
-	exit
-fi
 
 echo 'Waiting 5 seconds...'
 sleep 5
