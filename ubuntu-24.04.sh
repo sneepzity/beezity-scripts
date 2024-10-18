@@ -5,7 +5,7 @@ Make sure to read all scripts you download before executing them,
 especially ones running as root."
 if [ "$(whoami)" != "root" ]; then
 	echo "
-Please run this script as root (sudo su or sudo ./ubuntu-24.04.sh)."
+Please run this script as root (sudo ./ubuntu-24.04.sh)."
 	exit
 fi
 
