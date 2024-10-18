@@ -21,11 +21,11 @@ then
 # You can comment out using # and make sure to know what you're doing before hand!
 
 # This installs basic requirements for most of the other commands like build-essential, wget and curl
-echo 'Installing basic requirements'
+echo 'Installing basic requirements...'
 sudo apt install -y curl build-essential wget
 
 # This creates keyrings for brave, wine and other future applications
-echo 'Now creating gpg keyring'
+echo 'Now creating gpg keyring...'
 sleep 2
 sudo mkdir -pm755 /etc/apt/keyrings
 
@@ -40,13 +40,14 @@ sudo apt install -y brave-browser
 # All the snap related commands down below uninstall firefox snap and snap store and disables snap, but doesn't uninstall
 # It also puts higher preference on non-snap
 
-echo 'Now disabling snap... and uninstalling firefox and snap store...'
+echo 'Now disabling snap... and uninstalling firefox snap and snap store...'
 sleep 2
 printf "Package: firefox*\nPin: release o=Ubuntu*\nPin-Priority: -1" > /etc/apt/preferences.d/firefox-no-snap
 printf "Package: snapd\nPin: release a=*\nPin-Priority: -10" > /etc/apt/preferences.d/nosnap.pref
 sudo apt update -y
 sudo apt-get upgrade -y
-snap remove --purge firefox snap-store
+sudo snap remove --purge firefox 
+sudo snap remove --purge snap-store
 sudo systemctl disable snapd.service
 sudo systemctl disable snapd.socket
 sudo systemctl disable snapd.seeded.service
