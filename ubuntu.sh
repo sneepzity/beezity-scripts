@@ -72,17 +72,19 @@ echo 'Universe and multiverse repository added!'
 
 # This adds 32-bit architecture as by default Ubuntu only supports 64-bit, it also installs wine-stable,
 # change packages or comment out if you don't like the default selection here
-echo 'Now installing wine..'
+echo 'Now installing wine...'
 sleep 2
 sudo dpkg --add-architecture i386
 sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key > /dev/null
 sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources > /dev/null
 sudo apt-get install -y --install-recommends winehq-stable wine-stable wine-stable-amd64 wine-stable-i386:i386 > /dev/null
+echo 'Wine installed!'
 
 # This installs the regular debian package version of Firefox which is much faster than the one in Ubuntu by default.
 echo 'Now installing firefox...'
 wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
 echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
+echo 'Firefox deb version installed!'
 
 # This installs flatpak, a much better alternative to snap with much wider app support and compatibility
 echo 'Now installing flatpak and flathub..'
@@ -90,7 +92,9 @@ sleep 2
 sudo apt-get install -y flatpak > /dev/null
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo > /dev/null
 sleep 3
+echo 'Flatpak installed and flathub set-up!'
 echo 'Make sure to reboot LATER to apply all changes!'
+sleep 3
 else
 echo 'Thanks for looking at my scripts!'
 fi
