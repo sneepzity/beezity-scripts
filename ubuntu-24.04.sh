@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "This script is for Ubuntu 22.04 (MINIMAL) ONLY. 
+echo "This script is for Ubuntu 24.04 ONLY. 
 Make sure to read all scripts you download before executing them, 
 especially ones running as root."
 if [ "$(whoami)" != "root" ]; then
