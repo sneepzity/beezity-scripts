@@ -87,6 +87,7 @@ echo 'Make sure to log out and log back LATER in to apply changes'
 sleep 2
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+$SHELL
 echo 'You have to manually install fonts if you use Gnome Terminal :('
 echo 'Dont worry if the script freezes because I have it set to sleep for a few seconds :)'
 sleep 3
