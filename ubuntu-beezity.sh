@@ -6,17 +6,17 @@ Make sure to read all scripts you download before executing them, especially one
 
 echo 'This script is meant to be run after ubuntu.sh, make sure you have run it before hand.'
 
-echo 'Do you want to install Playonlinux? (1/2)'
+echo 'Do you want to install Playonlinux? ( 1 for install / 2 for no )'
 read input
-if [ "$input" -gt 0 -a "$input" -lt 2 ]
+if [ "$input" -eq 1 ]
 then
 sudo apt-get install playonlinux > /dev/null
 
 echo "Do you want to install VS Code, ncspot, Adobe Reader, 
 Space Cadet Pinball, Vesktop, VLC, Flatseal, Sober and Gnome extension-manager?
-(From Flatpak) (1/2)"
+(From Flatpak) ( 1 for install / 2 for no )"
 read input
-if [ "$input" -gt 0 -a "$input" -lt 2 ]
+if [ "$input" -eq 1 ]
 then
 echo 'Nothing much might seem to be happening, please give it time especially if your internet is slow...'
 flatpak install -y --user --noninteractive io.github.hrkfdn.ncspot
@@ -35,9 +35,9 @@ else
 echo 'Thanks for looking at my scripts!'
 fi
 
-echo 'Make terminal app shortcuts (can launch from terminal) for flatpak apps? (1/2)'
+echo 'Make terminal app shortcuts (can launch from terminal) for flatpak apps? ( 1 for install / 2 for no )'
 read input
-if [ "$input" -gt 0 -a "$input" -lt 2 ]
+if [ "$input" -eq 1 ]
 then
 # This creates a folder for the terminal apps specifically and adds it to PATH in both zsh and bash
 cd
@@ -71,7 +71,7 @@ chmod +x zoom
 chmod +x sober
 chmod +x roblox
 chmod +x extension-manager
-Chmod +x warehouse
+chmod +x warehouse
 cd
 echo 'Flatpak shortcuts created!'
 sleep 2
@@ -89,9 +89,9 @@ no idle dimming,
 no mouse acceleration, 
 do not disturb, 
 show seconds in clock, and 
-install gnome-tweaks? (1/2)"
+install gnome-tweaks? ( 1 for install / 2 for no )"
 read input
-if [ "$input" -gt 0 -a "$input" -lt 2 ]
+if [ "$input" -eq 1 ]
 then
 gsettings set org.gnome.desktop.interface clock-format '12h'
 powerprofilesctl set performance
@@ -106,11 +106,11 @@ else
 echo "Thanks for looking at my scripts!"
 fi
 
-echo 'Install Custom Ubuntu and Debian ISO Creator (CUBIC)?(1/2)'
+echo 'Install Custom Ubuntu and Debian ISO Creator (CUBIC)?( 1 for install / 2 for no )'
 read input
-if [ "$input" -gt 0 -a "$input" -lt 2 ]
+if [ "$input" -eq 1 ]
 then
-sudo apt-get-add-repository ppa:cubic-wizard/release -y > /dev/null
+sudo apt-add-repository ppa:cubic-wizard/release -y > /dev/null
 sudo apt-get update -y > /dev/null 
 sudo apt-get install -y --no-install-recommends cubic > /dev/null
 echo 'Cubic installed!'
@@ -119,9 +119,9 @@ echo "Thanks for looking at my scripts!"
 fi
 
 
-echo 'Remove snaps?(1/2)'
+echo 'Remove snaps?( 1 for install / 2 for no )'
 read input
-if [ "$input" -gt 0 -a "$input" -lt 2 ]
+if [ "$input" -eq 1 ]
 then
 # More advisable to remove one snap at a time and already assuming you removed firefox and snap-store with ubuntu.sh
 echo 'Close all snap apps before uninstalling if you have any installed!'
@@ -138,9 +138,9 @@ else
 echo "Thanks for looking at my scripts!"
 fi
 
-echo 'Install gamemode? (https://github.com/FeralInteractive/gamemode) (1/2)'
+echo 'Install gamemode? (https://github.com/FeralInteractive/gamemode) ( 1 for install / 2 for no )'
 read input
-if [ "$input" -gt 0 -a "$input" -lt 2 ]
+if [ "$input" -eq 1 ]
 then
 # Install required dependencies 
 echo 'Installing dependencies...'
