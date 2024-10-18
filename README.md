@@ -6,7 +6,7 @@ this is made specifically in mind for linux, not windows or wsl, don't try it on
 the only dependency required is git, all other dependencies will be installed themselves inside the script
 
 clone repo:
-git clone https://github.com/sneepzity/beezity-scripts
+git clone https://github.com/sneepzity/beezity-scripts.git
 
 cd beezity-scripts
 
