@@ -108,6 +108,8 @@ sudo apt-get install -y zsh kitty > /dev/null
 chsh -s /usr/bin/zsh
 echo 'Make sure to log out and log back LATER in to apply changes'
 sleep 2
+# The next few commands below clone the latest release of p10k and add it to zshrc file and restart shell to let it apply
+# Fonts may be broken, you may want to use something like JetbrainMonoNerd font in gnome-terminal or kitty
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k > /dev/null
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 $SHELL
