@@ -5,7 +5,7 @@ Make sure to read all scripts you download before executing them,
 especially ones running as root."
 if [ "$(whoami)" != "root" ]; then
 	echo "
-Please run this script as root (sudo su or sudo ./ubuntu.sh)."
+Please run this script as root (sudo ./ubuntu.sh)."
 	exit
 fi
 
@@ -46,10 +46,13 @@ echo 'Now disabling snap... and uninstalling firefox snap and snap store...'
 sleep 2
 printf "Package: firefox*\nPin: release o=Ubuntu*\nPin-Priority: -1" > /etc/apt/preferences.d/firefox-no-snap
 printf "Package: snapd\nPin: release a=*\nPin-Priority: -10" > /etc/apt/preferences.d/nosnap.pref
+echo 'Updating and upgrading packages...'
 sudo apt-get update -y > /dev/null
 sudo apt-get upgrade -y > /dev/null
+echo 'Removing snap firefox and store...'
 sudo snap remove --purge firefox > /dev/null
 sudo snap remove --purge snap-store > /dev/null
+echo 'Disabling snap services...'
 sudo systemctl disable snapd.service > /dev/null
 sudo systemctl disable snapd.socket > /dev/null
 sudo systemctl disable snapd.seeded.service > /dev/null
