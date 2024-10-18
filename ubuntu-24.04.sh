@@ -3,11 +3,6 @@
 echo "This script is for Ubuntu 24.04 ONLY. 
 Make sure to read all scripts you download before executing them, 
 especially ones running as root."
-if [ "$(whoami)" != "root" ]; then
-	echo "
-Please run this script as root (sudo ./ubuntu-24.04.sh)."
-	exit
-fi
 
 echo 'Waiting 5 seconds...'
 sleep 5
