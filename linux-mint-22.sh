@@ -1,9 +1,9 @@
 #!/bin/bash
 
 echo "
-Debloat Linux Mint? (1/2)"
+Debloat Linux Mint? ( 1 for install / 2 for no )"
 read input
-if [ "$input" -gt 0 -a "$input" -lt 2 ]
+if [ "$input" -eq 1 ]
 then
   sudo apt-get purge redshift -y
 	sudo apt-get purge libreoffice-core -y
@@ -26,3 +26,8 @@ then
 	sudo apt-get purge gnome-power-manager -y
 	sudo apt-get purge onboard -y
 	sudo apt-get-get purge warpinator -y
+else
+echo 'Thanks for looking at my scripts!'
+fi
+
+exit
