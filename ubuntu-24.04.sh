@@ -46,14 +46,17 @@ echo 'Now disabling snap... and uninstalling firefox snap and snap store...'
 sleep 2
 printf "Package: firefox*\nPin: release o=Ubuntu*\nPin-Priority: -1" > /etc/apt/preferences.d/firefox-no-snap
 printf "Package: snapd\nPin: release a=*\nPin-Priority: -10" > /etc/apt/preferences.d/nosnap.pref
+echo 'Updating and upgrading packages...'
 sudo apt-get update -y > /dev/null
 sudo apt-get upgrade -y > /dev/null
+echo 'Removing snap firefox and store...'
 sudo snap remove --purge firefox > /dev/null
 sudo snap remove --purge snap-store > /dev/null
-sudo systemctl disable snapd.service
-sudo systemctl disable snapd.socket
-sudo systemctl disable snapd.seeded.service
-sudo systemctl mask snapd.service
+echo 'Disabling snap services...'
+sudo systemctl disable snapd.service > /dev/null
+sudo systemctl disable snapd.socket > /dev/null
+sudo systemctl disable snapd.seeded.service > /dev/null
+sudo systemctl mask snapd.service > /dev/null
 echo 'Snap disabled!'
 
 
@@ -77,6 +80,7 @@ sleep 2
 sudo dpkg --add-architecture i386
 sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key > /dev/null
 sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/noble/winehq-noble.sources > /dev/null
+sudo apt-get update -y
 sudo apt-get install -y --install-recommends winehq-stable wine-stable wine-stable-amd64 wine-stable-i386:i386 > /dev/null
 echo 'Wine installed!'
 # This installs the regular debian package version of Firefox which is much faster than the one in Ubuntu by default.
