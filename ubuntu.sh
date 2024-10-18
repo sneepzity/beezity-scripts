@@ -9,7 +9,7 @@ Please run this script as root (sudo su or sudo ./ubuntu.sh)."
 	exit
 fi
 
-
+echo 'Waiting 5 seconds...'
 sleep 5
 
 echo "
