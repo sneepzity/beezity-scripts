@@ -133,6 +133,10 @@ sudo snap remove --purge gnome-42-2204 > /dev/null
 sudo snap remove --purge snapd-desktop-integration > /dev/null
 sudo snap remove --purge core22 > /dev/null
 sudo snap remove --purge bare > /dev/null
+sudo systemctl disable snapd.service
+sudo systemctl disable snapd.socket 
+sudo systemctl disable snapd.seeded.service
+sudo systemctl mask snapd.service
 sudo rm -rf /var/cache/snapd
 sudo apt-get autoremove -y --purge snapd > /dev/null
 rm -rf ~/snap
