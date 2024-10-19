@@ -19,17 +19,20 @@ then
 echo 'Installing basic requirements...'
 sudo apt-get install -y curl build-essential wget > /dev/null
 echo 'Installation successful!'
+sleep 2
 
 # This creates keyrings for brave, wine and other future applications
-echo 'Now creating gpg keyring...'
+echo 'Now creating GPG keyring...'
 sleep 2
-sudo mkdir -pm755 /etc/apt/keyrings
+sudo mkdir -pm755 /etc/apt/keyrings > /dev/null
+echo 'GPG keyring successfully added!'
+sleep 2
 
 # The four commands below install brave browser, comment it out if you don't want to install brave
 echo 'Now installing brave browser...'
 sleep 2
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt-get update -y > /dev/null
 sudo apt-get install -y brave-browser > /dev/null
 echo 'Brave installed!'
