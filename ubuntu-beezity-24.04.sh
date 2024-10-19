@@ -15,22 +15,22 @@ else
 echo 'Thanks for looking at my scripts!'
 fi
 
-echo "Do you want to install VS Code, ncspot, Adobe Reader \
+echo "Do you want to install VS Code, ncspot, Adobe Reader,
 Space Cadet Pinball, Vesktop, VLC, Flatseal, Sober and Gnome extension-manager?
 (From Flatpak) ( 1 for install / 2 for no )"
 read input
 if [ "$input" -eq 1 ]
 then
 echo 'Nothing much might seem to be happening, please give it time especially if your internet is slow...'
-flatpak install --assumeyes --noninteractive flathub io.github.hrkfdn.ncspot
-flatpak install --assumeyes --noninteractive com.adobe.Reader 
-flatpak install --assumeyes --noninteractive com.github.k4zmu2a.spacecadetpinball 
-flatpak install --assumeyes --noninteractive dev.vencord.Vesktop 
-flatpak install --assumeyes --noninteractive org.videolan.VLC 
-flatpak install --assumeyes --noninteractive com.visualstudio.code 
-flatpak install --assumeyes --noninteractive com.github.tchx84.Flatseal 
-flatpak install --assumeyes --noninteractive us.zoom.Zoom 
-flatpak install --assumeyes --noninteractive com.mattjakeman.ExtensionManager 
+flatpak install --user --assumeyes --noninteractive io.github.hrkfdn.ncspot
+flatpak install --user --assumeyes --noninteractive com.adobe.Reader 
+flatpak install --user --assumeyes --noninteractive com.github.k4zmu2a.spacecadetpinball 
+flatpak install --user --assumeyes --noninteractive dev.vencord.Vesktop 
+flatpak install --user --assumeyes --noninteractive org.videolan.VLC 
+flatpak install --user --assumeyes --noninteractive com.visualstudio.code 
+flatpak install --user --assumeyes --noninteractive com.github.tchx84.Flatseal 
+flatpak install --user --assumeyes --noninteractive us.zoom.Zoom 
+flatpak install --user --assumeyes --noninteractive com.mattjakeman.ExtensionManager 
 flatpak install --user --assumeyes --noninteractive https://sober.vinegarhq.org/sober.flatpakref
 flatpak install --assumeyes --noninteractive io.github.flattool.Warehouse
 echo 'Flatpak apps installed!'
