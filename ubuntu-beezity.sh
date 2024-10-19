@@ -32,7 +32,7 @@ flatpak install --user --assumeyes --noninteractive com.github.tchx84.Flatseal
 flatpak install --user --assumeyes --noninteractive us.zoom.Zoom 
 flatpak install --user --assumeyes --noninteractive com.mattjakeman.ExtensionManager 
 flatpak install --user --assumeyes --noninteractive https://sober.vinegarhq.org/sober.flatpakref
-flatpak install --assumeyes --noninteractive io.github.flattool.Warehouse
+flatpak install --user --assumeyes --noninteractive io.github.flattool.Warehouse
 echo 'Flatpak apps installed!'
 else
 echo 'Thanks for looking at my scripts!'
