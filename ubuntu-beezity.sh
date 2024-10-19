@@ -38,9 +38,9 @@ flatpak install --user --assumeyes --noninteractive dev.vencord.Vesktop
 flatpak install --user --assumeyes --noninteractive org.videolan.VLC 
 flatpak install --user --assumeyes --noninteractive com.visualstudio.code 
 flatpak install --user --assumeyes --noninteractive com.github.tchx84.Flatseal 
-flatpak install --user --assumeyes --noninteractive us.zoom.Zoom 
-flatpak install --user --assumeyes --noninteractive com.mattjakeman.ExtensionManager
-flatpak install --user --assumeyes --noninteractive io.github.flattool.Warehouse
+flatpak install --user  --assumeyes --noninteractive us.zoom.Zoom 
+flatpak install --user  --assumeyes --noninteractive com.mattjakeman.ExtensionManager
+flatpak install --user  --assumeyes --noninteractive io.github.flattool.Warehouse
 echo 'Flatpak apps installed!'
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
@@ -217,6 +217,7 @@ echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
 then
+echo 'Thanks for looking at my scripts!'
 exit
 else
 echo 'Continuing!'
@@ -231,7 +232,9 @@ performance mode,
 no idle dimming, 
 no mouse acceleration, 
 do not disturb, 
-show seconds in clock, and 
+show seconds in clock, 
+hide dock trash 
+and drives in dock and also
 install gnome-tweaks? ( 1 for install / 2 for no )"
 read input
 if [ "$input" -eq 1 ]
@@ -243,14 +246,16 @@ gsettings set org.gnome.desktop.session idle-delay 86400
 gsettings set org.gnome.desktop.peripherals.mouse accel-profile 'flat'
 gsettings set org.gnome.desktop.notifications show-banners false
 gsettings set org.gnome.desktop.interface clock-show-seconds true
+gsettings set org.gnome.shell.extensions.desktop-icons show-trash false
+gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 sudo apt-get install -y gnome-tweaks gnome-shell-extensions chrome-gnome-shell > /dev/null
 echo 'Gnome tweaks applied!'
 else
-echo 'Thanks for looking at my scripts!'
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
 then
+echo 'Thanks for looking at my scripts!'
 exit
 else
 echo 'Continuing!'
@@ -266,11 +271,11 @@ sudo apt-get update -y > /dev/null
 sudo apt-get install -y --no-install-recommends cubic > /dev/null
 echo 'Cubic installed!'
 else
-echo 'Thanks for looking at my scripts!'
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
 then
+echo 'Thanks for looking at my scripts!'
 exit
 else
 echo 'Continuing!'
@@ -298,11 +303,11 @@ sudo apt-get autoremove -y --purge snapd > /dev/null
 rm -rf ~/snap
 echo 'Snapped clean off!'
 else
-echo 'Thanks for looking at my scripts!'
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
 then
+echo 'Thanks for looking at my scripts!'
 exit
 else
 echo 'Continuing!'
@@ -329,7 +334,6 @@ flatpak install --user --assumeyes --noninteractive com.valvesoftware.Steam
 flatpak install --user --assumeyes --noninteractive com.heroicgameslauncher.hgl
 flatpak install --user --assumeyes --noninteractive net.lutris.Lutris
 flatpak install --user --assumeyes --noninteractive com.usebottles.bottles
-echo 'Thanks for looking at my scripts!'
 echo 'Do you want to install Roblox? (Sober) ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
@@ -364,11 +368,11 @@ echo 'Aliases successfully added, make sure to check file names i.e steam or Ste
 sleep 1
 echo 'Game launchers successfully installed! Go out there and rock!'
 else
-echo 'Thanks for looking at my scripts!'
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
 then
+echo 'Thanks for looking at my scripts'
 exit
 else
 echo 'Thanks for looking at my scripts!'
