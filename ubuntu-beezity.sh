@@ -128,7 +128,7 @@ echo 'You are safe to ignore this if you didnt install any of the artistic apps.
 sleep 1
 echo 'Also automatically adds terminal shortcuts'
 sleep 1
-echo 'Are you really sure after knowing all that?'
+echo 'Are you really sure after knowing all that? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
