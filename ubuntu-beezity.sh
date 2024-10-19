@@ -133,6 +133,7 @@ cd /home/$USER
 echo 'PhotoGIMP created!'
 else
 echo 'Thats fine, you can always come back.'
+fi
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
