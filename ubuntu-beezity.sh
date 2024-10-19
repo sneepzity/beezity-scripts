@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo 'This script is for Ubuntu 22.04 (MINIMAL) ONLY.
-I DO NOT GUARANTEE COMPATIBILITY WITH ALL OTHER VERSIONS EXCEPT 22.04 MINIMAL.
+echo 'This script is for Ubuntu 24.04 ONLY.
+I DO NOT GUARANTEE COMPATIBILITY WITH ALL OTHER VERSIONS EXCEPT 24.04.
 Make sure to read all scripts you download before executing them, especially ones running as root.'
 
 echo 'This script is meant to be run after ubuntu.sh, make sure you have run it before hand.'
@@ -11,6 +11,9 @@ read input
 if [ "$input" -eq 1 ]
 then
 sudo apt-get install playonlinux > /dev/null
+else
+echo 'Thanks for looking at my scripts!'
+fi
 
 echo "Do you want to install VS Code, ncspot, Adobe Reader \
 Space Cadet Pinball, Vesktop, VLC, Flatseal, Sober and Gnome extension-manager?
