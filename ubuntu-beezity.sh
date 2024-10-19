@@ -273,7 +273,7 @@ gsettings set org.gnome.desktop.notifications show-banners false
 gsettings set org.gnome.desktop.interface clock-show-seconds true
 gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
-sudo apt-get install gnome-extensions -y > /dev/null
+sudo apt-get install gnome-shell-extensions -y > /dev/null
 gnome-extensions disable ding@rastersoft.com
 sudo apt-get install -y gnome-tweaks gnome-shell-extensions chrome-gnome-shell > /dev/null
 echo 'Gnome tweaks applied!'
