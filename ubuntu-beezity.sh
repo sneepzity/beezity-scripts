@@ -250,8 +250,9 @@ echo 'no idle dimming,'
 echo 'no mouse acceleration, '
 echo 'do not disturb, '
 echo 'show seconds in clock, '
-echo 'hide dock trash '
-echo 'and drives in dock and also'
+echo 'hide dock trash in dock '
+echo 'disable desktop icons'
+echo 'hide drives in dock and also'
 echo 'install gnome-tweaks? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
@@ -263,8 +264,10 @@ gsettings set org.gnome.desktop.session idle-delay 86400
 gsettings set org.gnome.desktop.peripherals.mouse accel-profile 'flat'
 gsettings set org.gnome.desktop.notifications show-banners false
 gsettings set org.gnome.desktop.interface clock-show-seconds true
-gsettings set org.gnome.shell.extensions.desktop-icons show-trash false
+gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
+sudo apt-get install gnome-extensions -y > /dev/null
+gnome-extensions disable ding@rastersoft.com
 sudo apt-get install -y gnome-tweaks gnome-shell-extensions chrome-gnome-shell > /dev/null
 echo 'Gnome tweaks applied!'
 else
