@@ -10,9 +10,17 @@ echo 'Do you want to install Playonlinux? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-sudo apt-get -y install playonlinux > /dev/null
+sudo apt-get install -y playonlinux > /dev/null
 else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
 echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
 fi
 
 echo "Do you want to install VS Code, ncspot, Adobe Reader,
@@ -30,24 +38,159 @@ flatpak install --user --assumeyes --noninteractive org.videolan.VLC
 flatpak install --user --assumeyes --noninteractive com.visualstudio.code 
 flatpak install --user --assumeyes --noninteractive com.github.tchx84.Flatseal 
 flatpak install --user --assumeyes --noninteractive us.zoom.Zoom 
-flatpak install --user --assumeyes --noninteractive com.mattjakeman.ExtensionManager 
-flatpak install --user --assumeyes --noninteractive https://sober.vinegarhq.org/sober.flatpakref
+flatpak install --user --assumeyes --noninteractive com.mattjakeman.ExtensionManager
 flatpak install --user --assumeyes --noninteractive io.github.flattool.Warehouse
 echo 'Flatpak apps installed!'
 else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
 echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
 fi
 
-echo 'Make terminal app shortcuts (can launch from terminal) for flatpak apps? ( 1 for install / 2 for no )'
+echo 'Feeling artistic? ( 1 for install / 2 for no)'
+sleep 1
+echo 'Also automatically adds terminal shortcuts'
+sleep 1
+read input
+if [ "$input" -eq 1 ]
+then
+flatpak install --user --assumeyes --noninteractive org.kde.kdenlive
+flatpak install --user --assumeyes --noninteractive org.inkscape.Inkscape
+flatpak install --user --assumeyes --noninteractive org.gimp.GIMP
+echo 'Make sure you're using X11 as GIMP at least on flatpak doesn't support Wayland!'
+sleep 1
+flatpak install --user --assumeyes --noninteractive org.kde.krita
+flatpak install --user --assumeyes --noninteractive com.github.PintaProject.Pinta
+# Making sure in home directory
+cd /home/$USER
+mkdir ~/bin
+echo 'flatpak run com.github.PintaProject.Pinta' >> pinta > /dev/null
+echo 'flatpak run com.github.PintaProject.Pinta' >> Pinta > /dev/null
+echo 'flatpak run com.github.PintaProject.Pinta' >> paint > /dev/null
+echo 'flatpak run com.github.PintaProject.Pinta' >> Paint > /dev/null
+echo 'flatpak run com.github.PintaProject.Pinta' >> mspaint > /dev/null
+echo 'flatpak run com.github.PintaProject.Pinta' >> MSPaint > /dev/null
+echo 'flatpak run org.kde.krita' >> krita > /dev/null
+echo 'flatpak run org.kde.krita' >> Krita > /dev/null
+echo 'flatpak run org.gimp.GIMP' >> gimp > /dev/null
+echo 'flatpak run org.gimp.GIMP' >> GIMP > /dev/null
+echo 'flatpak run org.inkscape.Inkscape' >> inkscape > /dev/null
+echo 'flatpak run org.inkscape.Inkscape' >> Inkscape > /dev/null
+echo 'flatpak run org.kde.kdenlive' >> kdenlive > /dev/null
+echo 'flatpak run org.kde.kdenlive' >> KDEnlive > /dev/null
+chmod +x *
+echo 'Aliases successfully added, make sure to check file names i.e gimp or GIMP to launch GIMP etc.'
+sleep 1
+echo 'Apps installed and may you continue to do good on your endeavours!'
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
+echo 'Install PhotoGIMP? ( 1 for install / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sleep 1
+echo 'PhotoGIMP aims to make and look GIMP more like Photoshop.'
+sleep 1
+echo 'You are safe to ignore this if you didnt install any of the artistic apps.'
+sleep 1
+echo 'Also automatically adds terminal shortcuts'
+sleep 1
+echo 'Are you really sure after knowing all that?'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Starting GIMP customization into Photoshop...'
+wget https://github.com/Diolinux/PhotoGIMP/releases/latest/download/PhotoGIMP.zip
+sudo apt install unzip rsync > /dev/null
+unzip PhotoGIMP.zip -o -d ~ > /dev/null
+rsync -av ~/PhotoGIMP-master/.local/share ~/.local
+rsync -av ~/PhotoGIMP-master/.var/app ~/.var/
+rm -rf ~/PhotoGIMP-master
+cd /home/$USER/bin
+echo 'flatpak run org.gimp.GIMP' >> photogimp > /dev/null
+echo 'flatpak run org.gimp.GIMP' >> photoGIMP > /dev/null
+echo 'flatpak run org.gimp.GIMP' >> photoshop > /dev/null
+echo 'flatpak run org.gimp.GIMP' >> Photoshop > /dev/null
+echo 'flatpak run org.gimp.GIMP' >> PhotoGIMP > /dev/null
+chmod +x *
+cd /home/$USER
+echo 'PhotoGIMP created!'
+else
+echo 'Thats fine, you can always come back.'
+fi
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
+echo 'Setup terminal flatpak app shortcuts? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
 # This creates a folder for the terminal apps specifically and adds it to PATH in both zsh and bash
-cd
-mkdir ~/bin
-echo 'PATH="/home/$USER/bin:$PATH"' >> ~/.zshrc
+cd /home/$USER
+mkdir -p ~/bin &> /dev/null
+echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
+read input
+if [ "$input" -eq 1 ]
+then
 echo 'PATH="/home/$USER/bin:$PATH"' >> ~/.bashrc
-cd bin
+echo 'Also add to zsh? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> ~/.zshrc
+else
+echo 'Continuing!'
+fi
+else
+echo 'PATH="/home/$USER/bin:$PATH"' >> ~/.zshrc
+echo 'Also add to bash? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> ~/.bashrc
+else
+echo 'Continuing!'
+fi
+fi
+echo 'Setting up terminal apps proper...'
+echo 'List of apps...'
+echo 'Ncspot'
+echo 'Adobe Reader'
+echo 'Space Cadet Pinball'
+echo 'Vesktop'
+echo 'VLC'
+echo 'VSCode'
+echo 'Zoom'
+echo 'Extension Manager'
+echo 'Flattool Warehouse'
+sleep 5
+echo 'Starting now...'
+cd ~/bin
 # These are the apps themselves, the output is directed towards a file and the output is the command to run flatpak apps
 echo 'Creating apps...'
 echo 'flatpak run io.github.hrkfdn.ncspot' >> ncspot > /dev/null
@@ -58,31 +201,27 @@ echo 'flatpak run org.videolan.VLC' >> vlc > /dev/null
 echo 'flatpak run com.visualstudio.code' >> vscode > /dev/null
 echo 'flatpak run com.github.tchx84.Flatseal' >> flatseal > /dev/null
 echo 'flatpak run us.zoom.Zoom' >> zoom > /dev/null
-echo 'flatpak run org.vinegarhq.Sober' >> sober > /dev/null
-echo 'flatpak run org.vinegarhq.Sober' >> roblox > /dev/null
 echo 'flatpak run com.mattjakeman.ExtensionManager' >> extension-manager > /dev/null
 echo 'flatpak run io.github.flattool.Warehouse' >> warehouse > /dev/null
 # chmod +x makes them executables instead of just plain text files
-chmod +x ncspot
-chmod +x adobe-reader
-chmod +x spacecadetpinball
-chmod +x vesktop
-chmod +x vlc
-chmod +x vscode
-chmod +x flatseal
-chmod +x zoom
-chmod +x sober
-chmod +x roblox
-chmod +x extension-manager
-chmod +x warehouse
-cd
+chmod +x *
+cd /home/$USER
 echo 'Flatpak shortcuts created!'
-sleep 2
+sleep 1
 echo "Make sure to check the commands inside the bin folder using a terminal text-editor like vim or nano as 
 they might be wrong and also subject to change which both can cause breakage!"
 else
-echo "Thanks for looking at my scripts!"
+echo 'Thanks for looking at my scripts!'
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+exit
+else
+echo 'Continuing!'
 fi
+fi
+
 
 echo "Set Gnome to dark mode, 
 performance mode, 
@@ -106,7 +245,15 @@ gsettings set org.gnome.desktop.interface clock-show-seconds true
 sudo apt-get install -y gnome-tweaks gnome-shell-extensions chrome-gnome-shell > /dev/null
 echo 'Gnome tweaks applied!'
 else
-echo "Thanks for looking at my scripts!"
+echo 'Thanks for looking at my scripts!'
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+exit
+else
+echo 'Continuing!'
+fi
 fi
 
 echo 'Install Custom Ubuntu and Debian ISO Creator (CUBIC)?( 1 for install / 2 for no )'
@@ -118,7 +265,15 @@ sudo apt-get update -y > /dev/null
 sudo apt-get install -y --no-install-recommends cubic > /dev/null
 echo 'Cubic installed!'
 else
-echo "Thanks for looking at my scripts!"
+echo 'Thanks for looking at my scripts!'
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+exit
+else
+echo 'Continuing!'
+fi
 fi
 
 
@@ -140,12 +295,20 @@ sudo systemctl mask snapd.service
 sudo rm -rf /var/cache/snapd
 sudo apt-get autoremove -y --purge snapd > /dev/null
 rm -rf ~/snap
-echo 'Snap removed entirely!'
+echo 'Snapped clean off!'
 else
-echo "Thanks for looking at my scripts!"
+echo 'Thanks for looking at my scripts!'
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+exit
+else
+echo 'Continuing!'
+fi
 fi
 
-echo 'Install gamemode? (https://github.com/FeralInteractive/gamemode) ( 1 for install / 2 for no )'
+echo 'Are you  a gamer? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -158,9 +321,57 @@ git clone https://github.com/FeralInteractive/gamemode.git > /dev/null
 echo 'Now installing gamemode script...'
 cd gamemode
 ./bootstrap.sh
-echo 'Run gamemoded -t to see if it insalled correctly!'
+echo 'Run gamemoded -t after the script is done to see if it insalled correctly!'
+sleep 1
+echo 'Now installing game launchers...'
+flatpak install --user --assumeyes --noninteractive com.valvesoftware.Steam
+flatpak install --user --assumeyes --noninteractive com.heroicgameslauncher.hgl
+flatpak install --user --assumeyes --noninteractive net.lutris.Lutris
+flatpak install --user --assumeyes --noninteractive com.usebottles.bottles
+echo 'Thanks for looking at my scripts!'
+echo 'Do you want to install Roblox? (Sober) ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+flatpak install --user --assumeyes --noninteractive https://sober.vinegarhq.org/sober.flatpakref
 else
-echo "Thanks for looking at my scripts!"
+echo 'Continuing!'
+fi
+mkdir -p ~/bin &> /dev/null
+echo 'Now adding terminal shortcuts to let you launch them from terminal...'
+echo 'com.usebottles.bottles' >> bottles > /dev/null
+echo 'com.usebottles.bottles' >> Bottles > /dev/null
+echo 'net.lutris.Lutris' >> lutris > /dev/null
+echo 'net.lutris.Lutris' >> Lutris > /dev/null
+echo 'com.heroicgameslauncher.hgl' >> hgl > /dev/null
+echo 'com.heroicgameslauncher.hgl' >> heroicgamelauncher > /dev/null
+echo 'com.valvesoftware.Steam' >> Steam > /dev/null
+echo 'com.valvesoftware.Steam' >> steam > /dev/null
+echo 'Did you install Roblox? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'flatpak run org.vinegarhq.Sober' >> roblox > /dev/null
+echo 'flatpak run org.vinegarhq.Sober' >> sober > /dev/null
+else
+echo 'Continuing!'
+sleep 1
+fi
+chmod +x *
+cd /home/$USER
+echo 'Aliases successfully added, make sure to check file names i.e steam or Steam to launch steam etc.'
+sleep 1
+echo 'Game launchers successfully installed! Go out there and rock!'
+else
+echo 'Thanks for looking at my scripts!'
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+exit
+else
+echo 'Continuing!'
+fi
 fi
 
 exit
