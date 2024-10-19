@@ -12,11 +12,11 @@ if [ "$input" -eq 1 ]
 then
 sudo apt-get install -y playonlinux > /dev/null
 else
-echo 'Thanks for looking at my scripts!'
-echo 'Do you want to leave ( 1 to leave / 2 to continue )'
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
 then
+echo 'Thanks for looking at my scripts!'
 exit
 else
 echo 'Continuing!'
@@ -42,11 +42,11 @@ flatpak install --user --assumeyes --noninteractive com.mattjakeman.ExtensionMan
 flatpak install --user --assumeyes --noninteractive io.github.flattool.Warehouse
 echo 'Flatpak apps installed!'
 else
-echo 'Thanks for looking at my scripts!'
-echo 'Do you want to leave ( 1 to leave / 2 to continue )'
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
 then
+echo 'Thanks for looking at my scripts!'
 exit
 else
 echo 'Continuing!'
@@ -89,11 +89,11 @@ echo 'Aliases successfully added, make sure to check file names i.e gimp or GIMP
 sleep 1
 echo 'Apps installed and may you continue to do good on your endeavours!'
 else
-echo 'Thanks for looking at my scripts!'
-echo 'Do you want to leave ( 1 to leave / 2 to continue )'
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
 then
+echo 'Thanks for looking at my scripts!'
 exit
 else
 echo 'Continuing!'
@@ -101,15 +101,21 @@ fi
 fi
 
 echo 'Install PhotoGIMP? ( 1 for install / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 sleep 1
 echo 'PhotoGIMP aims to make and look GIMP more like Photoshop.'
 sleep 1
 echo 'You are safe to ignore this if you didnt install any of the artistic apps.'
 sleep 1
 echo 'Also automatically adds terminal shortcuts'
+sleep 1
+echo 'Are you really sure after knowing all that?'
 read input
 if [ "$input" -eq 1 ]
 then
+echo 'Starting GIMP customization into Photoshop...'
 wget https://github.com/Diolinux/PhotoGIMP/releases/latest/download/PhotoGIMP.zip
 sudo apt install unzip rsync > /dev/null
 unzip PhotoGIMP.zip -o -d ~ > /dev/null
@@ -124,26 +130,28 @@ echo 'flatpak run org.gimp.GIMP' >> Photoshop > /dev/null
 echo 'flatpak run org.gimp.GIMP' >> PhotoGIMP > /dev/null
 chmod +x *
 cd /home/$USER
-echo 'Apps installed and may you continue to do good on your endeavours!'
+echo 'PhotoGIMP created!'
 else
-echo 'Thanks for looking at my scripts!'
-echo 'Do you want to leave ( 1 to leave / 2 to continue )'
+echo 'Thats fine, you can always come back.'
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
 then
+echo 'Thanks for looking at my scripts!'
 exit
 else
 echo 'Continuing!'
 fi
 fi
 
-echo 'Setup terminal shortcuts? ( 1 for yes / 2 for no )'
+echo 'Setup terminal flatpak app shortcuts? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
 # This creates a folder for the terminal apps specifically and adds it to PATH in both zsh and bash
 cd /home/$USER
-mkdir ~/bin &> /dev/null
+mkdir -p ~/bin &> /dev/null
 echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
 read input
 if [ "$input" -eq 1 ]
@@ -168,13 +176,19 @@ else
 echo 'Continuing!'
 fi
 fi
-echo 'Continuing!'
-fi
-
-echo 'Make terminal app shortcuts (can launch from terminal) for flatpak apps? ( 1 for install / 2 for no )'
-read input
-if [ "$input" -eq 1 ]
-then
+echo 'Setting up terminal apps proper...'
+echo 'List of apps...'
+echo 'Ncspot'
+echo 'Adobe Reader'
+echo 'Space Cadet Pinball'
+echo 'Vesktop'
+echo 'VLC'
+echo 'VSCode'
+echo 'Zoom'
+echo 'Extension Manager'
+echo 'Flattool Warehouse'
+sleep 5
+echo 'Starting now...'
 cd ~/bin
 # These are the apps themselves, the output is directed towards a file and the output is the command to run flatpak apps
 echo 'Creating apps...'
@@ -197,7 +211,7 @@ echo "Make sure to check the commands inside the bin folder using a terminal tex
 they might be wrong and also subject to change which both can cause breakage!"
 else
 echo 'Thanks for looking at my scripts!'
-echo 'Do you want to leave ( 1 to leave / 2 to continue )'
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -206,6 +220,7 @@ else
 echo 'Continuing!'
 fi
 fi
+
 
 echo "Set Gnome to dark mode, 
 performance mode, 
@@ -230,7 +245,7 @@ sudo apt-get install -y gnome-tweaks gnome-shell-extensions chrome-gnome-shell >
 echo 'Gnome tweaks applied!'
 else
 echo 'Thanks for looking at my scripts!'
-echo 'Do you want to leave ( 1 to leave / 2 to continue )'
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -250,7 +265,7 @@ sudo apt-get install -y --no-install-recommends cubic > /dev/null
 echo 'Cubic installed!'
 else
 echo 'Thanks for looking at my scripts!'
-echo 'Do you want to leave ( 1 to leave / 2 to continue )'
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -282,8 +297,7 @@ rm -rf ~/snap
 echo 'Snapped clean off!'
 else
 echo 'Thanks for looking at my scripts!'
-echo 'Thanks for looking at my scripts!'
-echo 'Do you want to leave ( 1 to leave / 2 to continue )'
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -322,7 +336,7 @@ flatpak install --user --assumeyes --noninteractive https://sober.vinegarhq.org/
 else
 echo 'Continuing!'
 fi
-mkdir ~/bin &> /dev/null
+mkdir -p ~/bin &> /dev/null
 echo 'Now adding terminal shortcuts to let you launch them from terminal...'
 echo 'com.usebottles.bottles' >> bottles > /dev/null
 echo 'com.usebottles.bottles' >> Bottles > /dev/null
@@ -332,7 +346,7 @@ echo 'com.heroicgameslauncher.hgl' >> hgl > /dev/null
 echo 'com.heroicgameslauncher.hgl' >> heroicgamelauncher > /dev/null
 echo 'com.valvesoftware.Steam' >> Steam > /dev/null
 echo 'com.valvesoftware.Steam' >> steam > /dev/null
-echo 'Did you install roblox?( 1 for yes / 2 for no )'
+echo 'Did you install Roblox? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -349,8 +363,7 @@ sleep 1
 echo 'Game launchers successfully installed! Go out there and rock!'
 else
 echo 'Thanks for looking at my scripts!'
-echo 'Thanks for looking at my scripts!'
-echo 'Do you want to leave ( 1 to leave / 2 to continue )'
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
 then
