@@ -12,7 +12,7 @@ if [ "$input" -eq 1 ]
 then
 sudo apt-get install playonlinux > /dev/null
 
-echo "Do you want to install VS Code, ncspot, Adobe Reader, 
+echo "Do you want to install VS Code, ncspot, Adobe Reader \
 Space Cadet Pinball, Vesktop, VLC, Flatseal, Sober and Gnome extension-manager?
 (From Flatpak) ( 1 for install / 2 for no )"
 read input
@@ -46,7 +46,7 @@ echo 'PATH="/home/$USER/bin:$PATH"' >> ~/.zshrc
 echo 'PATH="/home/$USER/bin:$PATH"' >> ~/.bashrc
 cd bin
 # These are the apps themselves, the output is directed towards a file and the output is the command to run flatpak apps
-'Creating apps...'
+echo 'Creating apps...'
 echo 'flatpak run io.github.hrkfdn.ncspot' >> ncspot > /dev/null
 echo 'flatpak run com.adobe.Reader' >> adobe-reader > /dev/null
 echo 'flatpak run com.github.k4zmu2a.spacecadetpinball' >> spacecadetpinball > /dev/null
