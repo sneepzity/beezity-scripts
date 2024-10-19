@@ -68,17 +68,13 @@ apt-fast - uses aria2 to do parallel downloading with apt, apt-get or aptitude
 
 preload - loads commonly used apps into ram allowing them to open faster
 
-Disables:
+Removes:
+
+Ubuntu bloat (gnome games, libreoffice, thunderbird etc.)
 
 snap firefox (uninstall)
 
 snap store (uninstall)
-
-snaps (but does not outright uninstall the service)
-
-Removes:
-
-Ubuntu bloat (gnome games, libreoffice, thunderbird etc.)
 
 # ubuntu-beezity.sh / ubuntu-beezity-24.04.sh
 
