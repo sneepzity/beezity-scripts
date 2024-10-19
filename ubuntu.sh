@@ -139,7 +139,7 @@ sudo apt-get install -y preload > /dev/null
 sudo apt-get install -y apt-fast
 echo 'Apt-fast and preload installed!'
 sudo apt-get remove -y --purge *thunderbird* *libreoffice* *vim* aisleriot gnome-mahjongg gnome-mines gnome-sudoku brltty duplicity empathy empathy-common example-content gnome-accessibility-themes gnome-contacts gnome-mines gnome-orca gnome-screensaver gnome-sudoku gnome-video-effects landscape-common libsane python3-uno rhythmbox* sane-utils shotwell* telepathy* totem*  printer-driver-brlaser printer-driver-foo2zjs printer-driver-foo2zjs-common printer-driver-m2300w printer-driver-ptouch  printer-driver-splix
-sudo apt-get autoremove
+sudo apt-get autoremove -y > /dev/null
 echo 'Debloat successful, enjoy your new distro!'
 else
 echo 'Thanks for looking at my scripts!'
