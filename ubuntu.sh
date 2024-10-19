@@ -1,14 +1,14 @@
 #!/bin/bash
 
-echo "This script is for Ubuntu 22.04+ ONLY. 
+echo 'This script is for Ubuntu 22.04+ ONLY. 
 Make sure to read all scripts you download before executing them, 
-especially ones running as root."
+especially ones running as root.'
 
 echo 'Waiting 5 seconds...'
 sleep 5
 
-echo "
-Install basic apps? ( 1 for install / 2 for no )"
+echo '
+Install basic apps? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -20,6 +20,16 @@ echo 'Installing basic requirements...'
 sudo apt-get install -y curl build-essential wget > /dev/null
 echo 'Installation successful!'
 sleep 2
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
 
 # This creates keyrings for brave, wine and other future applications
 echo 'Now creating GPG keyring...'
@@ -29,8 +39,8 @@ echo 'GPG keyring successfully added!'
 sleep 2
 
 # The four commands below install brave browser, comment it out if you don't want to install brave
-echo "
-Install brave browser? ( 1 for install / 2 for no )"
+echo '
+Install brave browser? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -41,6 +51,13 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] http
 sudo apt-get update -y > /dev/null
 sudo apt-get install -y brave-browser > /dev/null
 echo 'Brave installed!'
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
 else
 echo 'Continuing!'
 fi
@@ -61,6 +78,10 @@ echo 'Snapped in half!'
 
 # This automatically adds the universe and multiverse repos to access as much software as possible, again comment out if you don't want
 # Also upgrades all packages possible, dont mind if a few are held back, thats really due to Ubuntu and can't be fought against
+echo 'Add universe and multiverse software repositories for software? ( 1 for install / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 echo 'Now adding official Ubuntu software repositories...'
 sleep 2
 sudo apt-get update -y > /dev/null
@@ -71,11 +92,22 @@ sudo apt-add-repository multiverse -y > /dev/null
 sudo apt-get update -y > /dev/null
 sudo apt-get upgrade -y > /dev/null
 echo 'Universe and multiverse repository added!'
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
 
 # This adds 32-bit architecture as by default Ubuntu only supports 64-bit, it also installs wine-stable,
 # change packages or comment out if you don't like the default selection here
 echo "
-Install latest wine32 and wine64 stable for Ubuntu 22.04/24.04? ( 1 for 22.04 / 2 for 24.04 )"
+Install latest wine32 and wine64 stable for Ubuntu 22.04/24.04? ( 1 for 22.04 / 2 for 24.04 / 3 for quit or continue )"
 read input
 if [ "$input" -eq 1 ]
 then
@@ -87,11 +119,16 @@ sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/
 sudo apt-get update -y > /dev/null
 sudo apt-get install -y --install-recommends winehq-stable wine-stable wine-stable-amd64 wine-stable-i386:i386 > /dev/null
 echo 'Wine installed!'
-else
-echo 'READ READ READ ( 1 for install / 2 for no ) Did you just accidentally not read and go straight for 2,
+fi
+if [ "$input" -eq 2 ]
+then
+clear
+echo 'READ READ READ ( 1 for install / 2 for no ) Did you just accidentally not read and go straight for 2,'
 echo 'or are you on Ubuntu 24.04 and actually want to install wine? READ READ READ'
+echo 'Sleeping 2, wait a moment and read.'
+sleep 2
 read input
-if [ "$input" -eq 1 ]
+if [ "$input" -eq 1 ] 
 then
 sudo dpkg --add-architecture i386
 sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
@@ -102,8 +139,16 @@ sudo apt-get update -y > /dev/null
 sudo apt-get install -y --install-recommends winehq-stable wine-stable wine-stable-amd64 wine-stable-i386:i386 > /dev/null
 echo 'Wine installed!'
 else
-echo 'Continuing!
+echo 'Continuing!'
+fi
+echo 'Quit or continue? ( 3 for QUIT / 4 for CONTINUE )'
+if [ "$input" -eq 3 ]
+then
+ echo 'Thanks for looking at my scripts!'
 exit
+else
+echo 'Continuing!'
+fi
 fi
 fi
 
