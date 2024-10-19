@@ -155,4 +155,5 @@ echo 'Run gamemoded -t to see if it insalled correctly!'
 else
 echo "Thanks for looking at my scripts!"
 fi
+
 exit
