@@ -37,7 +37,7 @@ sudo apt-get update -y > /dev/null
 sudo apt-get install -y brave-browser > /dev/null
 echo 'Brave installed!'
 
-# All the snap related commands down below uninstall firefox snap and snap store and disables snap, but doesn't uninstall
+# All the snap related commands down below uninstall firefox snap and snap store
 # It also puts higher preference on non-snap
 
 echo 'Updating and upgrading packages...'
@@ -48,12 +48,7 @@ sudo snap remove --purge firefox > /dev/null
 sudo snap remove --purge snap-store > /dev/null
 printf "Package: firefox*\nPin: release o=Ubuntu*\nPin-Priority: -1" > /etc/apt/preferences.d/firefox-no-snap
 printf "Package: snapd\nPin: release a=*\nPin-Priority: -10" > /etc/apt/preferences.d/nosnap.pref
-echo 'Disabling snap services...'
-sudo systemctl disable snapd.service
-sudo systemctl disable snapd.socket 
-sudo systemctl disable snapd.seeded.service
-sudo systemctl mask snapd.service
-echo 'Snap disabled!'
+echo 'Snapped in half!'
 
 
 # This automatically adds the universe and multiverse repos to access as much software as possible, again comment out if you don't want
