@@ -116,7 +116,7 @@ gsettings set org.gnome.desktop.session idle-delay 86400
 gsettings set org.gnome.desktop.peripherals.mouse accel-profile 'flat'
 gsettings set org.gnome.desktop.notifications show-banners false
 gsettings set org.gnome.desktop.interface clock-show-seconds true
-sudo apt-get install gnome-tweaks gnome-shell-extensions chrome-gnome-shell > /dev/null
+sudo apt-get install -y gnome-tweaks gnome-shell-extensions chrome-gnome-shell > /dev/null
 echo 'Gnome tweaks applied!'
 else
 echo "Thanks for looking at my scripts!"
