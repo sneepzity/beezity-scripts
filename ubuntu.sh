@@ -92,7 +92,7 @@ echo 'Firefox deb version installed!'
 echo 'Now installing flatpak and flathub..'
 sleep 2
 sudo apt-get install -y flatpak > /dev/null
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo > /dev/null
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 sleep 3
 echo 'Flatpak installed and flathub set-up!'
 echo 'Make sure to reboot LATER to apply all changes!'
