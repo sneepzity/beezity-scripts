@@ -12,7 +12,9 @@ cd beezity-scripts
 
 chmod +x *.sh
 
-sh (script).sh or sudo ./(script).sh
+do NOT run the script as sudo, it might mess up permissions and cause things to break, especially with gnome tweaks!
+
+sh script.sh or ./script.sh
 
 
 
