@@ -231,6 +231,5 @@ echo 'Debloat successful, enjoy your new distro!'
 else
 echo 'Thanks for looking at my scripts!'
 fi
-fi
 
 exit
