@@ -63,6 +63,7 @@ exit
 else
 echo 'Continuing!'
 fi
+fi
 
 # All the snap related commands down below uninstall firefox snap and snap store
 # It also puts higher preference on non-snap
