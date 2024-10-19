@@ -32,15 +32,26 @@ if [ "$input" -eq 1 ]
 then
 echo 'Nothing much might seem to be happening, please give it time especially if your internet is slow...'
 flatpak install --assumeyes --noninteractive io.github.hrkfdn.ncspot
+echo 'Ncspot installed!'
 flatpak install --assumeyes --noninteractive com.adobe.Reader 
+echo 'Adobe Reader 9.5.5 installed!'
 flatpak install --assumeyes --noninteractive com.github.k4zmu2a.spacecadetpinball 
+echo 'Space Cadet Pinball installed!'
 flatpak install --assumeyes --noninteractive dev.vencord.Vesktop 
+echo 'Vesktop installed!'
 flatpak install --assumeyes --noninteractive org.videolan.VLC 
+echo 'VLC installed!'
 flatpak install --assumeyes --noninteractive com.visualstudio.code 
+echo 'VS Code installed!'
 flatpak install --assumeyes --noninteractive com.github.tchx84.Flatseal 
+echo 'Flatseal installed!'
 flatpak install --assumeyes --noninteractive us.zoom.Zoom 
+echo 'Zoom installed!'
 flatpak install --assumeyes --noninteractive com.mattjakeman.ExtensionManager
+echo 'Gnome Extension Manager installed!'
 flatpak install --assumeyes --noninteractive io.github.flattool.Warehouse
+echo 'Flattool Warehouse installed!'
+sleep 1
 echo 'Flatpak apps installed!'
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
@@ -61,13 +72,18 @@ sleep 1
 read input
 if [ "$input" -eq 1 ]
 then
-flatpak install --user --assumeyes --noninteractive org.kde.kdenlive
-flatpak install --user --assumeyes --noninteractive org.inkscape.Inkscape
-flatpak install --user --assumeyes --noninteractive org.gimp.GIMP
+flatpak install --assumeyes --noninteractive org.kde.kdenlive
+echo 'KDEnlive installed!'
+flatpak install --assumeyes --noninteractive org.inkscape.Inkscape
+echo 'Inkscape installed!'
+flatpak install --assumeyes --noninteractive org.gimp.GIMP
+echo 'GIMP installed!'
 echo 'Make sure you're using X11 as GIMP at least on flatpak doesn't support Wayland!'
 sleep 1
-flatpak install --user --assumeyes --noninteractive org.kde.krita
-flatpak install --user --assumeyes --noninteractive com.github.PintaProject.Pinta
+flatpak install --assumeyes --noninteractive org.kde.krita
+echo 'Krita installed!'
+flatpak install --assumeyes --noninteractive com.github.PintaProject.Pinta
+echo 'Pinta installed!'
 # Making sure in home directory
 cd /home/$USER
 mkdir -p /home/$USER/bin
@@ -225,17 +241,18 @@ fi
 fi
 
 
-echo "Set Gnome to dark mode, 
-performance mode, 
-12 hour idle,
-12 hour clock format, 
-no idle dimming, 
-no mouse acceleration, 
-do not disturb, 
-show seconds in clock, 
-hide dock trash 
-and drives in dock and also
-install gnome-tweaks? ( 1 for install / 2 for no )"
+echo 'Set Gnome'
+echo 'to dark mode,'
+echo 'performance mode,'
+echo '12 hour idle,'
+echo '12 hour clock format,'
+echo 'no idle dimming,'
+echo 'no mouse acceleration, '
+echo 'do not disturb, '
+echo 'show seconds in clock, '
+echo 'hide dock trash '
+echo 'and drives in dock and also'
+echo 'install gnome-tweaks? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -330,15 +347,19 @@ cd gamemode
 echo 'Run gamemoded -t after the script is done to see if it insalled correctly!'
 sleep 1
 echo 'Now installing game launchers...'
-flatpak install --user --assumeyes --noninteractive com.valvesoftware.Steam
-flatpak install --user --assumeyes --noninteractive com.heroicgameslauncher.hgl
-flatpak install --user --assumeyes --noninteractive net.lutris.Lutris
-flatpak install --user --assumeyes --noninteractive com.usebottles.bottles
+flatpak install --assumeyes --noninteractive com.valvesoftware.Steam
+echo 'Steam installed!'
+flatpak install --assumeyes --noninteractive com.heroicgameslauncher.hgl
+echo 'Heroic Game Launcher installed!'
+flatpak install --assumeyes --noninteractive net.lutris.Lutris
+echo 'Lutris installed!'
+flatpak install --assumeyes --noninteractive com.usebottles.bottles
+echo 'Bottles installed!'
 echo 'Do you want to install Roblox? (Sober) ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-flatpak install --user --assumeyes --noninteractive https://sober.vinegarhq.org/sober.flatpakref
+flatpak install --assumeyes --noninteractive https://sober.vinegarhq.org/sober.flatpakref
 else
 echo 'Continuing!'
 fi
