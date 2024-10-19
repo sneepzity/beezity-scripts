@@ -10,7 +10,7 @@ echo 'Do you want to install Playonlinux? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-sudo apt-get install playonlinux > /dev/null
+sudo apt-get install -y playonlinux > /dev/null
 else
 echo 'Thanks for looking at my scripts!'
 fi
