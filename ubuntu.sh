@@ -144,7 +144,7 @@ fi
 echo 'Quit or continue? ( 3 for QUIT / 4 for CONTINUE )'
 if [ "$input" -eq 3 ]
 then
- echo 'Thanks for looking at my scripts!'
+echo 'Thanks for looking at my scripts!'
 exit
 else
 echo 'Continuing!'
