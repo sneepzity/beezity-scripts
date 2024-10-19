@@ -135,9 +135,10 @@ if [ "$input" -eq 1 ]
 then
 sudo dpkg --add-architecture i386
 sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/noble/winehq-noble.sources
+clear
 echo 'Installing wine...'
 sleep 2
-sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/noble/winehq-noble.sources
 sudo apt-get update -y > /dev/null
 sudo apt-get install -y --install-recommends winehq-stable wine-stable wine-stable-amd64 wine-stable-i386:i386 > /dev/null
 echo 'Wine installed!'
