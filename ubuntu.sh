@@ -19,12 +19,13 @@ then
 echo 'Installing basic requirements...'
 sudo apt-get install -y curl build-essential wget > /dev/null
 echo 'Installation successful!'
+sleep 2
 
 # This creates keyrings for brave, wine and other future applications
-echo 'Now creating gpg keyring...'
+echo 'Now creating GPG keyring...'
 sleep 2
-sudo mkdir -pm755 /etc/apt/keyrings
-
+sudo mkdir -pm755 /etc/apt/keyrings > /dev/null
+echo 'GPG keyring successfully added!'
 # The four commands below install brave browser, comment it out if you don't want to install brave
 echo 'Now installing brave browser...'
 sleep 2
