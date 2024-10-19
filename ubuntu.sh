@@ -17,6 +17,7 @@ then
 
 # This installs basic requirements for most of the other commands like build-essential, wget and curl
 echo 'Installing basic requirements...'
+sudo apt-get update -y
 sudo apt-get install -y curl build-essential wget > /dev/null
 echo 'Installation successful!'
 sleep 2
