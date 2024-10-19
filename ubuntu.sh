@@ -153,7 +153,6 @@ else
 echo 'Continuing!'
 fi
 fi
-fi
 
 # This installs the regular debian package version of Firefox which is much faster than the one in Ubuntu by default.
 
