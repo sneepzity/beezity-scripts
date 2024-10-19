@@ -346,7 +346,7 @@ read input
 if [ "$input" -eq 1 ]
 then
 # Install required dependencies 
-echo 'Installing dependencies...'
+echo 'Installing gamemode script dependencies...'
 sudo apt-get install meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev build-essential > /dev/null
 echo 'Cloning repository and installing gamemode via ./bootstrap.sh...'
 cd ~
