@@ -26,6 +26,8 @@ echo 'Now creating GPG keyring...'
 sleep 2
 sudo mkdir -pm755 /etc/apt/keyrings > /dev/null
 echo 'GPG keyring successfully added!'
+sleep 2
+
 # The four commands below install brave browser, comment it out if you don't want to install brave
 echo 'Now installing brave browser...'
 sleep 2
