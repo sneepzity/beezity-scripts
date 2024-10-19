@@ -10,7 +10,7 @@ echo 'Do you want to install Playonlinux? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-sudo apt-get update -y
+sudo apt-get update -y > /dev/null
 sudo apt-get install -y playonlinux > /dev/null
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
@@ -31,16 +31,16 @@ read input
 if [ "$input" -eq 1 ]
 then
 echo 'Nothing much might seem to be happening, please give it time especially if your internet is slow...'
-flatpak install --user --assumeyes --noninteractive io.github.hrkfdn.ncspot
-flatpak install --user --assumeyes --noninteractive com.adobe.Reader 
-flatpak install --user --assumeyes --noninteractive com.github.k4zmu2a.spacecadetpinball 
-flatpak install --user --assumeyes --noninteractive dev.vencord.Vesktop 
-flatpak install --user --assumeyes --noninteractive org.videolan.VLC 
-flatpak install --user --assumeyes --noninteractive com.visualstudio.code 
-flatpak install --user --assumeyes --noninteractive com.github.tchx84.Flatseal 
-flatpak install --user  --assumeyes --noninteractive us.zoom.Zoom 
-flatpak install --user  --assumeyes --noninteractive com.mattjakeman.ExtensionManager
-flatpak install --user  --assumeyes --noninteractive io.github.flattool.Warehouse
+flatpak install --assumeyes --noninteractive io.github.hrkfdn.ncspot
+flatpak install --assumeyes --noninteractive com.adobe.Reader 
+flatpak install --assumeyes --noninteractive com.github.k4zmu2a.spacecadetpinball 
+flatpak install --assumeyes --noninteractive dev.vencord.Vesktop 
+flatpak install --assumeyes --noninteractive org.videolan.VLC 
+flatpak install --assumeyes --noninteractive com.visualstudio.code 
+flatpak install --assumeyes --noninteractive com.github.tchx84.Flatseal 
+flatpak install --assumeyes --noninteractive us.zoom.Zoom 
+flatpak install --assumeyes --noninteractive com.mattjakeman.ExtensionManager
+flatpak install --assumeyes --noninteractive io.github.flattool.Warehouse
 echo 'Flatpak apps installed!'
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
