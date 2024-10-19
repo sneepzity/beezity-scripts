@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ "$(whoami)" = "root" ] 
+then
+        echo "Please run this script as non-root (./ubuntu.sh)."
+        exit
+fi
+
 echo 'This script is for Ubuntu 22.04+ ONLY. 
 Make sure to read all scripts you download before executing them, 
 especially ones running as root.'
