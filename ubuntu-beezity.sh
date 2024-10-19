@@ -69,7 +69,7 @@ flatpak install --user --assumeyes --noninteractive org.kde.krita
 flatpak install --user --assumeyes --noninteractive com.github.PintaProject.Pinta
 # Making sure in home directory
 cd /home/$USER
-mkdir ~/bin
+mkdir -p /home/$USER/bin
 echo 'flatpak run com.github.PintaProject.Pinta' >> pinta > /dev/null
 echo 'flatpak run com.github.PintaProject.Pinta' >> Pinta > /dev/null
 echo 'flatpak run com.github.PintaProject.Pinta' >> paint > /dev/null
