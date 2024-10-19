@@ -211,7 +211,7 @@ sleep 1
 echo "Make sure to check the commands inside the bin folder using a terminal text-editor like vim or nano as 
 they might be wrong and also subject to change which both can cause breakage!"
 else
-echo 'Thanks for looking at my scripts!'
+echo 'Continuing!'
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
@@ -370,7 +370,7 @@ if [ "$input" -eq 1 ]
 then
 exit
 else
-echo 'Continuing!'
+echo 'Thanks for looking at my scripts!'
 fi
 fi
 
