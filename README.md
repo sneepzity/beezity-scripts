@@ -35,7 +35,7 @@ i might also include other tweaks from other repos
 
 this section is to describe what each script does before you run it
 
-# ubuntu.sh / ubuntu-24.04.sh
+# ubuntu.sh
 
 
 This script can do the following:
@@ -108,6 +108,18 @@ sober - linux implementation of android roblox
 
 flattool warehouse - flatpak management (more general than flatseal)
 
+inkscape - drawing
+
+krita - drawing
+
+pinta - mspaint drawing
+
+kdenlive - video editor
+
+gimp - photo editor
+
+photogimp - make gimp like photoshop
+
 gnome-tweaks - gnome tweaks app to apply multiple quick changes
 
 gnome-shell-extensions - allows extensions to be used
@@ -117,6 +129,16 @@ chrome-gnome-shell - integration with chromium based browsers
 cubic - custom ubuntu iso creator (also works on debian, debian-based and ubuntu-based as long as they don't stray too far off)
 
 gamemode - custom script to increase game performance (https://github.com/FeralInteractive/gamemode)
+
+steam - valve store game launcher big thing idk
+
+heroic games - launcher and epic games
+
+lutris - even more launcher
+
+bottles - like a less game focused but stimm game compatible launcher
+
+also adds terminal aliases for every single one except gnome-tweaks
 
 Removes:
 
