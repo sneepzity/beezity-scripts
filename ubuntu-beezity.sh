@@ -137,7 +137,7 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Make terminal app shortcuts (can launch from terminal) for flatpak apps? ( 1 for install / 2 for no )'
+echo 'Setup terminal shortcuts? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -171,6 +171,10 @@ fi
 echo 'Continuing!'
 fi
 
+echo 'Make terminal app shortcuts (can launch from terminal) for flatpak apps? ( 1 for install / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 cd ~/bin
 # These are the apps themselves, the output is directed towards a file and the output is the command to run flatpak apps
 echo 'Creating apps...'
