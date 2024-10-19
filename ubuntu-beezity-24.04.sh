@@ -22,17 +22,17 @@ read input
 if [ "$input" -eq 1 ]
 then
 echo 'Nothing much might seem to be happening, please give it time especially if your internet is slow...'
-flatpak install -y --user --noninteractive io.github.hrkfdn.ncspot
-flatpak install -y --user --noninteractive com.adobe.Reader 
-flatpak install -y --user --noninteractive com.github.k4zmu2a.spacecadetpinball 
-flatpak install -y --user --noninteractive dev.vencord.Vesktop 
-flatpak install -y --user --noninteractive org.videolan.VLC 
-flatpak install -y --user --noninteractive com.visualstudio.code 
-flatpak install -y --user --noninteractive com.github.tchx84.Flatseal 
-flatpak install -y --user --noninteractive us.zoom.Zoom 
-flatpak install -y --user --noninteractive com.mattjakeman.ExtensionManager 
-flatpak install -y --user --noninteractive https://sober.vinegarhq.org.sober.flatpakref 
-flatpak install -y --user --noninteractive io.github.flattool.Warehouse
+flatpak install --assumeyes --noninteractive flathub io.github.hrkfdn.ncspot
+flatpak install --assumeyes --noninteractive com.adobe.Reader 
+flatpak install --assumeyes --noninteractive com.github.k4zmu2a.spacecadetpinball 
+flatpak install --assumeyes --noninteractive dev.vencord.Vesktop 
+flatpak install --assumeyes --noninteractive org.videolan.VLC 
+flatpak install --assumeyes --noninteractive com.visualstudio.code 
+flatpak install --assumeyes --noninteractive com.github.tchx84.Flatseal 
+flatpak install --assumeyes --noninteractive us.zoom.Zoom 
+flatpak install --assumeyes --noninteractive com.mattjakeman.ExtensionManager 
+flatpak install --user --assumeyes --noninteractive https://sober.vinegarhq.org/sober.flatpakref
+flatpak install --assumeyes --noninteractive io.github.flattool.Warehouse
 echo 'Flatpak apps installed!'
 else
 echo 'Thanks for looking at my scripts!'
