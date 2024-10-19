@@ -11,6 +11,9 @@ read input
 if [ "$input" -eq 1 ]
 then
 sudo apt-get install playonlinux > /dev/null
+else
+echo 'Thanks for looking at my scripts!'
+fi
 
 echo "Do you want to install VS Code, ncspot, Adobe Reader \
 Space Cadet Pinball, Vesktop, VLC, Flatseal, Sober and Gnome extension-manager?
