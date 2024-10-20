@@ -104,6 +104,8 @@ flatpak install --assumeyes --noninteractive com.github.PintaProject.Pinta
 echo 'Pinta installed!'
 flatpak install --assumeyes --noninteractive com.obsproject.Studio
 echo 'OBS installed!'
+flatpak install --assumeyes --noninteractive com.obsproject.Studio.Plugin.BackgroundRemoval
+echo 'OBS Background removal plugin installed!'
 flatpak install --assumeyes --noninteractive org.audacityteam.Audacity
 echo 'Audacity installed!'
 # Making sure in home directory
