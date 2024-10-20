@@ -105,6 +105,7 @@ echo 'Pinta installed!'
 # Making sure in home directory
 cd /home/$USER
 mkdir -p /home/$USER/bin
+cd ~/home/$USER/bin
 echo 'flatpak run com.github.PintaProject.Pinta' >> pinta > /dev/null
 echo 'flatpak run com.github.PintaProject.Pinta' >> Pinta > /dev/null
 echo 'flatpak run com.github.PintaProject.Pinta' >> paint > /dev/null
@@ -119,6 +120,7 @@ echo 'flatpak run org.inkscape.Inkscape' >> inkscape > /dev/null
 echo 'flatpak run org.inkscape.Inkscape' >> Inkscape > /dev/null
 echo 'flatpak run org.kde.kdenlive' >> kdenlive > /dev/null
 echo 'flatpak run org.kde.kdenlive' >> KDEnlive > /dev/null
+cd /home/$USER/beezity-scripts
 chmod +x *
 echo 'Aliases successfully added, make sure to check file names i.e gimp or GIMP to launch GIMP etc.'
 sleep 1
@@ -151,6 +153,7 @@ read input
 if [ "$input" -eq 1 ]
 then
 echo 'Starting GIMP customization into Photoshop...'
+cd ~/home/$USER
 wget https://github.com/Diolinux/PhotoGIMP/releases/latest/download/PhotoGIMP.zip
 sudo apt install unzip rsync > /dev/null
 unzip PhotoGIMP.zip -o -d ~ > /dev/null
