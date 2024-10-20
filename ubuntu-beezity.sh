@@ -191,27 +191,27 @@ if [ "$input" -eq 1 ]
 then
 # This creates a folder for the terminal apps specifically and adds it to PATH in both zsh and bash
 cd /home/$USER
-mkdir -p ~/bin &> /dev/null
+mkdir /home/$USER/bin
 echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
 read input
 if [ "$input" -eq 1 ]
 then
-echo 'PATH="/home/$USER/bin:$PATH"' >> ~/.bashrc
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.bashrc
 echo 'Also add to zsh? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-echo 'PATH="/home/$USER/bin:$PATH"' >> ~/.zshrc
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.zshrc
 else
 echo 'Continuing!'
 fi
 else
-echo 'PATH="/home/$USER/bin:$PATH"' >> ~/.zshrc
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.zshrc
 echo 'Also add to bash? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-echo 'PATH="/home/$USER/bin:$PATH"' >> ~/.bashrc
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.bashrc
 else
 echo 'Continuing!'
 fi
@@ -229,7 +229,7 @@ echo 'Extension Manager'
 echo 'Flattool Warehouse'
 sleep 5
 echo 'Starting now...'
-cd ~/bin
+cd /home/$USER/bin
 # These are the apps themselves, the output is directed towards a file and the output is the command to run flatpak apps
 echo 'Creating apps...'
 echo 'flatpak run io.github.hrkfdn.ncspot' >> ncspot > /dev/null
@@ -389,7 +389,8 @@ flatpak install --user --noninteractive https://sober.vinegarhq.org/sober.flatpa
 else
 echo 'Continuing!'
 fi
-mkdir -p ~/bin &> /dev/null
+mkdir -p /home/$USER/bin
+cd /home/$USER/bin
 echo 'Now adding terminal shortcuts to let you launch them from terminal...'
 echo 'flatpak run com.usebottles.bottles' >> bottles > /dev/null
 echo 'flatpak run com.usebottles.bottles' >> Bottles > /dev/null
