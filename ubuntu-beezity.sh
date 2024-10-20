@@ -325,7 +325,7 @@ fi
 fi
 
 
-echo 'Remove snaps?( 1 for install / 2 for no )'
+echo 'Remove snaps? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
