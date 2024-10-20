@@ -105,7 +105,7 @@ echo 'Pinta installed!'
 # Making sure in home directory
 cd /home/$USER
 mkdir -p /home/$USER/bin
-cd ~/home/$USER/bin
+cd /home/$USER/bin
 echo 'flatpak run com.github.PintaProject.Pinta' >> pinta
 echo 'flatpak run com.github.PintaProject.Pinta' >> Pinta
 echo 'flatpak run com.github.PintaProject.Pinta' >> paint
