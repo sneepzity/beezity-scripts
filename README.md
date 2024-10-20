@@ -152,10 +152,15 @@ sets ubuntu to not have idle-dim
 
 sets ubuntu to only turn off screen after 12 hours
 
+sets ubuntu to 12 hour am/pm format in clock
+
 sets ubuntu to turn off mouse acceleration
 
 sets ubuntu to show seconds in the top bar clock
 
+sets ubuntu to hide trash icon in dock
+
+sets ubuntu to hide drive icons in dock
 
 # Flatpak:
 
@@ -189,35 +194,7 @@ brave-bin - brave browser
 
 flatpak - flatpak integration in arch
 
-Ncspot - terminal version of spotify
-
-space cadet pinball - recompiled for linux
-
-vesktop - discord + vencord patches and other qol features baked right in
-
-VLC - good video player
-
-vs code - coding
-
-flatseal - flatpak permission manager
-
-zoom - conferencing app
-
-extension manager - gnome extension manager (better than the apt one)
-
-sober - linux implementation of android roblox
-
-flattool warehouse - flatpak management (more general than flatseal)
-
-
-
-also creates the same aliases as in ubuntu-beezity.sh allowing you to launch the flatpak apps from terminal
-
-not use them, just launch them you'll still need a display compositor in order to display them except ncspot
-
-ls ~/bin
-
-to see all app names
+WIP
 
 
 # auto-cpufreq.sh
