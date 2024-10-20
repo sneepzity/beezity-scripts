@@ -106,20 +106,20 @@ echo 'Pinta installed!'
 cd /home/$USER
 mkdir -p /home/$USER/bin
 cd ~/home/$USER/bin
-echo 'flatpak run com.github.PintaProject.Pinta' >> pinta > /dev/null
-echo 'flatpak run com.github.PintaProject.Pinta' >> Pinta > /dev/null
-echo 'flatpak run com.github.PintaProject.Pinta' >> paint > /dev/null
-echo 'flatpak run com.github.PintaProject.Pinta' >> Paint > /dev/null
-echo 'flatpak run com.github.PintaProject.Pinta' >> mspaint > /dev/null
-echo 'flatpak run com.github.PintaProject.Pinta' >> MSPaint > /dev/null
-echo 'flatpak run org.kde.krita' >> krita > /dev/null
-echo 'flatpak run org.kde.krita' >> Krita > /dev/null
-echo 'flatpak run org.gimp.GIMP' >> gimp > /dev/null
-echo 'flatpak run org.gimp.GIMP' >> GIMP > /dev/null
-echo 'flatpak run org.inkscape.Inkscape' >> inkscape > /dev/null
-echo 'flatpak run org.inkscape.Inkscape' >> Inkscape > /dev/null
-echo 'flatpak run org.kde.kdenlive' >> kdenlive > /dev/null
-echo 'flatpak run org.kde.kdenlive' >> KDEnlive > /dev/null
+echo 'flatpak run com.github.PintaProject.Pinta' >> pinta
+echo 'flatpak run com.github.PintaProject.Pinta' >> Pinta
+echo 'flatpak run com.github.PintaProject.Pinta' >> paint
+echo 'flatpak run com.github.PintaProject.Pinta' >> Paint
+echo 'flatpak run com.github.PintaProject.Pinta' >> mspaint 
+echo 'flatpak run com.github.PintaProject.Pinta' >> MSPaint 
+echo 'flatpak run org.kde.krita' >> krita 
+echo 'flatpak run org.kde.krita' >> Krita 
+echo 'flatpak run org.gimp.GIMP' >> gimp 
+echo 'flatpak run org.gimp.GIMP' >> GIMP 
+echo 'flatpak run org.inkscape.Inkscape' >> inkscape 
+echo 'flatpak run org.inkscape.Inkscape' >> Inkscape 
+echo 'flatpak run org.kde.kdenlive' >> kdenlive 
+echo 'flatpak run org.kde.kdenlive' >> KDEnlive
 cd /home/$USER/beezity-scripts
 chmod +x *
 echo 'Aliases successfully added, make sure to check file names i.e gimp or GIMP to launch GIMP etc.'
@@ -162,11 +162,11 @@ rsync -av /home/$USER/PhotoGIMP-master/.var/app /home/$USER/.var/
 rm -rf ~/PhotoGIMP-master
 rm ~/PhotoGIMP.zip
 cd /home/$USER/bin
-echo 'flatpak run org.gimp.GIMP' >> photogimp > /dev/null
-echo 'flatpak run org.gimp.GIMP' >> photoGIMP > /dev/null
-echo 'flatpak run org.gimp.GIMP' >> photoshop > /dev/null
-echo 'flatpak run org.gimp.GIMP' >> Photoshop > /dev/null
-echo 'flatpak run org.gimp.GIMP' >> PhotoGIMP > /dev/null
+echo 'flatpak run org.gimp.GIMP' >> photogimp
+echo 'flatpak run org.gimp.GIMP' >> photoGIMP
+echo 'flatpak run org.gimp.GIMP' >> photoshop 
+echo 'flatpak run org.gimp.GIMP' >> Photoshop 
+echo 'flatpak run org.gimp.GIMP' >> PhotoGIMP 
 chmod +x *
 cd /home/$USER
 echo 'PhotoGIMP created!'
@@ -232,16 +232,16 @@ echo 'Starting now...'
 cd /home/$USER/bin
 # These are the apps themselves, the output is directed towards a file and the output is the command to run flatpak apps
 echo 'Creating apps...'
-echo 'flatpak run io.github.hrkfdn.ncspot' >> ncspot > /dev/null
-echo 'flatpak run com.adobe.Reader' >> adobe-reader > /dev/null
-echo 'flatpak run com.github.k4zmu2a.spacecadetpinball' >> spacecadetpinball > /dev/null
-echo 'flatpak run dev.Vencord.Vesktop' >> vesktop > /dev/null
-echo 'flatpak run org.videolan.VLC' >> vlc > /dev/null
-echo 'flatpak run com.visualstudio.code' >> vscode > /dev/null
-echo 'flatpak run com.github.tchx84.Flatseal' >> flatseal > /dev/null
-echo 'flatpak run us.zoom.Zoom' >> zoom > /dev/null
-echo 'flatpak run com.mattjakeman.ExtensionManager' >> extension-manager > /dev/null
-echo 'flatpak run io.github.flattool.Warehouse' >> warehouse > /dev/null
+echo 'flatpak run io.github.hrkfdn.ncspot' >> ncspot 
+echo 'flatpak run com.adobe.Reader' >> adobe-reader 
+echo 'flatpak run com.github.k4zmu2a.spacecadetpinball' >> spacecadetpinball 
+echo 'flatpak run dev.Vencord.Vesktop' >> vesktop 
+echo 'flatpak run org.videolan.VLC' >> vlc 
+echo 'flatpak run com.visualstudio.code' >> vscode 
+echo 'flatpak run com.github.tchx84.Flatseal' >> flatseal 
+echo 'flatpak run us.zoom.Zoom' >> zoom 
+echo 'flatpak run com.mattjakeman.ExtensionManager' >> extension-manager 
+echo 'flatpak run io.github.flattool.Warehouse' >> warehouse 
 # chmod +x makes them executables instead of just plain text files
 chmod +x *
 cd /home/$USER
@@ -264,6 +264,7 @@ fi
 
 
 echo 'Set Gnome Ubuntu to'
+echo 'dark mode'
 echo 'performance mode,'
 echo '12 hour idle,'
 echo '12 hour clock format,'
@@ -287,9 +288,11 @@ gsettings set org.gnome.desktop.notifications show-banners false
 gsettings set org.gnome.desktop.interface clock-show-seconds true
 gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
-sudo apt-get install gnome-shell-extensions -y > /dev/null
-gnome-extensions disable ding@rastersoft.com
+gsettings set org.gnome.shell.ubuntu color-scheme prefer-dark
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+gsettings set org.gnome.desktop.interface gtk-theme Yaru-dark
 sudo apt-get install -y gnome-tweaks gnome-shell-extensions chrome-gnome-shell > /dev/null
+gnome-extensions disable ding@rastersoft.com
 echo 'Gnome tweaks applied!'
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
@@ -392,24 +395,24 @@ fi
 mkdir -p /home/$USER/bin
 cd /home/$USER/bin
 echo 'Now adding terminal shortcuts to let you launch them from terminal...'
-echo 'flatpak run com.usebottles.bottles' >> bottles > /dev/null
-echo 'flatpak run com.usebottles.bottles' >> Bottles > /dev/null
-echo 'flatpak run net.lutris.Lutris' >> lutris > /dev/null
-echo 'flatpak run net.lutris.Lutris' >> Lutris > /dev/null
-echo 'flatpak run com.heroicgameslauncher.hgl' >> hgl > /dev/null
-echo 'flatpak run com.heroicgameslauncher.hgl' >> heroicgamelauncher > /dev/null
-echo 'flatpak run com.valvesoftware.Steam' >> Steam > /dev/null
-echo 'flatpak run com.valvesoftware.Steam' >> steam > /dev/null
-echo 'flatpak run io.missioncenter.MissionCenter' >> missioncenter > /dev/null
-echo 'flatpak run io.missioncenter.MissionCenter' >> taskmanager > /dev/null
-echo 'flatpak run io.missioncenter.MissionCenter' >> taskmgr > /dev/null
-echo 'flatpak run io.missioncenter.MissionCenter' >> MissionCenter > /dev/null
+echo 'flatpak run com.usebottles.bottles' >> bottles
+echo 'flatpak run com.usebottles.bottles' >> Bottles
+echo 'flatpak run net.lutris.Lutris' >> lutris 
+echo 'flatpak run net.lutris.Lutris' >> Lutris 
+echo 'flatpak run com.heroicgameslauncher.hgl' >> hgl
+echo 'flatpak run com.heroicgameslauncher.hgl' >> heroicgamelauncher 
+echo 'flatpak run com.valvesoftware.Steam' >> Steam 
+echo 'flatpak run com.valvesoftware.Steam' >> steam 
+echo 'flatpak run io.missioncenter.MissionCenter' >> missioncenter 
+echo 'flatpak run io.missioncenter.MissionCenter' >> taskmanager 
+echo 'flatpak run io.missioncenter.MissionCenter' >> taskmgr
+echo 'flatpak run io.missioncenter.MissionCenter' >> MissionCenter
 echo 'Did you install Roblox? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-echo 'flatpak run org.vinegarhq.Sober' >> roblox > /dev/null
-echo 'flatpak run org.vinegarhq.Sober' >> sober > /dev/null
+echo 'flatpak run org.vinegarhq.Sober' >> roblox
+echo 'flatpak run org.vinegarhq.Sober' >> sober 
 else
 echo 'Continuing!'
 sleep 1
