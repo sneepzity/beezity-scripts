@@ -8,7 +8,7 @@ fi
 
 echo 'This script is for Ubuntu 22.04+ ONLY. 
 Make sure to read all scripts you download before executing them, 
-especially ones running as root.'
+especially ones asking for root.'
 
 echo 'Waiting 5 seconds...'
 sleep 5
@@ -80,6 +80,11 @@ sudo apt-get upgrade -y > /dev/null
 echo 'Removing snap firefox and store...'
 sudo snap remove --purge firefox > /dev/null
 sudo snap remove --purge snap-store > /dev/null
+cd /home/$USER
+sudo touch /etc/apt/preferences.d/firefox-no-snap
+sudo touch /etc/apt/preferences.d/nosnap.pref
+sudo chown $USER /etc/apt/preferences.d/firefox-no-snap
+sudo chown $USER /etc/apt/preferences.d/nosnap.pref
 printf "Package: firefox*\nPin: release o=Ubuntu*\nPin-Priority: -1" > /etc/apt/preferences.d/firefox-no-snap
 printf "Package: snapd\nPin: release a=*\nPin-Priority: -10" > /etc/apt/preferences.d/nosnap.pref
 echo 'Snapped in half!'
