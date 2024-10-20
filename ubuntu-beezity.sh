@@ -384,7 +384,7 @@ echo 'Do you want to install Roblox? (Sober) ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-flatpak install --assumeyes --noninteractive https://sober.vinegarhq.org/sober.flatpakref
+flatpak install --user --noninteractive https://sober.vinegarhq.org/sober.flatpakref
 else
 echo 'Continuing!'
 fi
