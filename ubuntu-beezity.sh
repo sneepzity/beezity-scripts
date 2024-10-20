@@ -155,11 +155,12 @@ then
 echo 'Starting GIMP customization into Photoshop...'
 cd ~/home/$USER
 wget https://github.com/Diolinux/PhotoGIMP/releases/latest/download/PhotoGIMP.zip
-sudo apt install unzip rsync > /dev/null
-unzip PhotoGIMP.zip -o -d ~ > /dev/null
-rsync -av ~/PhotoGIMP-master/.local/share ~/.local
-rsync -av ~/PhotoGIMP-master/.var/app ~/.var/
+sudo apt-get install unzip rsync > /dev/null
+unzip PhotoGIMP.zip -d /home/$USER > /dev/null
+rsync -av /home/$USER/PhotoGIMP-master/.local/share /home/$USER/.local
+rsync -av /home/$USER/PhotoGIMP-master/.var/app /home/$USER/.var/
 rm -rf ~/PhotoGIMP-master
+rm ~/PhotoGIMP.zip
 cd /home/$USER/bin
 echo 'flatpak run org.gimp.GIMP' >> photogimp > /dev/null
 echo 'flatpak run org.gimp.GIMP' >> photoGIMP > /dev/null
