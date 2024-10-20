@@ -214,20 +214,9 @@ then
 echo 'Now installing kitty, zsh and p10k...'
 sudo apt-get install -y zsh kitty > /dev/null
 chsh -s /usr/bin/zsh
+$SHELL
 echo 'Make sure to log out and log back LATER in to apply changes'
 sleep 2
-# The next few commands below clone the latest release of p10k and add it to zshrc file and restart shell to let it apply
-# Fonts may be broken, you may want to use something like JetbrainMonoNerd font in gnome-terminal or kitty
-cd ~
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k > /dev/null
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
-$SHELL
-echo 'You have to manually install fonts if you use Gnome Terminal :('
-echo 'Dont worry if the script freezes because I have it set to sleep for a few seconds :)'
-sleep 3
-echo "IF you use kitty, then you can edit ~/.config/kitty/kitty.conf and search up how to add fonts 
-(https://reddit.com/r/KittyTerminal/comments/11qexp6/how_to_use_my_own_custom_font/)"
-sleep 3
 else
 echo 'Continuing!'
 fi
