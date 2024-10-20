@@ -291,6 +291,13 @@ gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 gsettings set org.gnome.shell.ubuntu color-scheme prefer-dark
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 gsettings set org.gnome.desktop.interface gtk-theme Yaru-dark
+cd /home/$USER
+touch /home/$USER/.config/gtk-4.0/settings.ini
+cp /home/$USER/.config/gtk-4.0/settings.ini /home/$USER/.config/gtk-4.0/settings.ini.bak
+echo 'Created GTK 4.0 settings.ini backup...'
+sleep 1
+echo '[Settings]
+gtk-application-prefer-dark-theme=1'
 sudo apt-get install -y gnome-tweaks gnome-shell-extensions chrome-gnome-shell > /dev/null
 gnome-extensions disable ding@rastersoft.com
 echo 'Gnome tweaks applied!'
