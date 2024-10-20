@@ -218,7 +218,7 @@ else
 echo 'Continuing!'
 fi
 
-echo 'Install kitty terminal and change shell to Zsh with p10k theme? ( 1 for install / 2 for no )'
+echo 'Install kitty terminal and change shell to Zsh? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
