@@ -263,8 +263,7 @@ fi
 fi
 
 
-echo 'Set Gnome'
-echo 'to dark mode,'
+echo 'Set Gnome Ubuntu to'
 echo 'performance mode,'
 echo '12 hour idle,'
 echo '12 hour clock format,'
