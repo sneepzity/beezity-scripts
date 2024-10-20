@@ -380,6 +380,8 @@ flatpak install --assumeyes --noninteractive net.lutris.Lutris
 echo 'Lutris installed!'
 flatpak install --assumeyes --noninteractive com.usebottles.bottles
 echo 'Bottles installed!'
+flatpak install --assumeyes --noninteractive io.missioncenter.MissionCenter
+echo 'Mission Center installed!'
 echo 'Do you want to install Roblox? (Sober) ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
@@ -390,14 +392,18 @@ echo 'Continuing!'
 fi
 mkdir -p ~/bin &> /dev/null
 echo 'Now adding terminal shortcuts to let you launch them from terminal...'
-echo 'com.usebottles.bottles' >> bottles > /dev/null
-echo 'com.usebottles.bottles' >> Bottles > /dev/null
-echo 'net.lutris.Lutris' >> lutris > /dev/null
-echo 'net.lutris.Lutris' >> Lutris > /dev/null
-echo 'com.heroicgameslauncher.hgl' >> hgl > /dev/null
-echo 'com.heroicgameslauncher.hgl' >> heroicgamelauncher > /dev/null
-echo 'com.valvesoftware.Steam' >> Steam > /dev/null
-echo 'com.valvesoftware.Steam' >> steam > /dev/null
+echo 'flatpak run com.usebottles.bottles' >> bottles > /dev/null
+echo 'flatpak run com.usebottles.bottles' >> Bottles > /dev/null
+echo 'flatpak run net.lutris.Lutris' >> lutris > /dev/null
+echo 'flatpak run net.lutris.Lutris' >> Lutris > /dev/null
+echo 'flatpak run com.heroicgameslauncher.hgl' >> hgl > /dev/null
+echo 'flatpak run com.heroicgameslauncher.hgl' >> heroicgamelauncher > /dev/null
+echo 'flatpak run com.valvesoftware.Steam' >> Steam > /dev/null
+echo 'flatpak run com.valvesoftware.Steam' >> steam > /dev/null
+echo 'flatpak run io.missioncenter.MissionCenter' >> missioncenter > /dev/null
+echo 'flatpak run io.missioncenter.MissionCenter' >> taskmanager > /dev/null
+echo 'flatpak run io.missioncenter.MissionCenter' >> taskmgr > /dev/null
+echo 'flatpak run io.missioncenter.MissionCenter' >> MissionCenter > /dev/null
 echo 'Did you install Roblox? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
