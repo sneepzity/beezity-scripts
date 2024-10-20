@@ -6,6 +6,17 @@ then
         exit
 fi
 
+
+echo 'Checking working directory...'
+current_directory=$(pwd)
+if [ "$current_directory" = "/home/$USER/beezity-scripts" ]
+then
+echo 'Great, continuing.'
+else
+echo 'Clone the repo to your home directory, you can clean it up afterwards.'
+exit
+fi
+
 echo 'This script is for Ubuntu 22.04+ ONLY. 
 Make sure to read all scripts you download before executing them, 
 especially ones asking for root.'
