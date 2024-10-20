@@ -96,12 +96,18 @@ flatpak install --assumeyes --noninteractive org.inkscape.Inkscape
 echo 'Inkscape installed!'
 flatpak install --assumeyes --noninteractive org.gimp.GIMP
 echo 'GIMP installed!'
-echo 'Make sure you're using X11 as GIMP at least on flatpak doesn't support Wayland!'
+echo 'Make sure you're using X11 or Xwayland as GIMP at least on flatpak doesn't support Wayland!'
 sleep 1
 flatpak install --assumeyes --noninteractive org.kde.krita
 echo 'Krita installed!'
 flatpak install --assumeyes --noninteractive com.github.PintaProject.Pinta
 echo 'Pinta installed!'
+flatpak install --assumeyes --noninteractive com.obsproject.Studio
+echo 'OBS installed!'
+flatpak install --assumeyes --noninteractive org.gnome.SoundRecorder
+'echo Gnome Sound Recorder installed!'
+flatpak install --assumeyes --noninteractive org.gnome.Snapshot
+echo 'Gnome Snapshot Camera installed!'
 # Making sure in home directory
 cd /home/$USER
 mkdir -p /home/$USER/bin
@@ -120,6 +126,13 @@ echo 'flatpak run org.inkscape.Inkscape' >> inkscape
 echo 'flatpak run org.inkscape.Inkscape' >> Inkscape 
 echo 'flatpak run org.kde.kdenlive' >> kdenlive 
 echo 'flatpak run org.kde.kdenlive' >> KDEnlive
+echo 'flatpak run com.obsproject.Studio' >> obs
+echo 'flatpak run com.obsproject.Studio' >> OBS
+echo 'flatpak run org.gnome.soundrecorder' >> voicerecorder
+echo 'flatpak run org.gnome.soundrecorder' >> soundrecorder
+echo 'flatpak run org.gnome.Snapshot' >> snapshot
+echo 'flatpak run org.gnome.Snapshot' >> Snapshot
+echo 'flatpak run org.gnome.Snapshot' >> camera
 cd /home/$USER/beezity-scripts
 chmod +x *
 echo 'Aliases successfully added, make sure to check file names i.e gimp or GIMP to launch GIMP etc.'
