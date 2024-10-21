@@ -452,4 +452,23 @@ echo 'Thanks for looking at my scripts!'
 fi
 fi
 
+echo 'Use ChrisTitus Linutil?'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Make sure to look at what you can do with it!'
+curl fsSL christitus.com/linux | sh
+fi
+if [ "$input" -eq 2 ]
+then
+echo 'Do you want to leave? ( 1 to leave / 2 to continue'
+read input
+if [ "$input" -eq 1 ]
+then
+exit
+else
+echo 'Continuing'
+fi
+fi
+
 exit
