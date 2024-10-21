@@ -458,17 +458,34 @@ if [ "$input" -eq 1 ]
 then
 echo 'Make sure to look at what you can do with it!'
 curl fsSL christitus.com/linux | sh
-fi
-if [ "$input" -eq 2 ]
-then
+else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue'
 read input
 if [ "$input" -eq 1 ]
 then
+echo 'Thanks for looking at my scripts!'
 exit
 else
-echo 'Continuing'
+echo 'Continuing!'
 fi
 fi
 
+echo 'Install pokemon-color-scripts?'
+read input
+if [ "$input" -eq 1 ]
+then
+git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git
+cd pokemon-colorscripts
+sudo ./install.sh
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
 exit
