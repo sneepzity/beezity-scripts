@@ -355,6 +355,7 @@ sudo snap remove --purge gnome-42-2204 > /dev/null
 sudo snap remove --purge snapd-desktop-integration > /dev/null
 sudo snap remove --purge core22 > /dev/null
 sudo snap remove --purge bare > /dev/null
+sudo snap remove --purge firmware-updater &> /dev/null
 sudo systemctl disable snapd.service
 sudo systemctl disable snapd.socket 
 sudo systemctl disable snapd.seeded.service
