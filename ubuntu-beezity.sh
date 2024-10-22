@@ -502,7 +502,7 @@ echo 'Remove Nautilus? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-sudo apt-get -y remove --purge nautilus
+sudo apt-get -y remove --purge nautilus* > /dev/null
 else
 echo 'Continuing!'
 fi
@@ -518,4 +518,21 @@ echo 'Continuing!'
 fi
 fi
 
+echo 'Remove Gnome Terminal? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo apt-get -y remove --purge gnome-terminal* > /dev/null
+echo 'Gnome Terminal removed!'
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
 exit
