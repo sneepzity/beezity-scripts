@@ -29,7 +29,7 @@ read input
 if [ "$input" -eq 1 ]
 then
 sudo apt-get update -y > /dev/null
-sudo apt-get install -y playonlinux > /dev/null
+sudo apt-get install -y playonlinux winbind > /dev/null
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
@@ -323,26 +323,6 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Install Custom Ubuntu and Debian ISO Creator (CUBIC)?( 1 for install / 2 for no )'
-read input
-if [ "$input" -eq 1 ]
-then
-sudo apt-add-repository ppa:cubic-wizard/release -y > /dev/null
-sudo apt-get update -y > /dev/null 
-sudo apt-get install -y --no-install-recommends cubic > /dev/null
-echo 'Cubic installed!'
-else
-echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
-read input
-if [ "$input" -eq 1 ]
-then
-echo 'Thanks for looking at my scripts!'
-exit
-else
-echo 'Continuing!'
-fi
-fi
-
 
 echo 'Remove snaps? ( 1 for yes / 2 for no )'
 read input
@@ -454,14 +434,14 @@ echo 'Thanks for looking at my scripts!'
 fi
 fi
 
-echo 'Use ChrisTitus Linutil?'
+echo 'Use ChrisTitus Linutil? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
 echo 'Make sure to look at what you can do with it!'
 curl fsSL christitus.com/linux | sh
 else
-echo 'Do you want to leave? ( 1 to leave / 2 to continue'
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -472,15 +452,32 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Install pokemon-color-scripts?'
+echo 'Install pokemon-color-scripts? ( 1 to install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
 git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git
 cd pokemon-colorscripts
 sudo ./install.sh
+echo 'Pokemon-colorscripts installed!'
+sleep 1
+echo 'Add to bash profile? ( 1 to install / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'pokemon-colorscripts -r --no-title' >> /home/$USER/.bashrc
 else
-echo 'Do you want to leave? ( 1 to leave / 2 to continue'
+echo 'Do you use Zsh? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'pokemon-colorscripts -r --no-title' >> /home/$USER/.zshrc
+else
+echo 'Continuing!'
+fi
+fi
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -490,4 +487,31 @@ else
 echo 'Continuing!'
 fi
 fi
+
+echo 'Change default file manager to Thunar? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo apt-get install -y thunar thunar-archive-plugin > /dev/null
+xdg mime default thunar.desktop inode/directory application/x-gnome-saved-search
+echo 'Remove Nautilus? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo apt-get -y remove --purge nautilus
+else
+echo 'Continuing!'
+fi
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
 exit
