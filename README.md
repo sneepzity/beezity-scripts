@@ -136,9 +136,15 @@ bottles - like a less game focused but stimm game compatible launcher
 
 also adds terminal aliases for every single one except gnome-tweaks
 
+thunar - alternative to nautilus
+
 Removes:
 
 snaps (fully removes them, gone from the system, even the leftover folders)
+
+(optional) gnome-terminal - default ubuntu terminal
+
+(optional) nautilus - default ubuntu file manager
 
 # Settings:
 
