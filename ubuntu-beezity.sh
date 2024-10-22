@@ -369,6 +369,7 @@ git clone https://github.com/FeralInteractive/gamemode.git
 echo 'Now installing gamemode script...'
 cd gamemode
 ./bootstrap.sh
+rm -rf /home/$USER/beezity-scripts/gamemode
 echo 'Run gamemoded -t after the script is done to see if it insalled correctly!'
 sleep 1
 echo 'Installing MS Fonts...'
@@ -456,9 +457,12 @@ echo 'Install pokemon-color-scripts? ( 1 to install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
+cd /home/$USER/beezity-scripts
 git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git
-cd pokemon-colorscripts
+cd /home/$USER/beezity-scripts/pokemon-colorscripts
 sudo ./install.sh
+rm -rf /home/$USER/beezity-scripts/pokemon-colorscripts
+cd /home/$USER/beezity-scripts
 echo 'Pokemon-colorscripts installed!'
 sleep 1
 echo 'Add to bash profile? ( 1 to install / 2 for no )'
