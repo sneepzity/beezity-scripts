@@ -130,8 +130,8 @@ echo 'flatpak run com.obsproject.Studio' >> obs
 echo 'flatpak run com.obsproject.Studio' >> OBS
 echo 'flatpak run org.audacityteam.Audacity' >> audacity
 echo 'flatpak run org.audacityteam.Audacity' >> Audacity
-cd /home/$USER/beezity-scripts
 chmod +x *
+cd /home/$USER/beezity-scripts
 echo 'Aliases successfully added, make sure to check file names i.e gimp or GIMP to launch GIMP etc.'
 sleep 1
 echo 'Apps installed and may you continue to do good on your endeavours!'
@@ -178,7 +178,7 @@ echo 'flatpak run org.gimp.GIMP' >> photoshop
 echo 'flatpak run org.gimp.GIMP' >> Photoshop 
 echo 'flatpak run org.gimp.GIMP' >> PhotoGIMP 
 chmod +x *
-cd /home/$USER
+cd /home/$USER/beezity-scripts
 echo 'PhotoGIMP created!'
 else
 echo 'Thats fine, you can always come back.'
@@ -201,7 +201,7 @@ if [ "$input" -eq 1 ]
 then
 # This creates a folder for the terminal apps specifically and adds it to PATH in both zsh and bash
 cd /home/$USER
-mkdir /home/$USER/bin
+mkdir -p /home/$USER/bin
 echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
 read input
 if [ "$input" -eq 1 ]
