@@ -376,7 +376,7 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Are you  a gamer? ( 1 for install / 2 for no )'
+echo 'Are you a gamer? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -384,13 +384,15 @@ then
 echo 'Installing gamemode script dependencies...'
 sudo apt-get install meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev build-essential > /dev/null
 echo 'Cloning repository and installing gamemode via ./bootstrap.sh...'
-cd ~
-git clone https://github.com/FeralInteractive/gamemode.git > /dev/null
+cd /home/$USER/beezity-scripts
+git clone https://github.com/FeralInteractive/gamemode.git
 echo 'Now installing gamemode script...'
 cd gamemode
 ./bootstrap.sh
 echo 'Run gamemoded -t after the script is done to see if it insalled correctly!'
 sleep 1
+echo 'Installing MS Fonts...'
+sudo apt-get -y install ttf-mscorefonts-installer
 echo 'Now installing game launchers...'
 flatpak install --assumeyes --noninteractive com.valvesoftware.Steam
 echo 'Steam installed!'
