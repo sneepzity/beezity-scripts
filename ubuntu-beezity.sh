@@ -604,4 +604,12 @@ echo 'Continuing!'
 fi
 fi
 
+echo 'Update all packages? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo apt-get -y update > /dev/null
+sudo apt-get -y upgrade > /dev/null
+flatpak update --assumeyes --noninteractive
+
 exit
