@@ -703,7 +703,7 @@ read input
 if [ "$input" -eq 1 ]
 then
 cd /home/$USER
-sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y > /dev/null
+sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y
 sudo apt-get -y update
 sudo apt-get -y install unzip rsync fastfetch trash-cli > /dev/null
 cd /home/$USER
@@ -752,6 +752,8 @@ rm -rf /home/$USER/NerdFontsSymbolsOnly
 rm NerdFontsSymbolsOnly.zip
 sudo fc-cache -f -v
 fastfetch --gen-config
+sudo echo 'PrefersNonDefaultGPU=true  
+X-KDE-RunOnDiscreteGpu=true' >> /usr/share/applications/kitty.desktop
 mkdir -p /home/$USER/.config/fastfetch
 wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/configs/kitty.conf
 mv -f kitty.conf /home/$USER/.config/kitty/kitty.conf
