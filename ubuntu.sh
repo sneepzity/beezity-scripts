@@ -51,7 +51,7 @@ fi
 fi
 
 # This creates keyrings for brave, wine and other future applications
-echo 'Create GPG keyring for Brave and Wine?'
+echo 'Create GPG keyring for Brave and Wine? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
