@@ -576,10 +576,9 @@ sudo systemctl enable --now libvirtd
 sudo adduser $USER libvirt
 sudo systemctl restart libvirtd
 sudo virsh net-start default
-sudo systemctl enable --now libvirtd && systemctl status libvirtd
 sleep 3
 clear
-echo 'If libvirtd is off, you need to run this command manually after the script is finished:'
+echo 'If libvirtd (systemctl status libvirtd) is off, you need to run this command manually after the script is finished:'
 echo 'sudo systemctl enable --now libvirtd && sudo virsh net-start default and make sure to logout after to let it apply.'
 curl -sSL https://get.docker.com | sh
 sudo usermod -aG docker $USER
@@ -635,6 +634,7 @@ fi
 echo 'Left Virtualbox Extension Pack in Downloads folder.'
 sudo groupadd vboxusers
 sudo usermod -a -G vboxusers $USER
+rm /home/$USER/beezity-scripts/virtualbox*
 sleep 1
 cd /home/$USER/beezity-scripts
 echo 'Install DOSBox-X? ( 1 for yes / 2 for no )'
@@ -665,14 +665,26 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Update all packages? ( 1 for yes / 2 for no )'
+echo 'Install Catpuccin shell theme and WhiteSur Icon Theme? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-sudo apt-get -y update > /dev/null
-sudo apt-get -y upgrade > /dev/null
-sudo apt-get -y autoremove > /dev/null
-flatpak update --assumeyes --noninteractive
+cd /home/$USER
+wget https://github.com/sneepzity/beezity-scripts/raw/88ab7e613246e1267a43084d0c4ba7ca14055adc/Catppuccin-Dark-Macchiato-BL-MB.zip
+sudo apt-get -y install unzip rsync > /dev/null
+unzip Catppuccin-Dark-Macchiato-BL-MB.zip -d /home/$USER
+mkdir -p /home/$USER/.themes
+rsync -av /home/$USER/Catppuccin-Dark-Macchiato* /home/$USER/.themes
+rm /home/$USER/.themes/Catppuccin-Dark-Macchiato-BL-MB.zip
+rm -rf /home/$USER/Catppuccin*
+rm /home/$USER/Catppuccin-Dark-Macchiato-BL-MB.zip
+cd /home/$USER/beezity-scripts
+git clone https://github.com/vinceliuice/WhiteSur-icon-theme
+cd WhiteSur-icon-theme
+./install.sh
+rm -rf /home/$USER/beezity-scripts/WhiteSur-icon-theme
+echo 'Successfully installed themes!'
+echo 'Continuing!'
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
@@ -685,24 +697,49 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Install Catpuccin shell theme and WhiteSur Icon Theme? ( 1 for install / 2 for no )'
+echo 'Apply light terminal customizations for kitty? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
 cd /home/$USER
-wget https://github.com/sneepzity/beezity-scripts/raw/88ab7e613246e1267a43084d0c4ba7ca14055adc/Catppuccin-Dark-Macchiato-BL-MB.zip
-sudo apt-get -y install unzip rsync > /dev/null
-unzip Catppuccin-Dark-Macchiato-BL-MB.zip -d /home/$USER
-mkdir -p /home/$USER/.themes
-rsync -av /home/$USER/Catppuccin-Dark-Macchiato-BL-MB*/ /home/$USER/.themes
-rm -rf /home/$USER/Catpuccin-Dark-Macchiato-BL-MB
-rm /home/$USER/Catppuccin-Dark-Macchiato-BL-MB.zip
-cd /home/$USER/beezity-scripts
-git clone https://github.com/vinceliuice/WhiteSur-icon-theme
-cd WhiteSur-icon-theme
-./install.sh
-rm -rf WhiteSur-icon-theme
-echo 'Successfully installed themes!'
+sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y > /dev/null
+sudo apt-get -y update > /dev/null
+sudo apt-get -y install unzip rsync fastfetch trash-cli > /dev/null
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
+mkdir -p "/home/$USER/JetBrainsMono Nerd Font"
+unzip JetBrainsMono.zip -d "/home/$USER/JetBrainsMono Nerd Font"
+mkdir -p /home/$USER/.fonts
+rsync -av "/home/$USER/JetBrainsMono Nerd Font" /home/$USER/.fonts
+rsync -av "/home/$USER/JetBrainsMono Nerd Font" /home/$USER/.local/share/fonts
+rm -rf "/home/$USER/JetBrainsMono Nerd Font"
+rm JetBrainsMono.zip
+sudo fc-cache -f -v
+wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/configs/kitty.conf
+mv -f kitty.conf /home/$USER/.config/kitty/kitty.conf
+wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/configs/config.jsonc
+mv -f config.jsonc /home/$USER/.config/fastfetch/config.jsonc
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
+echo 'Update all packages? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo apt-get -y update > /dev/null
+sudo apt-get -y upgrade > /dev/null
+sudo apt-get -y autoremove > /dev/null
+flatpak update --assumeyes --noninteractive
+sudo apt-get -y autoremove --purge > /dev/null
+sudo apt-get -y --fix-broken install > /dev/null
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
