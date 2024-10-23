@@ -313,4 +313,13 @@ echo 'Thanks for looking at my scripts!'
 exit
 fi
 
+echo 'Would you like to reboot now or later? (1 for now / 2 for later)'
+read input
+if [ "$input" -eq 1 ]
+then
+reboot
+else
+echo 'Make sure to reboot later to apply changes!'
+fi
+
 exit
