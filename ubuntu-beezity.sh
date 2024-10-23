@@ -517,7 +517,9 @@ sudo systemctl enable --now docker.service
 sudo systemctl enable --now containerd.service
 cd /home/$USER/beezity-scripts
 wget https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb
+sudo apt-get -y install xclip pass uidmap qrencode tree > /dev/null
 sudo dpkg -i docker-desktop-amd64.deb
+rm docker-desktop-amd64.deb
 cd /home/$USER/Downloads
 echo 'Aria2c or wget for qemu guest additions/tools? ( 1 for aria2 / 2 for wget )'
 read input
