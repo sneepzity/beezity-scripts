@@ -28,7 +28,7 @@ echo 'Do you want to install Playonlinux? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-sudo apt-get update -y > /dev/null
+sudo apt-get update -y
 sudo apt-get install -y playonlinux winbind libxcb-cursor0 > /dev/null
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
@@ -90,7 +90,7 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode s
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 sudo apt-get -y install apt-transport-https > /dev/null
-sudo apt-get -y update > /dev/null
+sudo apt-get -y update
 sudo apt-get -y install code > /dev/null
 mkdir -p /home/$USER/bin
 cd /home/$USER/bin
@@ -393,7 +393,7 @@ if [ "$input" -eq 1 ]
 then
 # Install required dependencies 
 echo 'Installing gamemode script dependencies...'
-sudo apt-get install meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev build-essential > /dev/null
+sudo apt-get -y install meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev build-essential > /dev/null
 echo 'Cloning repository and installing gamemode via ./bootstrap.sh...'
 cd /home/$USER/beezity-scripts
 git clone https://github.com/FeralInteractive/gamemode.git
@@ -703,7 +703,7 @@ if [ "$input" -eq 1 ]
 then
 cd /home/$USER
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y > /dev/null
-sudo apt-get -y update > /dev/null
+sudo apt-get -y update
 sudo apt-get -y install unzip rsync fastfetch trash-cli > /dev/null
 cd /home/$USER
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
@@ -770,7 +770,7 @@ echo 'Update all packages? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-sudo apt-get -y update > /dev/null
+sudo apt-get -y update
 sudo apt-get -y upgrade > /dev/null
 sudo apt-get -y autoremove > /dev/null
 flatpak update --assumeyes --noninteractive
