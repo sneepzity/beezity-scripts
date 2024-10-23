@@ -361,6 +361,8 @@ sudo snap remove --purge snapd-desktop-integration > /dev/null
 sudo snap remove --purge core22 > /dev/null
 sudo snap remove --purge bare > /dev/null
 sudo snap remove --purge firmware-updater &> /dev/null
+sudo apt-get -y remove --purge update-manager > /dev/null
+sudo apt-get -y install synpatic
 sudo systemctl disable snapd.service
 sudo systemctl disable snapd.socket 
 sudo systemctl disable snapd.seeded.service
@@ -663,6 +665,7 @@ if [ "$input" -eq 1 ]
 then
 sudo apt-get -y update > /dev/null
 sudo apt-get -y upgrade > /dev/null
+sudo apt-get -y autoremove > /dev/null
 flatpak update --assumeyes --noninteractive
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
