@@ -734,7 +734,7 @@ mkdir -p /home/$USER/UbuntuSans
 unzip UbuntuSans.zip -d /home/$USER/UbuntuSans
 rsync -av /home/$USER/UbuntuSans /home/$USER/.fonts
 rsync -av /home/$USER/UbuntuSans /home/$USER/.loca/share/fonts
-rm -rf /home/$USER/UbuntuMono
+rm -rf /home/$USER/UbuntuSans
 rm /home/$USER/UbuntuSans.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Noto.zip
 mkdir -p /home/$USER/Noto
@@ -751,6 +751,8 @@ rsync -av /home/$USER/NerdFontsSymbolsOnly /home/$USER/.local/share/fonts
 rm -rf /home/$USER/NerdFontsSymbolsOnly
 rm NerdFontsSymbolsOnly.zip
 sudo fc-cache -f -v
+fastfetch --gen-config
+mkdir -p /home/$USER/.config/fastfetch
 wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/configs/kitty.conf
 mv -f kitty.conf /home/$USER/.config/kitty/kitty.conf
 wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/configs/config.jsonc
