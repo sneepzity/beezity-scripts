@@ -59,8 +59,6 @@ flatpak install --assumeyes --noninteractive dev.vencord.Vesktop
 echo 'Vesktop installed!'
 flatpak install --assumeyes --noninteractive org.videolan.VLC 
 echo 'VLC installed!'
-flatpak install --assumeyes --noninteractive com.visualstudio.code 
-echo 'VS Code installed!'
 flatpak install --assumeyes --noninteractive com.github.tchx84.Flatseal 
 echo 'Flatseal installed!'
 flatpak install --assumeyes --noninteractive us.zoom.Zoom 
@@ -233,7 +231,6 @@ echo 'Adobe Reader'
 echo 'Space Cadet Pinball'
 echo 'Vesktop'
 echo 'VLC'
-echo 'VSCode'
 echo 'Zoom'
 echo 'Extension Manager'
 echo 'Flattool Warehouse'
@@ -247,7 +244,6 @@ echo 'flatpak run com.adobe.Reader' >> adobe-reader
 echo 'flatpak run com.github.k4zmu2a.spacecadetpinball' >> spacecadetpinball 
 echo 'flatpak run dev.Vencord.Vesktop' >> vesktop 
 echo 'flatpak run org.videolan.VLC' >> vlc 
-echo 'flatpak run com.visualstudio.code' >> vscode 
 echo 'flatpak run com.github.tchx84.Flatseal' >> flatseal 
 echo 'flatpak run us.zoom.Zoom' >> zoom 
 echo 'flatpak run com.mattjakeman.ExtensionManager' >> extension-manager 
