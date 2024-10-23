@@ -108,6 +108,7 @@ echo 'Updating and upgrading packages...'
 sudo apt-get update -y 
 sudo apt-get upgrade -y > /dev/null
 echo 'Removing snap firefox and store...'
+pkill firefox
 sudo snap remove --purge firefox > /dev/null
 sudo snap remove --purge snap-store > /dev/null
 cd /home/$USER
