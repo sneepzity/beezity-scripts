@@ -705,6 +705,7 @@ cd /home/$USER
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y > /dev/null
 sudo apt-get -y update > /dev/null
 sudo apt-get -y install unzip rsync fastfetch trash-cli > /dev/null
+cd /home/$USER
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
 mkdir -p "/home/$USER/JetBrainsMono Nerd Font"
 unzip JetBrainsMono.zip -d "/home/$USER/JetBrainsMono Nerd Font"
@@ -712,14 +713,42 @@ mkdir -p /home/$USER/.fonts
 rsync -av "/home/$USER/JetBrainsMono Nerd Font" /home/$USER/.fonts
 rsync -av "/home/$USER/JetBrainsMono Nerd Font" /home/$USER/.local/share/fonts
 rm -rf "/home/$USER/JetBrainsMono Nerd Font"
-rm JetBrainsMono.zip
+rm /home/$USER/JetBrainsMono.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Ubuntu.zip
 mkdir -p "/home/$USER/Ubuntu"
 unzip Ubuntu.zip -d "/home/$USER/Ubuntu"
 rsync -av "/home/$USER/Ubuntu" /home/$USER/.fonts
 rsync -av "/home/$USER/Ubuntu" /home/$USER/.local/share/fonts
 rm -rf /home/$USER/Ubuntu
-rm Ubuntu.zip
+rm /home/$USER/Ubuntu.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/UbuntuMono.zip
+mkdir -p /home/$USER/UbuntuMono
+unzip UbuntuMono.zip -d /home/$USER/UbuntuMono
+rsync -av /home/$USER/UbuntuMono /home/$USER/.fonts
+rsync -av /home/$USER/UbuntuMono /home/$USER/.local/share/fonts
+rm -rf /home/$USER/UbuntuMono
+rm /home/$USER/UbuntuMono.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/UbuntuSans.zip
+mkdir -p /home/$USER/UbuntuSans
+unzip UbuntuSans.zip -d /home/$USER/UbuntuSans
+rsync -av /home/$USER/UbuntuSans /home/$USER/.fonts
+rsync -av /home/$USER/UbuntuSans /home/$USER/.loca/share/fonts
+rm -rf /home/$USER/UbuntuMono
+rm /home/$USER/UbuntuSans.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Noto.zip
+mkdir -p /home/$USER/Noto
+unzip Noto.zip -d /home/$USER/Noto
+rsync -av /home/$USER/Noto /home/$USER/.fonts
+rsync -av /home/$USER/Noto /home/$USER/.local/share/fonts
+rm -rf /home/$USER/Noto
+rm /home/$USER/Noto.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/NerdFontsSymbolsOnly.zip
+mkdir -p /home/$USER/NerdFontsSymbolsOnly
+unzip NerdFontsSymbolsOnly.zip -d /home/$USER/NerdFontsSymbolsOnly
+rsync -av /home/$USER/NerdFontsSymbolsOnly /home/$USER/.fonts
+rsync -av /home/$USER/NerdFontsSymbolsOnly /home/$USER/.local/share/fonts
+rm -rf /home/$USER/NerdFontsSymbolsOnly
+rm NerdFontsSymbolsOnly.zip
 sudo fc-cache -f -v
 wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/configs/kitty.conf
 mv -f kitty.conf /home/$USER/.config/kitty/kitty.conf
