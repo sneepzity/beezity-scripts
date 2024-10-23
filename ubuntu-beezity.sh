@@ -610,6 +610,7 @@ fi
 cd /home/$USER/Downloads
 wget https://download.virtualbox.org/virtualbox/7.1.4/Oracle_VirtualBox_Extension_Pack-7.1.4.vbox-extpack
 echo 'Left Virtualbox Extension Pack in Downloads folder.'
+sudo usermod -a -G vboxusers $USER
 sleep 1
 cd /home/$USER/beezity-scripts
 echo 'Install DOSBox-X? ( 1 for yes / 2 for no )'
