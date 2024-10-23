@@ -223,82 +223,6 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Setup terminal flatpak app shortcuts? ( 1 for yes / 2 for no )'
-read input
-if [ "$input" -eq 1 ]
-then
-# This creates a folder for the terminal apps specifically and adds it to PATH in both zsh and bash
-cd /home/$USER
-mkdir -p /home/$USER/bin
-echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
-read input
-if [ "$input" -eq 1 ]
-then
-echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.bashrc
-echo 'Also add to zsh? ( 1 for yes / 2 for no )'
-read input
-if [ "$input" -eq 1 ]
-then
-echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.zshrc
-else
-echo 'Continuing!'
-fi
-else
-echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.zshrc
-echo 'Also add to bash? ( 1 for yes / 2 for no )'
-read input
-if [ "$input" -eq 1 ]
-then
-echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.bashrc
-else
-echo 'Continuing!'
-fi
-fi
-echo 'Setting up terminal apps proper...'
-echo 'List of apps...'
-echo 'Ncspot'
-echo 'Adobe Reader'
-echo 'Space Cadet Pinball'
-echo 'Vesktop'
-echo 'VLC'
-echo 'Zoom'
-echo 'Extension Manager'
-echo 'Flattool Warehouse'
-sleep 5
-echo 'Starting now...'
-cd /home/$USER/bin
-# These are the apps themselves, the output is directed towards a file and the output is the command to run flatpak apps
-echo 'Creating apps...'
-echo 'flatpak run io.github.hrkfdn.ncspot' >> ncspot 
-echo 'flatpak run com.adobe.Reader' >> adobe-reader 
-echo 'flatpak run com.github.k4zmu2a.spacecadetpinball' >> spacecadetpinball 
-echo 'flatpak run dev.Vencord.Vesktop' >> vesktop 
-echo 'flatpak run org.videolan.VLC' >> vlc 
-echo 'flatpak run com.github.tchx84.Flatseal' >> flatseal 
-echo 'flatpak run us.zoom.Zoom' >> zoom 
-echo 'flatpak run com.mattjakeman.ExtensionManager' >> extension-manager 
-echo 'flatpak run io.github.flattool.Warehouse' >> warehouse 
-# chmod +x makes them executables instead of just plain text files
-chmod +x *
-cd /home/$USER
-echo 'Flatpak shortcuts created!'
-sleep 1
-echo "Make sure to check the commands inside the bin folder using a terminal text-editor like vim or nano as 
-they might be wrong and also subject to change which both can cause breakage!"
-else
-echo 'Continuing!'
-echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
-read input
-if [ "$input" -eq 1 ]
-then
-echo 'Thanks for looking at my scripts!'
-exit
-else
-echo 'Continuing!'
-fi
-fi
-
-
 echo 'Set Gnome Ubuntu to'
 echo 'dark mode'
 echo 'performance mode,'
@@ -654,6 +578,81 @@ else
 echo 'Continuing!'
 fi
 else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
+echo 'Setup terminal flatpak app shortcuts? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+# This creates a folder for the terminal apps specifically and adds it to PATH in both zsh and bash
+cd /home/$USER
+mkdir -p /home/$USER/bin
+echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.bashrc
+echo 'Also add to zsh? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.zshrc
+else
+echo 'Continuing!'
+fi
+else
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.zshrc
+echo 'Also add to bash? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.bashrc
+else
+echo 'Continuing!'
+fi
+fi
+echo 'Setting up terminal apps proper...'
+echo 'List of apps...'
+echo 'Ncspot'
+echo 'Adobe Reader'
+echo 'Space Cadet Pinball'
+echo 'Vesktop'
+echo 'VLC'
+echo 'Zoom'
+echo 'Extension Manager'
+echo 'Flattool Warehouse'
+sleep 5
+echo 'Starting now...'
+cd /home/$USER/bin
+# These are the apps themselves, the output is directed towards a file and the output is the command to run flatpak apps
+echo 'Creating apps...'
+echo 'flatpak run io.github.hrkfdn.ncspot' >> ncspot 
+echo 'flatpak run com.adobe.Reader' >> adobe-reader 
+echo 'flatpak run com.github.k4zmu2a.spacecadetpinball' >> spacecadetpinball 
+echo 'flatpak run dev.Vencord.Vesktop' >> vesktop 
+echo 'flatpak run org.videolan.VLC' >> vlc 
+echo 'flatpak run com.github.tchx84.Flatseal' >> flatseal 
+echo 'flatpak run us.zoom.Zoom' >> zoom 
+echo 'flatpak run com.mattjakeman.ExtensionManager' >> extension-manager 
+echo 'flatpak run io.github.flattool.Warehouse' >> warehouse 
+# chmod +x makes them executables instead of just plain text files
+chmod +x *
+cd /home/$USER
+echo 'Flatpak shortcuts created!'
+sleep 1
+echo "Make sure to check the commands inside the bin folder using a terminal text-editor like vim or nano as 
+they might be wrong and also subject to change which both can cause breakage!"
+else
+echo 'Continuing!'
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
