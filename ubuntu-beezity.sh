@@ -29,7 +29,7 @@ read input
 if [ "$input" -eq 1 ]
 then
 sudo apt-get update -y > /dev/null
-sudo apt-get install -y playonlinux winbind > /dev/null
+sudo apt-get install -y playonlinux winbind libxcb-cursor0 > /dev/null
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
@@ -587,17 +587,16 @@ sudo apt-get install ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
-echo 
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu 
-  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get -y update
+sudo apt-get install -y pass uidmap libqrencod4 qrencode tree xclip
 sudo systemctl enable --now docker.service
 sudo systemctl enable --now containerd.service
 cd /home/$USER/beezity-scripts
 wget https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb
 sudo dpkg -i docker-desktop-amd64.deb
 cd /home/$USER/Downloads
-echo 'Aria2c or wget? ( 1 for aria2 / 2 for wget )'
+echo 'Aria2c or wget for qemu guest additions/tools? ( 1 for aria2 / 2 for wget )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -633,9 +632,8 @@ sudo dpkg -i virtualbox*.deb
 echo 'Virtualbox installed, you might need to reboot'
 sleep 1
 fi
-cd /home/$USER/Downloads
-wget https://download.virtualbox.org/virtualbox/7.1.4/Oracle_VirtualBox_Extension_Pack-7.1.4.vbox-extpack
 echo 'Left Virtualbox Extension Pack in Downloads folder.'
+sudo groupadd vboxusers
 sudo usermod -a -G vboxusers $USER
 sleep 1
 cd /home/$USER/beezity-scripts
