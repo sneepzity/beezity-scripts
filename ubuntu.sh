@@ -34,7 +34,7 @@ then
 
 # This installs basic requirements for most of the other commands like build-essential, wget and curl
 echo 'Installing basic requirements...'
-sudo apt-get update -y > /dev/null
+sudo apt-get update -y
 sudo apt-get install -y curl build-essential wget > /dev/null
 echo 'Installation successful!'
 sleep 2
@@ -82,7 +82,7 @@ echo 'Now installing brave browser...'
 sleep 2
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg 
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt-get update -y > /dev/null
+sudo apt-get update -y
 sudo apt-get install -y brave-browser > /dev/null
 echo 'Brave installed!'
 else
@@ -105,7 +105,7 @@ read input
 if [ "$input" -eq 1 ]
 then
 echo 'Updating and upgrading packages...'
-sudo apt-get update -y > /dev/null
+sudo apt-get update -y 
 sudo apt-get upgrade -y > /dev/null
 echo 'Removing snap firefox and store...'
 sudo snap remove --purge firefox > /dev/null
@@ -139,12 +139,12 @@ if [ "$input" -eq 1 ]
 then
 echo 'Now adding official Ubuntu software repositories...'
 sleep 2
-sudo apt-get update -y > /dev/null
+sudo apt-get update 
 sudo apt-get upgrade -y > /dev/null
 sudo apt-add-repository universe -y > /dev/null
-sudo apt-get update -y > /dev/null
+sudo apt-get update -y 
 sudo apt-add-repository multiverse -y > /dev/null
-sudo apt-get update -y > /dev/null
+sudo apt-get update -y 
 sudo apt-get upgrade -y > /dev/null
 echo 'Universe and multiverse repository added!'
 else
@@ -171,7 +171,7 @@ sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-bui
 echo 'Now installing wine...'
 sleep 2
 sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
-sudo apt-get update -y > /dev/null
+sudo apt-get update -y 
 sudo apt-get install -y --install-recommends winehq-stable wine-stable wine-stable-amd64 wine-stable-i386:i386 > /dev/null
 echo 'Wine installed!'
 fi
@@ -191,7 +191,7 @@ sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/
 clear
 echo 'Installing wine...'
 sleep 2
-sudo apt-get update -y > /dev/null
+sudo apt-get update -y
 sudo apt-get install -y --install-recommends winehq-stable wine-stable wine-stable-amd64 wine-stable-i386:i386 > /dev/null
 echo 'Wine installed!'
 else
@@ -224,7 +224,7 @@ Package: firefox*
 Pin: release o=Ubuntu
 Pin-Priority: -1' | sudo tee /etc/apt/preferences.d/mozilla
 echo 'Now installing firefox...'
-sudo apt-get update -y > /dev/null
+sudo apt-get update -y
 sudo apt-get -y remove --purge firefox > /dev/null
 sudo apt-get install firefox -y --allow-downgrades > /dev/null
 echo 'Firefox deb version installed!'
@@ -301,7 +301,7 @@ if [ "$input" -eq 1 ]
 then
 echo 'Now installing apt-fast, preload and removing unnecessary bloat...'
 sudo apt-add-repository ppa:apt-fast/stable -y > /dev/null
-sudo apt-get update -y > /dev/null
+sudo apt-get update -y
 sudo apt-get install -y preload > /dev/null
 sudo apt-get install -y apt-fast
 echo 'Apt-fast and preload installed!'
