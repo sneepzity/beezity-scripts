@@ -570,6 +570,7 @@ sudo systemctl enable --now libvirtd
 sudo adduser $USER libvirt
 sudo systemctl restart libvirtd
 sudo virsh net-start default
+sudo systemctl enable --now libvirtd && systemctl status libvirtd
 cd /home/$USER/Downloads
 echo 'Aria2c or wget? ( 1 for aria2 / 2 for wget )'
 read input
