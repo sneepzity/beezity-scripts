@@ -29,7 +29,7 @@ read input
 if [ "$input" -eq 1 ]
 then
 sudo apt-get update -y
-sudo apt-get install -y playonlinux winbind libxcb-cursor0 > /dev/null
+sudo apt-get install -y playonlinux winbind libxcb-cursor0 konsole > /dev/null
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
