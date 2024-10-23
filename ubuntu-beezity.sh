@@ -81,6 +81,34 @@ echo 'Continuing!'
 fi
 fi
 
+echo 'Install VS Code? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo apt-get -y install apt-transport-https
+sudo apt-get -y update 
+sudo apt-get -y install code
+mkdir -p /home/$USER/bin
+cd /home/$USER/bin
+echo 'code' >> VSCode
+echo 'code' >> vscode
+chmod +x *
+echo 'VSCode installed!'
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
 echo 'Feeling artistic? ( 1 for install / 2 for no)'
 sleep 1
 echo 'Also automatically adds terminal shortcuts'
