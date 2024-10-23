@@ -85,6 +85,7 @@ echo 'Install VS Code? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
+cd /home/$USER/beezity-scripts
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
