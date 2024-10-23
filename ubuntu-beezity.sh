@@ -42,7 +42,7 @@ echo 'Continuing!'
 fi
 fi
 
-echo "Do you want to install VS Code, ncspot, Adobe Reader,
+echo "Do you want to install ncspot, Adobe Reader,
 Space Cadet Pinball, Vesktop, VLC, Flatseal, Sober and Gnome extension-manager?
 (From Flatpak) ( 1 for install / 2 for no )"
 read input
@@ -97,6 +97,7 @@ cd /home/$USER/bin
 echo 'code' >> VSCode
 echo 'code' >> vscode
 chmod +x *
+rm microsoft.gpg
 echo 'VSCode installed!'
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
@@ -192,7 +193,7 @@ then
 echo 'Starting GIMP customization into Photoshop...'
 cd /home/$USER
 wget https://github.com/Diolinux/PhotoGIMP/releases/latest/download/PhotoGIMP.zip
-sudo apt-get install unzip rsync > /dev/null
+sudo apt-get -y install unzip rsync > /dev/null
 unzip PhotoGIMP.zip -d /home/$USER
 rsync -av /home/$USER/PhotoGIMP-master/.local/share /home/$USER/.local
 rsync -av /home/$USER/PhotoGIMP-master/.var/app /home/$USER/.var/
@@ -310,6 +311,7 @@ echo 'show seconds in clock, '
 echo 'hide dock trash in dock '
 echo 'disable desktop icons'
 echo 'hide drives in dock and also'
+echo 'show weekday and seconds in top bar and'
 echo 'install gnome-tweaks? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
@@ -325,6 +327,8 @@ gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 gsettings set org.gnome.shell.ubuntu color-scheme prefer-dark
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+gsettings set org.gnome.desktop.interface clock-show-weekday true
+gsettings set org.gnome.desktop.interface clock-show-seconds true
 gsettings set org.gnome.desktop.interface gtk-theme Yaru-dark
 cd /home/$USER
 touch /home/$USER/.config/gtk-4.0/settings.ini
@@ -467,7 +471,7 @@ read input
 if [ "$input" -eq 1 ]
 then
 echo 'Make sure to look at what you can do with it!'
-curl fsSL christitus.com/linux | sh
+curl -fsSL christitus.com/linux | sh
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
@@ -524,7 +528,7 @@ read input
 if [ "$input" -eq 1 ]
 then
 sudo apt-get install -y thunar thunar-archive-plugin > /dev/null
-xdg mime default thunar.desktop inode/directory application/x-gnome-saved-search
+xdg-mime default thunar.desktop inode/directory application/x-gnome-saved-search
 echo 'Remove Nautilus? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
@@ -573,6 +577,10 @@ sudo adduser $USER libvirt
 sudo systemctl restart libvirtd
 sudo virsh net-start default
 sudo systemctl enable --now libvirtd && systemctl status libvirtd
+sleep 3
+clear
+echo 'If libvirtd is off, you need to run this command manually after the script is finished:'
+echo 'sudo systemctl enable --now libvirtd && sudo virsh net-start default and make sure to logout after to let it apply.'
 curl -sSL https://get.docker.com | sh
 sudo usermod -aG docker $USER
 sudo apt-get install ca-certificates curl
@@ -678,5 +686,36 @@ else
 echo 'Continuing!'
 fi
 fi
+
+echo 'Install Catpuccin shell theme and WhiteSur Icon Theme? ( 1 for install / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+cd /home/$USER
+wget https://github.com/sneepzity/beezity-scripts/raw/88ab7e613246e1267a43084d0c4ba7ca14055adc/Catppuccin-Dark-Macchiato-BL-MB.zip
+sudo apt-get -y install unzip rsync > /dev/null
+unzip Catppuccin-Dark-Macchiato-BL-MB.zip -d /home/$USER
+mkdir -p /home/$USER/.themes
+rsync -av /home/$USER/Catppuccin-Dark-Macchiato-BL-MB*/ /home/$USER/.themes
+rm -rf /home/$USER/Catpuccin-Dark-Macchiato-BL-MB
+rm /home/$USER/Catppuccin-Dark-Macchiato-BL-MB.zip
+cd /home/$USER/beezity-scripts
+git clone https://github.com/vinceliuice/WhiteSur-icon-theme
+cd WhiteSur-icon-theme
+./install.sh
+rm -rf WhiteSur-icon-theme
+echo 'Successfully installed themes!'
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
 
 exit
