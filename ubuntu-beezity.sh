@@ -713,6 +713,13 @@ rsync -av "/home/$USER/JetBrainsMono Nerd Font" /home/$USER/.fonts
 rsync -av "/home/$USER/JetBrainsMono Nerd Font" /home/$USER/.local/share/fonts
 rm -rf "/home/$USER/JetBrainsMono Nerd Font"
 rm JetBrainsMono.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Ubuntu.zip
+mkdir -p "/home/$USER/Ubuntu"
+unzip Ubuntu.zip -d "/home/$USER/Ubuntu"
+rsync -av "/home/$USER/Ubuntu" /home/$USER/.fonts
+rsync -av "/home/$USER/Ubuntu" /home/$USER/.local/share/fonts
+rm -rf /home/$USER/Ubuntu
+rm Ubuntu.zip
 sudo fc-cache -f -v
 wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/configs/kitty.conf
 mv -f kitty.conf /home/$USER/.config/kitty/kitty.conf
