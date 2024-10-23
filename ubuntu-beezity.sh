@@ -97,7 +97,7 @@ cd /home/$USER/bin
 echo 'code' >> VSCode
 echo 'code' >> vscode
 chmod +x *
-rm /home/$USER/microsoft.gpg
+rm /home/$USER/beezity-scripts/microsoft.gpg
 echo 'VSCode installed!'
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
