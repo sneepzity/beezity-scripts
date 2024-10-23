@@ -25,7 +25,7 @@ echo 'Waiting 5 seconds...'
 sleep 5
 
 echo '
-Install basic apps? ( 1 for install / 2 for no )'
+Install basic requirements? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -51,11 +51,26 @@ fi
 fi
 
 # This creates keyrings for brave, wine and other future applications
+echo 'Create GPG keyring for Brave and Wine?'
+read input
+if [ "$input" -eq 1 ]
+then
 echo 'Now creating GPG keyring...'
 sleep 2
 sudo mkdir -pm755 /etc/apt/keyrings > /dev/null
 echo 'GPG keyring successfully added!'
 sleep 2
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
 
 # The four commands below install brave browser, comment it out if you don't want to install brave
 echo '
@@ -85,6 +100,10 @@ fi
 # All the snap related commands down below uninstall firefox snap and snap store
 # It also puts higher preference on non-snap
 
+echo 'Remove firefox, snap store and upgrade and update packages? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 echo 'Updating and upgrading packages...'
 sudo apt-get update -y > /dev/null
 sudo apt-get upgrade -y > /dev/null
@@ -99,6 +118,17 @@ sudo chown $USER /etc/apt/preferences.d/nosnap.pref
 printf "Package: firefox*\nPin: release o=Ubuntu*\nPin-Priority: -1" > /etc/apt/preferences.d/firefox-no-snap
 printf "Package: snapd\nPin: release a=*\nPin-Priority: -10" > /etc/apt/preferences.d/nosnap.pref
 echo 'Snapped in half!'
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
 
 
 # This automatically adds the universe and multiverse repos to access as much software as possible, again comment out if you don't want
@@ -195,10 +225,19 @@ Pin: release o=Ubuntu
 Pin-Priority: -1' | sudo tee /etc/apt/preferences.d/mozilla
 echo 'Now installing firefox...'
 sudo apt-get update -y > /dev/null
-sudo apt-get install firefox -y > /dev/null
+sudo apt-get -y remove --purge firefox > /dev/null
+sudo apt-get install firefox -y --allow-downgrades > /dev/null
 echo 'Firefox deb version installed!'
 else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
 echo 'Continuing!'
+fi
 fi
 
 # This installs flatpak, a much better alternative to snap with much wider app support and compatibility
@@ -215,21 +254,43 @@ echo 'Flatpak installed and flathub set-up!'
 echo 'Make sure to reboot LATER to apply all changes!'
 sleep 3
 else
-echo 'Continuing!'
-fi
-
-echo 'Install kitty terminal and change shell to Zsh? ( 1 for install / 2 for no )'
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
 then
-echo 'Now installing kitty, zsh and p10k...'
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
+echo 'Install kitty terminal and Zsh? ( 1 for install / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Now installing kitty and zsh...'
 sudo apt-get install -y zsh kitty > /dev/null
+echo 'Do you want to switch to Zsh? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 chsh -s /usr/bin/zsh
-$SHELL
 echo 'Make sure to log out and log back LATER in to apply changes'
 sleep 2
 else
 echo 'Continuing!'
+fi
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
 fi
 
 echo 'Make Ubuntu faster? ( 1 for install / 2 for no )'
@@ -249,6 +310,7 @@ sudo apt-get autoremove -y > /dev/null
 echo 'Debloat successful, enjoy your new distro!'
 else
 echo 'Thanks for looking at my scripts!'
+exit
 fi
 
 exit
