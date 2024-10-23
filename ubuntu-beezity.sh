@@ -565,18 +565,29 @@ echo 'Do you do virtual machinedrugs? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-sudo apt-get install -y dkms virt-manager virt-viewer > /dev/null
+sudo apt-get install -y dkms virt-manager virt-viewer aria2 > /dev/null
 sudo systemctl enable --now libvirtd
 sudo adduser $USER libvirt
 sudo systemctl restart libvirtd
 sudo virsh net-start default
 cd /home/$USER/Downloads
-wget https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
-wget https://www.spice-space.org/download/windows/usbdk/UsbDk_1.0.22_x64.msi
-wget https://www.spice-space.org/download/windows/usbdk/UsbDk_1.0.22_x86.msi
-wget https://www.spice-space.org/download/windows/usbredirect/usbredirect-x64-0.14.0.msi
+echo 'Aria2c or wget? ( 1 for aria2 / 2 for wget )'
+read input
+if [ "$input" -eq 1 ]
+then
+aria2c -x16 https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
+aria2c -x16 https://www.spice-space.org/download/windows/usbdk/UsbDk_1.0.22_x64.msi
+aria2c -x16 https://www.spice-space.org/download/windows/usbdk/UsbDk_1.0.22_x86.msi
+aria2c -x16 https://www.spice-space.org/download/windows/usbredirect/usbredirect-x64-0.14.0.msi
+aria2c -x16 https://www.spice-space.org/download/windows/spice-guest-tools/spice-guest-tools-latest.exe
+else
 wget https://www.spice-space.org/download/windows/spice-guest-tools/spice-guest-tools-latest.exe
-echo 'Left extra goodies for virt-manager in your Downloads folder.'
+wget https://www.spice-space.org/download/windows/usbredirect/usbredirect-x64-0.14.0.msi
+wget https://www.spice-space.org/download/windows/usbdk/UsbDk_1.0.22_x86.msi
+wget https://www.spice-space.org/download/windows/usbdk/UsbDk_1.0.22_x64.msi
+wget https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
+fi
+echo 'Left extra goodies for qemu virt-manager in your Downloads folder.'
 sleep 1
 echo 'Reboot after script is finished to apply changes correctly...'
 sleep 1
