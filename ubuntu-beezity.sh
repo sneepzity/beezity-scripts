@@ -520,6 +520,7 @@ wget https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb
 sudo apt-get -y install xclip pass uidmap qrencode tree > /dev/null
 sudo dpkg -i docker-desktop-amd64.deb
 rm docker-desktop-amd64.deb
+curl -fsSL https://tailscale.com/install.sh | sh
 cd /home/$USER/Downloads
 echo 'Aria2c or wget for qemu guest additions/tools? ( 1 for aria2 / 2 for wget )'
 read input
@@ -560,7 +561,7 @@ fi
 echo 'Left Virtualbox Extension Pack in Downloads folder.'
 sudo groupadd vboxusers
 sudo usermod -a -G vboxusers $USER
-rm /home/$USER/beezity-scripts/virtualbox*
+rm /home/$USER/beezity-scripts/virtualbox*.deb
 sleep 1
 cd /home/$USER/beezity-scripts
 echo 'Install DOSBox-X? ( 1 for yes / 2 for no )'
