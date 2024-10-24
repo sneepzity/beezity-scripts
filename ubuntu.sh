@@ -192,8 +192,10 @@ sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/
 clear
 echo 'Installing wine...'
 sleep 2
+sudo apt-get upgrade -y
 sudo apt-get update -y
-sudo apt-get install -y --install-recommends winehq-stable wine-stable wine-stable-amd64 wine-stable-i386:i386 > /dev/null
+sudo apt-get -y install wine > /dev/null
+# sudo apt-get install -y --install-recommends winehq-stable wine-stable wine-stable-amd64 wine-stable-i386:i386 > /dev/null
 echo 'Wine installed!'
 else
 echo 'Continuing!'
