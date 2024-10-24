@@ -192,10 +192,8 @@ sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/
 clear
 echo 'Installing wine...'
 sleep 2
-sudo apt-get upgrade -y
 sudo apt-get update -y
-sudo apt-get -y install wine > /dev/null
-# sudo apt-get install -y --install-recommends winehq-stable wine-stable wine-stable-amd64 wine-stable-i386:i386 > /dev/null
+sudo apt-get install -y --install-recommends winehq-stable wine-stable wine-stable-amd64 wine-stable-i386:i386 > /dev/null
 echo 'Wine installed!'
 else
 echo 'Continuing!'
@@ -313,17 +311,22 @@ sudo apt-get autoremove -y > /dev/null
 sudo chown $USER /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
 echo '[connection]
 wifi.powersave = 2' > /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
-sudo su
+sudo chown root /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+sudo touch /etc/apt/apt.conf.d/00aptitude
+sudo chown $USER /etc/apt/apt.conf.d/00aptitude
+sudo chown $USER /etc/sysctl.conf
 echo 'Acquire::Languages "none";' >> /etc/apt/apt.conf.d/00aptitude
 echo 'vm.swappiness=30' >> /etc/sysctl.conf
-exit
+sudo chown root /etc/sysctl.conf
+sudo chown root /etc/apt/apt.conf.d/00aptitude
 echo 'Use atheros wifi? ( 1 for yes / 2 for no)'
 read input
 if [ "$input" -eq 1 ]
 then
-sudo su
+sudo touch /etc/modprobe.d/ath9k.conf
+sudo chown $USER /etc/modprobe.d/ath9k.conf
 echo "options ath9k nohwcrypt=1" >> /etc/modprobe.d/ath9k.conf
-exit
+sudo chown root /etc/modprobe.d/ath9k.conf
 else
 echo 'Continuing!'
 fi
