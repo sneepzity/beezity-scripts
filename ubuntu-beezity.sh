@@ -286,9 +286,9 @@ echo 'Close all snap apps before uninstalling if you have any installed!'
 sudo snap remove --purge gtk-common-themes > /dev/null
 sudo snap remove --purge gnome-42-2204 > /dev/null
 sudo snap remove --purge snapd-desktop-integration > /dev/null
+sudo snap remove --purge firmware-updater &> /dev/null
 sudo snap remove --purge core22 > /dev/null
 sudo snap remove --purge bare > /dev/null
-sudo snap remove --purge firmware-updater &> /dev/null
 sudo apt-get -y remove --purge update-manager > /dev/null
 sudo apt-get -y install synpatic
 sudo systemctl disable snapd.service
