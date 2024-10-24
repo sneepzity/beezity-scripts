@@ -202,6 +202,7 @@ else
 echo 'Continuing!'
 fi
 echo 'Quit or continue? ( 3 for QUIT / 4 for CONTINUE )'
+read input
 if [ "$input" -eq 3 ]
 then
 echo 'Thanks for looking at my scripts!'
