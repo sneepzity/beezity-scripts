@@ -495,6 +495,10 @@ echo 'Do you do virtual machinedrugs? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
+echo 'Install QEMU and Virt-Manager? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 sudo apt-get install -y dkms virt-manager virt-viewer aria2 > /dev/null
 sudo systemctl enable --now libvirtd
 sudo adduser $USER libvirt
@@ -504,6 +508,14 @@ sleep 3
 clear
 echo 'If libvirtd (systemctl status libvirtd) is off, you need to run this command manually after the script is finished:'
 echo 'sudo systemctl enable --now libvirtd && sudo virsh net-start default and make sure to logout after to let it apply.'
+else
+echo 'Continuing!'
+clear
+fi
+echo 'Install Docker and Docker Desktop? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 curl -sSL https://get.docker.com | sh
 sudo usermod -aG docker $USER
 sudo apt-get install ca-certificates curl
@@ -520,9 +532,26 @@ wget https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb
 sudo apt-get -y install xclip pass uidmap qrencode tree > /dev/null
 sudo dpkg -i docker-desktop-amd64.deb
 rm docker-desktop-amd64.deb
+else
+echo 'Continuing!'
+fi
+clear
+sleep 1
+echo 'Install Tailscale? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 curl -fsSL https://tailscale.com/install.sh | sh
+else
+echo 'Continuing!'
+fi
+clear
 cd /home/$USER/Downloads
-echo 'Aria2c or wget for qemu guest additions/tools? ( 1 for aria2 / 2 for wget )'
+echo 'Install QEMU Guest Tools? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Aria2c or wget for QEMU guest additions/tools? ( 1 for aria2 / 2 for wget )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -537,6 +566,7 @@ wget https://www.spice-space.org/download/windows/usbredirect/usbredirect-x64-0.
 wget https://www.spice-space.org/download/windows/usbdk/UsbDk_1.0.22_x86.msi
 wget https://www.spice-space.org/download/windows/usbdk/UsbDk_1.0.22_x64.msi
 wget https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
+fi
 fi
 echo 'Left extra goodies for qemu virt-manager in your Downloads folder.'
 sleep 1
