@@ -308,6 +308,23 @@ sudo apt-get install -y apt-fast
 echo 'Apt-fast and preload installed!'
 sudo apt-get remove -y --purge *thunderbird* *libreoffice* *vim* aisleriot gnome-mahjongg gnome-mines gnome-sudoku brltty duplicity empathy empathy-common example-content gnome-accessibility-themes gnome-contacts gnome-mines gnome-orca gnome-screensaver gnome-sudoku gnome-video-effects landscape-common libsane python3-uno rhythmbox* sane-utils shotwell* telepathy* totem*  printer-driver-brlaser printer-driver-foo2zjs printer-driver-foo2zjs-common printer-driver-m2300w printer-driver-ptouch  printer-driver-splix
 sudo apt-get autoremove -y > /dev/null
+sudo chown $USER /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+echo '[connection]
+wifi.powersave = 2' > /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+sudo su
+echo 'Acquire::Languages "none";' >> /etc/apt/apt.conf.d/00aptitude
+echo 'vm.swappiness=30' >> /etc/sysctl.conf
+exit
+echo 'Use atheros wifi? ( 1 for yes / 2 for no)'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo su
+echo "options ath9k nohwcrypt=1" >> /etc/modprobe.d/ath9k.conf
+exit
+else
+echo 'Continuing!'
+fi
 echo 'Debloat successful, enjoy your new distro!'
 else
 echo 'Thanks for looking at my scripts!'
