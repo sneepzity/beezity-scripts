@@ -92,6 +92,7 @@ then
 echo 'ncspot, a terminal alternative or the spotify client gui? ( 1 for ncspot / 2 for spotify )'
 read input
 if [ "$input" -eq 1 ]
+then
 flatpak install --assumeyes --noninteractive io.github.hrkfdn.ncspot
 echo 'Ncspot installed!'
 else
