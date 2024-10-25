@@ -964,7 +964,7 @@ sudo add-apt-repository multiverse -y
 sudo apt-get -y update > /dev/null
 clear
 echo 'Installing build dependencies...'
-sudo apt-get -y install meson libgtk-4-media-gstreamer ubuntu-restricted-extras gir1.2-gst-plugins-base-1.0 gir1.2-gst-plugins-bad-1.0 libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev libgstreamer-plugins-bad1.0-dev libgtk-4-dev > /dev/null
+sudo apt-get -y install meson libgtk-4-media-gstreamer ubuntu-restricted-extras gir1.2-gst-plugins-base-1.0 gir1.2-gst-plugins-bad-1.0 libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev libgstreamer-plugins-bad1.0-dev libgtk-4-dev
 git clone https://github.com/Rafostar/clapper.git
 cd clapper
 meson builddir --prefix=/usr/local
@@ -1136,6 +1136,25 @@ sudo apt-get -y autoremove > /dev/null
 flatpak update --assumeyes --noninteractive
 sudo apt-get -y autoremove --purge > /dev/null
 sudo apt-get -y --fix-broken install > /dev/null
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
+echo 'Install rEFInd boot manager? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo apt-add-repository ppa:rodsmith/refind -y
+sudo apt-get update -y > /dev/null
+sudo apt-get -y install refind
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
