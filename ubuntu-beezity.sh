@@ -290,7 +290,13 @@ sudo snap remove --purge firmware-updater &> /dev/null
 sudo snap remove --purge core22 > /dev/null
 sudo snap remove --purge bare > /dev/null
 sudo apt-get -y remove --purge update-manager > /dev/null
+echo 'Install synaptic package manager? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 sudo apt-get -y install synpatic
+else
+echo 'Continuing!'
 sudo systemctl disable snapd.service
 sudo systemctl disable snapd.socket 
 sudo systemctl disable snapd.seeded.service
