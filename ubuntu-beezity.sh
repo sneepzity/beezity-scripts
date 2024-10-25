@@ -24,6 +24,23 @@ Make sure to read all scripts you download before executing them, especially one
 
 echo 'This script is meant to be run after ubuntu.sh, make sure you have run it before hand.'
 
+echo 'Install basic requirements?'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo apt-get -y install curl wget > /dev/null
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
 echo 'Do you want to install Playonlinux? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
@@ -538,6 +555,7 @@ wget https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb
 sudo apt-get -y install xclip pass uidmap qrencode tree > /dev/null
 sudo dpkg -i docker-desktop-amd64.deb
 rm docker-desktop-amd64.deb
+clear
 else
 echo 'Continuing!'
 fi
