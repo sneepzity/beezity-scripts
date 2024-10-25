@@ -900,6 +900,58 @@ echo 'Continuing!'
 fi
 fi
 
+clear
+echo 'Do you want to install Hanabi live wallpaper? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Are you on Ubuntu 22.04 or Ubuntu 24.04? ( 1 for 22.04 / 2 for 24.04 )'
+read input
+if [ "$input" -eq 1 ]
+then
+cd /home/$USER/beezity-scripts
+git clone https://github.com/jeffshee/gnome-ext-hanabi.git -b legacy
+sudo apt-get -y install meson libgtk-4-media-gstreamer ubuntu-restricted-extras gir1.2-gst-plugins-base-1.0 gir1.2-gst-plugins-bad-1.0 libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev libgstreamer-plugins-bad1.0-dev libgtk-4-dev > /dev/null
+git clone https://github.com/Rafostar/clapper.git
+cd clapper
+meson builddir --prefix=/usr/local
+sudo meson install -C builddir
+cd /home/$USER/beezity-scripts
+cd gnome-ext-hanabi
+./run.sh install
+sleep 1
+clear
+echo 'After script is done, reboot and then head to Gnome Extensions and enable Hanabi and select the animated wallpaper you want in preferences.'
+sleep 5
+else
+cd /home/$USER/beezity-scripts
+git clone https://github.com/jeffshee/gnome-ext-hanabi.git
+sudo apt-get -y install meson libgtk-4-media-gstreamer ubuntu-restricted-extras gir1.2-gst-plugins-base-1.0 gir1.2-gst-plugins-bad-1.0 libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev libgstreamer-plugins-bad1.0-dev libgtk-4-dev > /dev/null
+git clone https://github.com/Rafostar/clapper.git
+cd clapper
+meson builddir --prefix=/usr/local
+sudo meson install -C builddir
+cd /home/$USER/beezity-scripts
+cd gnome-ext-hanabi
+./run.sh install
+sleep 1
+clear
+echo 'After script is done, reboot and then head to Gnome Extensions and enable Hanabi and select the animated wallpaper you want in preferences.'
+sleep 5
+fi
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
+
 echo 'Install Catpuccin-Macchiato-Dark shell theme and WhiteSur Icon Theme? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
