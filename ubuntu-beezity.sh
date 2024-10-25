@@ -16,13 +16,29 @@ echo 'Clone the repo to your home directory, you can clean it up afterwards.'
 exit
 fi
 
-sleep 2
+clear
+echo 'Did you know, if you go Software & Updates and drop down on download from: and choose other, you can click select best server to'
+echo 'Get the fastest speeds when updating, upgrading and retrieving packages.'
+echo 'Do you wanna try it right now?'
+read input
+if [ "$input" -eq  1 ]
+then
+echo 'Ok Ill wait for a bit, just return to the terminal when youre done.'
+sleep 20
+else
+echo 'Continuing!'
+fi
+
+clear
 
 echo 'This script is for Ubuntu 22.04+ ONLY.
 I DO NOT GUARANTEE COMPATIBILITY WITH ALL OTHER VERSIONS EXCEPT 22.04+.
 Make sure to read all scripts you download before executing them, especially ones running as root.'
 
 echo 'This script is meant to be run after ubuntu.sh, make sure you have run it before hand.'
+
+sleep 2
+
 
 echo 'Install basic requirements?'
 read input
@@ -782,6 +798,7 @@ fi
 fi
 
 echo 'Install Catppuccin-Macchiato-Pink-Dark shell theme system-wide? ( 1 for yes / 2 for no )'
+echo 'Heres what it shoud look like after you apply the themes in gnome-tweaks: (https://imgur.com/a/QPJd31q)'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -911,6 +928,8 @@ if [ "$input" -eq 1 ]
 then
 cd /home/$USER/beezity-scripts
 git clone https://github.com/jeffshee/gnome-ext-hanabi.git -b legacy
+sudo add-apt-repository multiverse -y
+sudo apt-get update > /dev/null
 sudo apt-get -y install meson libgtk-4-media-gstreamer ubuntu-restricted-extras gir1.2-gst-plugins-base-1.0 gir1.2-gst-plugins-bad-1.0 libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev libgstreamer-plugins-bad1.0-dev libgtk-4-dev > /dev/null
 git clone https://github.com/Rafostar/clapper.git
 cd clapper
