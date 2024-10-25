@@ -899,15 +899,6 @@ sleep 3
 else
 echo 'Continuing!'
 fi
-echo 'Copy Fonts? ( 1 for yes / 2 for no )'
-read input
-if [ "$input" -eq 1 ]
-then
-mkdir /home/$USER/.fonts
-mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/Fonts/* /home/$USER/.fonts
-else
-echo 'Continuing!'
-fi
 echo 'Apply Open Bar Settings? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
