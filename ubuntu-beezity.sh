@@ -574,14 +574,13 @@ wget https://www.spice-space.org/download/windows/usbdk/UsbDk_1.0.22_x64.msi
 wget https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
 fi
 fi
-echo 'Left extra goodies for qemu virt-manager in your Downloads folder.'
+clear
 sleep 1
-echo 'Reboot after script is finished to apply changes correctly...'
-sleep 1
-echo '22.04 or 24.04? ( 1 for 22.04 / 2 for 24.04 )'
+echo 'Install Virtualbox? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
+echo '22.04 or 24.04? ( 1 for 22.04 / 2 for 22.04 )'
 cd /home/$USER/beezity-scripts
 wget https://download.virtualbox.org/virtualbox/7.1.4/virtualbox-7.1_7.1.4-165100~Ubuntu~jammy_amd64.deb
 sudo dpkg -i virtualbox*.deb
@@ -594,11 +593,27 @@ sudo dpkg -i virtualbox*.deb
 echo 'Virtualbox installed, you might need to reboot'
 sleep 1
 fi
+echo 'Install Virtualbox Guest Additions? ( 1  for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+wget https://download.virtualbox.org/virtualbox/7.1.4/Oracle_VirtualBox_Extension_Pack-7.1.4.vbox-extpack -P /home/$USER/Downloads
 echo 'Left Virtualbox Extension Pack in Downloads folder.'
+else
+echo 'Continuing!'
+fi
+echo 'Did you install Virtualbox? ( 1 for yes / 2 for no)'
+read input
+if [ "$input" -eq 1 ]
+then
 sudo groupadd vboxusers
 sudo usermod -a -G vboxusers $USER
 rm /home/$USER/beezity-scripts/virtualbox*.deb
 sleep 1
+echo 'Done.'
+else
+echo 'Continuing!'
+fi
 cd /home/$USER/beezity-scripts
 echo 'Install DOSBox-X? ( 1 for yes / 2 for no )'
 read input
@@ -628,7 +643,7 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Setup terminal flatpak app shortcuts? ( 1 for yes / 2 for no )'
+echo 'Setup terminal flatpak app shortcuts for earlier installed apps like Vesktop? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -675,17 +690,22 @@ cd /home/$USER/bin
 # These are the apps themselves, the output is directed towards a file and the output is the command to run flatpak apps
 echo 'Creating apps...'
 echo 'flatpak run io.github.hrkfdn.ncspot' >> ncspot 
-echo 'flatpak run com.adobe.Reader' >> adobe-reader 
+echo 'flatpak run com.adobe.Reader' >> adobe-reader
+echo 'flatpak run com.adobe.Reader' >> adobereader
+echo 'flatpak run com.adobe.Reader' >> adobeacrobat
+echo 'flatpak run com.adobe.Reader' >> adobe-acrobat
 echo 'flatpak run com.github.k4zmu2a.spacecadetpinball' >> spacecadetpinball 
-echo 'flatpak run dev.Vencord.Vesktop' >> vesktop 
-echo 'flatpak run org.videolan.VLC' >> vlc 
+echo 'flatpak run dev.Vencord.Vesktop' >> vesktop
+echo 'flatpak run dev.Vencord.Vesktop' >> Vesktop
+echo 'flatpak run org.videolan.VLC' >> vlc
+echo 'flatpak run org.videolan.VLC' >> VLC
 echo 'flatpak run com.github.tchx84.Flatseal' >> flatseal 
 echo 'flatpak run us.zoom.Zoom' >> zoom 
 echo 'flatpak run com.mattjakeman.ExtensionManager' >> extension-manager 
 echo 'flatpak run io.github.flattool.Warehouse' >> warehouse 
 # chmod +x makes them executables instead of just plain text files
 chmod +x *
-cd /home/$USER
+cd /home/$USER/beezity-scripts
 echo 'Flatpak shortcuts created!'
 sleep 1
 echo "Make sure to check the commands inside the bin folder using a terminal text-editor like vim or nano as 
@@ -788,9 +808,8 @@ rsync -av /home/$USER/NerdFontsSymbolsOnly /home/$USER/.local/share/fonts
 rm -rf /home/$USER/NerdFontsSymbolsOnly
 rm NerdFontsSymbolsOnly.zip
 sudo fc-cache -f -v
+clear
 fastfetch --gen-config
-sudo echo 'PrefersNonDefaultGPU=true  
-X-KDE-RunOnDiscreteGpu=true' >> /usr/share/applications/kitty.desktop
 mkdir -p /home/$USER/.config/fastfetch
 wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/configs/kitty.conf
 mv -f kitty.conf /home/$USER/.config/kitty/kitty.conf
@@ -808,7 +827,7 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Update all packages? ( 1 for yes / 2 for no )'
+echo 'Update all packages (Flatpak and APT)? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
