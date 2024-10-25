@@ -59,15 +59,29 @@ echo 'Continuing!'
 fi
 fi
 
-echo "Do you want to install ncspot, Adobe Reader,
+echo "Do you want to install spotify, Adobe Reader,
 Space Cadet Pinball, Vesktop, VLC, Flatseal, Sober and Gnome extension-manager?
 (From Flatpak) ( 1 for install / 2 for no )"
 read input
 if [ "$input" -eq 1 ]
 then
 echo 'Nothing much might seem to be happening, please give it time especially if your internet is slow...'
+echo 'Install Spotify? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'ncspot, a terminal alternative or the spotify client gui? ( 1 for ncspot / 2 for spotify )'
+read input
+if [ "$input" -eq 1 ]
 flatpak install --assumeyes --noninteractive io.github.hrkfdn.ncspot
 echo 'Ncspot installed!'
+else
+flatpak install --assumeyes --noninteractive com.spotify.Client
+echo 'Spotify installed!'
+fi
+else
+echo 'Continuing!'
+fi
 flatpak install --assumeyes --noninteractive com.adobe.Reader 
 echo 'Adobe Reader 9.5.5 installed!'
 flatpak install --assumeyes --noninteractive com.github.k4zmu2a.spacecadetpinball 
@@ -78,12 +92,22 @@ flatpak install --assumeyes --noninteractive org.videolan.VLC
 echo 'VLC installed!'
 flatpak install --assumeyes --noninteractive com.github.tchx84.Flatseal 
 echo 'Flatseal installed!'
+echo 'Install Zoom ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 flatpak install --assumeyes --noninteractive us.zoom.Zoom 
 echo 'Zoom installed!'
+else
+echo 'Continuing!'
+fi
 flatpak install --assumeyes --noninteractive com.mattjakeman.ExtensionManager
 echo 'Gnome Extension Manager installed!'
 flatpak install --assumeyes --noninteractive io.github.flattool.Warehouse
 echo 'Flattool Warehouse installed!'
+clear
+echo 'You can use Warehouse to easily uninstall the apps you dont want!'
+sleep 1
 sleep 1
 echo 'Flatpak apps installed!'
 else
@@ -611,6 +635,7 @@ sudo dpkg -i virtualbox*.deb
 echo 'Virtualbox installed, you might need to reboot'
 sleep 1
 fi
+clear
 echo 'Install Virtualbox Guest Additions? ( 1  for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
@@ -694,7 +719,7 @@ fi
 fi
 echo 'Setting up terminal apps proper...'
 echo 'List of apps...'
-echo 'Ncspot'
+echo 'Ncspot/Spotify (if you installed them)'
 echo 'Adobe Reader'
 echo 'Space Cadet Pinball'
 echo 'Vesktop'
@@ -707,7 +732,21 @@ echo 'Starting now...'
 cd /home/$USER/bin
 # These are the apps themselves, the output is directed towards a file and the output is the command to run flatpak apps
 echo 'Creating apps...'
+echo 'Did you install a spotify client? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Did you install ncspot or spotify? ( 1 for ncspot / 2 for spotify )'
+read input
+if [ "$input" -eq 1 ]
+then
 echo 'flatpak run io.github.hrkfdn.ncspot' >> ncspot 
+else
+echo 'flatpak run com.spotify.Client' >> spotify
+fi
+else
+echo 'Continuing!'
+fi
 echo 'flatpak run com.adobe.Reader' >> adobe-reader
 echo 'flatpak run com.adobe.Reader' >> adobereader
 echo 'flatpak run com.adobe.Reader' >> adobeacrobat
@@ -741,7 +780,126 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Install Catpuccin shell theme and WhiteSur Icon Theme? ( 1 for install / 2 for no )'
+echo 'Install Catppuccin-Macchiato-Pink-Dark shell theme system-wide? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+cd /home/$USER/beezity-scripts
+git clone https://github.com/MFactor1/AlpsCatppuccin.git
+mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.themes/Catppuccin-Macchiato-Standard-Pink-Dark /home/$USER/.themes
+mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.themes/Catppuccin-Macchiato-Standard-Pink-Dark-xhdpi /home/$USER/.themes
+mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.themes/Catppuccin-Macchiato-Standard-Pink-Dark-hdpi /home/$USER/.themes
+# Checks if settings.ini exists
+cat /home/$USER/.config/gtk-4.0/settings.ini && rm /home/$USER/.config/gtk-4.0/settings.ini
+mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/gtk-4.0/ /home/$USER/.config/gtk-4.0
+mkdir -p /home/$USER/.icons
+mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.icons/* /home/$USER/.icons
+mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/Fonts/ /home/$USER/.fonts
+echo 'Did you install Spotify via flatpak? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Do you want to install Spicetify and Catppuccin theme? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh | sh
+sudo chmod a+wr /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify
+sudo chmod a+wr -R /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify/Apps
+clear
+echo 'Sorry, I cant manually do everything by myself...'
+sleep 1
+echo 'Heres what youll need to do...'
+sleep 1
+echo 'nano ~/.config/spicetify/config-xpui.ini'
+sleep 1
+echo 'Then append this path to the line that says prefs_path under settings.'
+sleep 1
+echo '/home/$USER/.var/app/com.spotify.Client/config/spotify/prefs'
+sleep 1
+echo 'Ill give you some time to take a screenshot and do this, just return to the terminal when youre done'
+sleep 15
+echo 'Answer for when you are done ( 1 for done (No you dont get another option, you have to be done applying spicetify tweaks, Im not coding in an else. )'
+read input
+if [ "$input" -eq 1 ]
+then
+mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/SpicetifyDefault /home/$USER/.config/spicetify/Themes
+fi
+fi
+else
+echo 'Continuing!'
+fi
+echo 'Do you want to copy the wallpapers? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+mkdir -p /home/$USER/Pictures/Wallpapers
+mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/wallpapers/*.jpg /home/$USER/Pictures/Wallpapers
+mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/wallpapers/*.png /home/$USER/Pictures/Wallpapers
+echo 'Add all the pictures in your wallpaper folder in /home/$USER/Pictures!'
+sleep 3
+else
+echo 'Continuing!'
+fi
+echo 'Copy Fonts? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+mkdir /home/$USER/.fonts
+mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/Fonts/* /home/$USER/.fonts
+else
+echo 'Continuing!'
+fi
+echo 'Apply Open Bar Settings? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo apt-get -y install gnome-shell-extensions chrome-gnome-shell > /dev/null
+clear
+echo 'This is a manual process, I cant find anyway to automate it.'
+sleep 1
+echo 'Make sure you are using a chromium based browser like Edge or Brave'
+sleep 1
+echo 'Open this link: https://extensions.gnome.org/extension/6580/open-bar/'
+sleep 1
+echo 'Then install it'
+sleep 1
+echo 'Then open Gnome extensions (double tap the windows key and open extensions)'
+sleep 1
+echo 'Then open Open Bar Settings'
+sleep 1
+echo 'Then go to the bottom and look for Import / Export'
+sleep 1
+echo 'Then click Import and navigate to /home/$USER/beezity-scripts/AlpsCatppuccin/OpenBarSettings'
+sleep 1
+echo 'Then select BlueBeigeAlpsLineArt'
+sleep 1
+echo 'Ill give you a few seconds, return when youre done'
+sleep 15
+echo 'Are you done? ( 1 for yes / 2 for no)'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Great, continuing!'
+else
+echo 'Dont just mindlessly mash away.'
+echo 'Now ill give you 30 more seconds'
+sleep 30
+fi
+fi
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
+echo 'Install Catpuccin-Macchiato-Dark shell theme and WhiteSur Icon Theme? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
