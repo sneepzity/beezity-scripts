@@ -385,7 +385,7 @@ sudo add-apt-repository ppa:trebelnik-stefina/synaptic -y
 sudo apt-get update -y
 sudo apt-get upgrade -y
 clear
-sudo apt-get -y install synpatic
+sudo apt install synpatic
 else
 echo 'Continuing!'
 fi
