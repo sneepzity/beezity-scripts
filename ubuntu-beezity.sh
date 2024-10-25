@@ -850,8 +850,9 @@ mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.themes/Catppuccin-Macchiato-St
 cat /home/$USER/.config/gtk-4.0/settings.ini && rm /home/$USER/.config/gtk-4.0/settings.ini
 mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/gtk-4.0/ /home/$USER/.config/gtk-4.0
 mkdir -p /home/$USER/.icons
+mkdir -p /home/$USER/.fonts
 mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.icons/* /home/$USER/.icons
-mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/Fonts/ /home/$USER/.fonts
+mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/Fonts/* /home/$USER/.fonts
 echo 'Did you install Spotify via flatpak? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
