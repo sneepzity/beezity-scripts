@@ -20,6 +20,20 @@ fi
 
 clear
 
+echo 'Did you know, if you go Software & Updates and drop down on download from: and choose other, you can click select best server to'
+echo 'Get the fastest speeds when updating, upgrading and retrieving packages.'
+echo 'Do you wanna try it right now?'
+read input
+if [ "$input" -eq  1 ]
+then
+echo 'Ok Ill wait for a bit, just return to the terminal when youre done.'
+sleep 20
+else
+echo 'Continuing!'
+fi
+
+clear
+
 echo 'This script is for Ubuntu 22.04+ ONLY. 
 Make sure to read all scripts you download before executing them, 
 especially ones asking for root.'
