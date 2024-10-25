@@ -849,6 +849,11 @@ git clone https://github.com/MFactor1/AlpsCatppuccin.git
 mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.themes/Catppuccin-Macchiato-Standard-Pink-Dark /home/$USER/.themes
 mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.themes/Catppuccin-Macchiato-Standard-Pink-Dark-xhdpi /home/$USER/.themes
 mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.themes/Catppuccin-Macchiato-Standard-Pink-Dark-hdpi /home/$USER/.themes
+cd /home/$USER/beezity-scripts
+git clone https://github.com/vinceliuice/WhiteSur-icon-theme
+cd WhiteSur-icon-theme
+./install.sh
+rm -rf /home/$USER/beezity-scripts/WhiteSur-icon-theme
 # Checks if settings.ini exists
 cat /home/$USER/.config/gtk-4.0/settings.ini && rm /home/$USER/.config/gtk-4.0/settings.ini
 mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/gtk-4.0/ /home/$USER/.config/gtk-4.0
