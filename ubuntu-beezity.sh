@@ -673,6 +673,9 @@ read input
 if [ "$input" -eq 1 ]
 then
 echo '22.04 or 24.04? ( 1 for 22.04 / 2 for 22.04 )'
+read input
+if [ "$input" -eq 1 ]
+then
 cd /home/$USER/beezity-scripts
 wget https://download.virtualbox.org/virtualbox/7.1.4/virtualbox-7.1_7.1.4-165100~Ubuntu~jammy_amd64.deb
 sudo dpkg -i virtualbox*.deb
@@ -685,6 +688,8 @@ sudo dpkg -i virtualbox*.deb
 echo 'Virtualbox installed, you might need to reboot'
 sleep 1
 fi
+else
+echo 'Continuing!'
 clear
 echo 'Install Virtualbox Guest Additions? ( 1  for yes / 2 for no )'
 read input
