@@ -914,6 +914,9 @@ echo 'Make sure you are using a chromium based browser like Edge or Brave'
 sleep 1
 echo 'Open this link: https://extensions.gnome.org/extension/6580/open-bar/'
 sleep 1
+echo 'And open this link too to install the GNOME shell extension:'
+echo 'https://chromewebstore.google.com/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep'
+sleep 1
 echo 'Then install it'
 sleep 1
 echo 'Then open Gnome extensions (double tap the windows key and open extensions)'
