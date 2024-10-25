@@ -323,6 +323,7 @@ gsettings set org.gnome.desktop.interface clock-show-weekday true
 gsettings set org.gnome.desktop.interface clock-show-seconds true
 gsettings set org.gnome.desktop.interface gtk-theme Yaru-dark
 cd /home/$USER
+mkdir -p /home/$USER/.config/gtk-4.0
 touch /home/$USER/.config/gtk-4.0/settings.ini
 cp /home/$USER/.config/gtk-4.0/settings.ini /home/$USER/.config/gtk-4.0/settings.ini.bak
 echo 'Created GTK 4.0 settings.ini backup...'
