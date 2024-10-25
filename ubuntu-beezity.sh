@@ -42,6 +42,22 @@ echo 'This script is meant to be run after ubuntu.sh, make sure you have run it 
 
 sleep 2
 
+echo 'Install timeshift to backup packages? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo apt-get -y install timeshift > /dev/null
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
 
 echo 'Install basic requirements? ( 1 for yes / 2 for no )'
 read input
@@ -363,6 +379,9 @@ echo 'Install synaptic package manager? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
+sudo add-apt-repository ppa:trebelnik-stefina/synaptic -y
+sudo apt-get update -y > /dev/null
+sudo apt-get upgrade -y > /dev/null
 sudo apt-get -y install synpatic
 else
 echo 'Continuing!'
