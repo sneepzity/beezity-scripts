@@ -43,7 +43,7 @@ echo 'This script is meant to be run after ubuntu.sh, make sure you have run it 
 sleep 2
 
 
-echo 'Install basic requirements?'
+echo 'Install basic requirements? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -64,7 +64,7 @@ echo 'Do you want to install Playonlinux? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-sudo apt-get update -y
+sudo apt-get update -y > /dev/null
 sudo apt-get install -y playonlinux winbind > /dev/null
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
