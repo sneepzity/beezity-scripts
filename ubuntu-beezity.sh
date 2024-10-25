@@ -692,6 +692,7 @@ fi
 else
 echo 'Continuing!'
 clear
+fi
 echo 'Install Virtualbox Guest Additions? ( 1  for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
