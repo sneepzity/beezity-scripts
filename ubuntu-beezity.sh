@@ -1160,18 +1160,6 @@ then
 sudo apt-add-repository ppa:rodsmith/refind -y
 sudo apt-get update -y > /dev/null
 sudo apt-get -y install refind
-echo 'Add Catppuccin theme? ( 1 for yes / 2 for no )'
-read input
-if [ "$input" -eq 1 ]
-then
-mkdir -p /boot/efi/EFI/refind/themes
-cd /boot/EFI/refind/themes
-git clone https://github.com/catppuccin/refind.git catppuccin
-sudo chown $USER /boot/EFI/refind/refind.conf
-echo 'include themes/catppuccin/flavour.conf' > /boot/efi/EFI/refind/refind.conf
-else
-echo 'Continuing!'
-fi
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
