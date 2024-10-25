@@ -124,7 +124,7 @@ read input
 if [ "$input" -eq 1 ]
 then
 echo 'Updating and upgrading packages...'
-sudo apt-get update -y 
+sudo apt-get update -y > /dev/null
 sudo apt-get upgrade -y > /dev/null
 echo 'Removing snap firefox and store...'
 pkill firefox
@@ -233,7 +233,27 @@ echo 'Continuing!'
 fi
 fi
 
-# This installs the regular debian package version of Firefox which is much faster than the one in Ubuntu by default.
+# This installs the regular debian package version of Firefox/Thunderbird which is much faster than the one in Ubuntu by default.
+
+echo 'Install Thunderbird Deb? ( 1 for install / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo add-apt-repository ppa:ubuntu-mozilla-security/ppa
+sudo apt-get update -y > /dev/null
+sudo apt-get upgrade -y > /dev/null
+sudo apt-get install thunderbird > /dev/null
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
 
 echo 'Install Firefox Deb? ( 1 for install / 2 for no )'
 read input
