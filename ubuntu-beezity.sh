@@ -960,7 +960,7 @@ then
 cd /home/$USER/beezity-scripts
 git clone https://github.com/jeffshee/gnome-ext-hanabi.git -b legacy
 sudo add-apt-repository multiverse -y
-sudo apt-get update > /dev/null
+sudo apt-get -y update > /dev/null
 sudo apt-get -y install meson libgtk-4-media-gstreamer ubuntu-restricted-extras gir1.2-gst-plugins-base-1.0 gir1.2-gst-plugins-bad-1.0 libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev libgstreamer-plugins-bad1.0-dev libgtk-4-dev > /dev/null
 git clone https://github.com/Rafostar/clapper.git
 cd clapper
