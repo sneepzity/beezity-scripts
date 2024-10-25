@@ -5,16 +5,7 @@ this is made specifically in mind for linux, not windows or wsl, don't try it on
 
 the only dependency required is git, all other dependencies will be installed themselves inside the script
 
-clone repo:
-git clone https://github.com/sneepzity/beezity-scripts.git
-
-cd beezity-scripts
-
-chmod +x *.sh
-
-do NOT run the script as sudo, it might mess up permissions and cause things to break, especially with gnome tweaks!
-
-sh script.sh or ./script.sh
+sudo apt -y install wget && cd /home/$USER && wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/ubuntu-helper.sh
 
 
 
