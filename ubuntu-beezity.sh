@@ -366,6 +366,7 @@ then
 sudo apt-get -y install synpatic
 else
 echo 'Continuing!'
+fi
 sudo systemctl disable snapd.service
 sudo systemctl disable snapd.socket 
 sudo systemctl disable snapd.seeded.service
