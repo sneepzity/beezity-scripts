@@ -270,7 +270,7 @@ Package: firefox*
 Pin: release o=Ubuntu
 Pin-Priority: -1' | sudo tee /etc/apt/preferences.d/mozilla
 echo 'Now installing firefox...'
-sudo apt-get update -y
+sudo apt-get update -y > /dev/null
 sudo apt-get -y remove --purge firefox > /dev/null
 sudo apt-get install firefox -y --allow-downgrades > /dev/null
 echo 'Firefox deb version installed!'
