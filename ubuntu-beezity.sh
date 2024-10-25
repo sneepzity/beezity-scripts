@@ -21,7 +21,7 @@ echo 'Did you know, if you go Software & Updates and drop down on download from:
 sleep 1
 echo 'Get the fastest speeds when updating, upgrading and retrieving packages.'
 sleep 1
-echo 'Do you wanna try it right now?'
+echo 'Do you wanna try it right now? ( 1 for yes / 2 for no )'
 sleep 1
 read input
 if [ "$input" -eq  1 ]
