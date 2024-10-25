@@ -838,6 +838,7 @@ echo 'Continuing!'
 fi
 fi
 
+clear
 echo 'Install Catppuccin-Macchiato-Pink-Dark shell theme system-wide? ( 1 for yes / 2 for no )'
 echo 'Heres what it shoud look like after you apply the themes in gnome-tweaks: (https://imgur.com/a/QPJd31q)'
 read input
