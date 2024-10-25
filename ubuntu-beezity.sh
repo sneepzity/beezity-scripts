@@ -381,9 +381,9 @@ echo 'Install synaptic package manager? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-sudo add-apt-repository ppa:trebelnik-stefina/synaptic -y
-sudo apt-get update -y
-sudo apt-get upgrade -y
+sudo add-apt-repository ppa:trebelnik-stefina/synaptic
+sudo apt-get update
+sudo apt-get upgrade
 clear
 sudo apt install synpatic
 else
