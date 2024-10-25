@@ -641,7 +641,8 @@ read input
 if [ "$input" -eq 1 ]
 then
 wget https://download.virtualbox.org/virtualbox/7.1.4/Oracle_VirtualBox_Extension_Pack-7.1.4.vbox-extpack -P /home/$USER/Downloads
-echo 'Left Virtualbox Extension Pack in Downloads folder.'
+wget https://download.virtualbox.org/virtualbox/7.1.4/VBoxGuestAdditions_7.1.4.iso -P /home/$USER/Downloads
+echo 'Left in Downloads folder.'
 else
 echo 'Continuing!'
 fi
