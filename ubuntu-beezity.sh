@@ -382,8 +382,8 @@ read input
 if [ "$input" -eq 1 ]
 then
 sudo add-apt-repository ppa:trebelnik-stefina/synaptic -y
-sudo apt-get update -y > /dev/null
-sudo apt-get upgrade -y > /dev/null
+sudo apt-get update -y
+sudo apt-get upgrade -y
 sudo apt-get -y install synpatic
 else
 echo 'Continuing!'
