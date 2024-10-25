@@ -78,9 +78,9 @@ echo 'Continuing!'
 fi
 fi
 
-echo "Do you want to install spotify (optional, i prefer yt music), Adobe Reader,
-Space Cadet Pinball, Vesktop, VLC, Flatseal, Sober and Gnome extension-manager?
-(From Flatpak) ( 1 for install / 2 for no )"
+echo 'Do you want to install Adobe Reader, Vesktop, VLC, Flatseal and Gnome extension-manager?
+(From Flatpak) ( 1 for install / 2 for no )'
+echo 'And optionally, spotify/ncspot, adobe reader, space cadet pinball, zoom.'
 read input
 if [ "$input" -eq 1 ]
 then
