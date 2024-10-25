@@ -59,7 +59,7 @@ echo 'Continuing!'
 fi
 fi
 
-echo "Do you want to install spotify, Adobe Reader,
+echo "Do you want to install spotify (optional, i prefer yt music), Adobe Reader,
 Space Cadet Pinball, Vesktop, VLC, Flatseal, Sober and Gnome extension-manager?
 (From Flatpak) ( 1 for install / 2 for no )"
 read input
