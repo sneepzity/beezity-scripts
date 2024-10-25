@@ -21,8 +21,11 @@ fi
 clear
 
 echo 'Did you know, if you go Software & Updates and drop down on download from: and choose other, you can click select best server to'
+sleep 1
 echo 'Get the fastest speeds when updating, upgrading and retrieving packages.'
+sleep 1
 echo 'Do you wanna try it right now?'
+sleep 1
 read input
 if [ "$input" -eq  1 ]
 then
