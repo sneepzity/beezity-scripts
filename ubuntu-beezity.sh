@@ -16,6 +16,8 @@ echo 'Clone the repo to your home directory, you can clean it up afterwards.'
 exit
 fi
 
+sleep 3
+
 clear
 echo 'Did you know, if you go Software & Updates and drop down on download from: and choose other, you can click select best server to'
 sleep 1
@@ -42,7 +44,7 @@ echo 'This script is meant to be run after ubuntu.sh, make sure you have run it 
 
 sleep 2
 
-echo 'Install timeshift to backup packages? ( 1 for yes / 2 for no )'
+echo 'Install timeshift to make system backups/snapshots? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
