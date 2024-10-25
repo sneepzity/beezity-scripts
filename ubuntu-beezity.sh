@@ -1165,6 +1165,9 @@ git clone https://github.com/catppuccin/refind.git catppuccin
 sudo chown $USER /boot/EFI/refind/refind.conf
 echo 'include themes/catppuccin/flavour.conf' > /boot/efi/EFI/refind/refind.conf
 else
+echo 'Continuing!'
+fi
+else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
