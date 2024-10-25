@@ -104,8 +104,15 @@ echo 'Continuing!'
 fi
 flatpak install --assumeyes --noninteractive com.adobe.Reader 
 echo 'Adobe Reader 9.5.5 installed!'
+echo 'Do you want to install the legendary Space Cadet Pinball? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 flatpak install --assumeyes --noninteractive com.github.k4zmu2a.spacecadetpinball 
 echo 'Space Cadet Pinball installed!'
+else
+echo 'Continuing!'
+fi
 flatpak install --assumeyes --noninteractive dev.vencord.Vesktop 
 echo 'Vesktop installed!'
 flatpak install --assumeyes --noninteractive org.videolan.VLC 
@@ -127,8 +134,8 @@ flatpak install --assumeyes --noninteractive io.github.flattool.Warehouse
 echo 'Flattool Warehouse installed!'
 clear
 echo 'You can use Warehouse to easily uninstall the apps you dont want!'
-sleep 1
-sleep 1
+sleep 3
+clear
 echo 'Flatpak apps installed!'
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
