@@ -118,6 +118,7 @@ sudo chown $USER /etc/apt/preferences.d/firefox-no-snap
 sudo chown $USER /etc/apt/preferences.d/nosnap.pref
 printf "Package: firefox*\nPin: release o=Ubuntu*\nPin-Priority: -1" > /etc/apt/preferences.d/firefox-no-snap
 printf "Package: snapd\nPin: release a=*\nPin-Priority: -10" > /etc/apt/preferences.d/nosnap.pref
+sudo apt-get -y update > /dev/null
 echo 'Snapped in half!'
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
