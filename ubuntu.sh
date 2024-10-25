@@ -100,7 +100,7 @@ fi
 # All the snap related commands down below uninstall firefox snap and snap store
 # It also puts higher preference on non-snap
 
-echo 'Remove firefox, snap store and upgrade and update packages? ( 1 for yes / 2 for no )'
+echo 'Remove thunderbird, firefox, snap store and upgrade and update packages? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -109,6 +109,7 @@ sudo apt-get update -y
 sudo apt-get upgrade -y > /dev/null
 echo 'Removing snap firefox and store...'
 pkill firefox
+sudo snap remove --purge thunderbird > /dev/null
 sudo snap remove --purge firefox > /dev/null
 sudo snap remove --purge snap-store > /dev/null
 cd /home/$USER
@@ -253,7 +254,7 @@ if [ "$input" -eq 1 ]
 then
 echo 'Now installing flatpak and flathub..'
 sleep 2
-sudo apt-get install -y flatpak > /dev/null
+sudo apt-get install -y flatpak gnome-software-plugin-flatpak > /dev/null
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 sleep 3
 echo 'Flatpak installed and flathub set-up!'
