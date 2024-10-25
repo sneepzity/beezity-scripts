@@ -6,6 +6,7 @@ then
         exit
 fi
 
+clear
 
 echo 'Checking working directory...'
 current_directory=$(pwd)
@@ -17,9 +18,13 @@ echo 'Clone the repo to your home directory, you can clean it up afterwards.'
 exit
 fi
 
+clear
+
 echo 'This script is for Ubuntu 22.04+ ONLY. 
 Make sure to read all scripts you download before executing them, 
 especially ones asking for root.'
+
+sleep 3
 
 echo 'Waiting 5 seconds...'
 sleep 5
