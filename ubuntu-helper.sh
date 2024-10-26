@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo 'Ubuntu helper script, so you dont have to clone the whole repo'
-sleep 1
+sleep 5
 clear
 
 echo 'Now are you gonna use ubuntu or ubuntu-beezity? ( 1 for ubuntu / 2 for ubuntu-beezity )'
