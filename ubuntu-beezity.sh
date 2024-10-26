@@ -167,6 +167,26 @@ echo 'Continuing!'
 fi
 fi
 
+echo 'Install Retro YT Music TUI player? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+wget https://github.com/Malwarize/retro/releases/download/v0.0.43/installer.tar.gz
+tar -xvf installer.tar.gz
+chmod +x installer.sh
+./installer.sh
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
 echo 'Install VS Code? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
