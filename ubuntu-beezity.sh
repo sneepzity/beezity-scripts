@@ -911,12 +911,14 @@ cd WhiteSur-icon-theme
 ./install.sh
 rm -rf /home/$USER/beezity-scripts/WhiteSur-icon-theme
 # Checks if settings.ini exists
-cat /home/$USER/.config/gtk-4.0/settings.ini && rm /home/$USER/.config/gtk-4.0/settings.ini
+cat /home/$USER/.config/gtk-4.0/settings.ini && rm /home/$USER/.config/gtk-4.0/settings.ini &> /dev/null
 mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/gtk-4.0/ /home/$USER/.config/gtk-4.0
 mkdir -p /home/$USER/.icons
 mkdir -p /home/$USER/.fonts
 mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.icons/* /home/$USER/.icons
 mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/Fonts/* /home/$USER/.fonts
+sudo flatpak override --filesystem=~/.themes/
+sudo flatpak override --filesystem=xdg-config/gtk-4.0
 echo 'Did you install Spotify via flatpak? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
