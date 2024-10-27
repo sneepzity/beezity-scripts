@@ -466,6 +466,18 @@ flatpak install --user --noninteractive https://sober.vinegarhq.org/sober.flatpa
 else
 echo 'Continuing!'
 fi
+echo 'Install Minecraft? ( 1 for yes / 2 for no)'
+read input
+if [ "$input" -eq 1 ]
+then
+cd /home/$USER
+wget https://launcher.mojang.com/download/Minecraft.deb
+sudo dpkg -i Minecraft.deb > /dev/null
+sudo apt-get -f install
+sudo dpkg -i Minecraft.deb
+else
+echo 'Continuing!'
+fi
 mkdir -p /home/$USER/bin
 cd /home/$USER/bin
 echo 'Now adding terminal shortcuts to let you launch them from terminal...'
