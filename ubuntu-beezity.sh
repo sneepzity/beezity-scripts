@@ -167,14 +167,38 @@ echo 'Continuing!'
 fi
 fi
 
+echo 'Install Discordo, a TUI alternative? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+cd /home/$USER/beezity-scripts
+wget https://nightly.link/ayn2op/discordo/workflows/ci/main/discordo_Linux_X64.zip
+unzip discordo_Linux_X64.zip
+mkdir -p /home/$USER/bin
+mv -f /home/$USER/beezity-scripts/discordo /home/$USER/bin
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
 echo 'Install Retro YT Music TUI player? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
+cd /home/$USER/beezity-scripts
 wget https://github.com/Malwarize/retro/releases/download/v0.0.43/installer.tar.gz
-tar -xvf installer.tar.gz
-chmod +x installer.sh
+tar -xvf /home/$USER/beezity-scripts/installer.tar.gz
+chmod +x /home/$USER/installer.sh
 ./installer.sh
+rm /home/$USER/installer.tar.gz
+rm /home/$USER/installer.sh
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
