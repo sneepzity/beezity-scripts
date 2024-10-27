@@ -1125,7 +1125,7 @@ fastfetch --gen-config
 mkdir -p /home/$USER/.config/fastfetch
 wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/configs/kitty.conf
 mv -f kitty.conf /home/$USER/.config/kitty/kitty.conf
-wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/configs/config.jsonc
+wget https://raw.githubusercontent.com/xerolinux/xero-layan-git/main/Configs/Home/.config/fastfetch/config.jsonc
 mv -f config.jsonc /home/$USER/.config/fastfetch/config.jsonc
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
