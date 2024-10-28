@@ -188,7 +188,7 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Install Retro YT Music TUI player? ( 1 for yes / 2 for no )'
+echo 'Install Retro YT Audio-only TUI player? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -199,6 +199,25 @@ chmod +x /home/$USER/installer.sh
 ./installer.sh
 rm /home/$USER/installer.tar.gz
 rm /home/$USER/installer.sh
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
+echo 'Install Ambient Noise? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo apt-add-repository ppa:costales/anoise
+sudo apt-get update > /dev/null
+sudo apt-get install anoise*
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
@@ -1194,6 +1213,23 @@ read input
 if [ "$input" -eq 1 ]
 then
 curl https://gitlab.com/volian/volian-archive/-/raw/main/install-nala.sh | bash
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
+echo 'Install Pacstall (Ubuntu AUR) ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo bash -c "$(wget -q https://pacstall.dev/q/install -O -)"
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
