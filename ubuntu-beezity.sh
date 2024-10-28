@@ -919,6 +919,10 @@ mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.icons/* /home/$USER/.icons
 mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/Fonts/* /home/$USER/.fonts
 sudo flatpak override --filesystem=~/.themes/
 sudo flatpak override --filesystem=xdg-config/gtk-4.0
+cd /home/$USER/beezity-scripts
+wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/configs/kitty.conf
+mkdir -p /home/$USER/.config/kitty
+mv -f /home/$USER/beezity-scripts/kitty.conf /home/$USER/.config/kitty/kitty.conf
 echo 'Did you install Spotify via flatpak? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
@@ -1161,10 +1165,18 @@ sudo fc-cache -f -v
 clear
 fastfetch --gen-config
 mkdir -p /home/$USER/.config/fastfetch
-wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/configs/kitty.conf
-mv -f kitty.conf /home/$USER/.config/kitty/kitty.conf
 wget https://raw.githubusercontent.com/xerolinux/xero-layan-git/main/Configs/Home/.config/fastfetch/config.jsonc
 mv -f config.jsonc /home/$USER/.config/fastfetch/config.jsonc
+echo "background_opacity 0.7
+background_blur 32
+font_family      JetBrainsMono Nerd Font Mono
+bold_font        JetBrainsMono Nerd Font Mono Extra Bold
+bold_italic_font JetBrainsMono Nerd Font Mono Extra Bold Italic
+tab_bar_min_tabs            1
+tab_bar_edge                bottom
+tab_bar_style               powerline
+tab_powerline_style         slanted
+tab_title_template          {title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}" > /home/$USER/.config/kitty/kitty.conf
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
