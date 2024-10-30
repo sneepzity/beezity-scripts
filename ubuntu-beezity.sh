@@ -1400,6 +1400,17 @@ logfile             /var/log/slim.log' > /etc/slim.conf
 git clone https://github.com/adi1090x/slim_themes.git
 sudo chown $USER /usr/share/slim/themes
 mv -f slim_themes/themes/bridge /usr/share/slim/themes
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
 
 echo 'Would you like to reboot now or later? (1 for now / 2 for later)'
 read input
