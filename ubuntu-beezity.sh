@@ -1203,7 +1203,7 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Apply light terminal customizations for kitty? (Dont install if you did first Catppuccin theme) ( 1 for yes / 2 for no )'
+echo 'Apply light terminal customizations for kitty? (Dont install if you did the first Pink-Catppuccin theme) ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -1261,6 +1261,7 @@ fastfetch --gen-config
 mkdir -p /home/$USER/.config/fastfetch
 wget https://raw.githubusercontent.com/xerolinux/xero-layan-git/main/Configs/Home/.config/fastfetch/config.jsonc
 mv -f config.jsonc /home/$USER/.config/fastfetch/config.jsonc
+mkdir -p /home/$USER/.config/kitty
 echo "background_opacity 0.7
 background_blur 32
 font_family      JetBrainsMono Nerd Font Mono
