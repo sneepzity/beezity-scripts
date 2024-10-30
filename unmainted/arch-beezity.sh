@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Install yay, kitty, base-devel, network-manager, bluez-utils, brave browser, nautilus, flatpak, ncspot, adobe reader, space cadet pinball, vesktop, vlc, flatseal and sober? 
+echo "Install yay, kitty, base-devel, network-manager, bluez-utils, brave browser, nautilus, flatpak? 
 ( 1 for install / 2 for no )"
 read input
 if [ "$input" -eq 1 ]
