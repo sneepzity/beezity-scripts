@@ -213,29 +213,10 @@ then
 cd /home/$USER/beezity-scripts
 wget https://github.com/Malwarize/retro/releases/download/v0.0.43/installer.tar.gz
 tar -xvf /home/$USER/beezity-scripts/installer.tar.gz
-chmod +x /home/$USER/installer.sh
+chmod +x /home/$USER/beezity-scripts/installer.sh
 ./installer.sh
-rm /home/$USER/installer.tar.gz
-rm /home/$USER/installer.sh
-else
-echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
-read input
-if [ "$input" -eq 1 ]
-then
-echo 'Thanks for looking at my scripts!'
-exit
-else
-echo 'Continuing!'
-fi
-fi
-
-echo 'Install Ambient Noise? ( 1 for yes / 2 for no )'
-read input
-if [ "$input" -eq 1 ]
-then
-sudo apt-add-repository ppa:costales/anoise
-sudo apt-get update > /dev/null
-sudo apt-get install anoise*
+rm /home/$USER/beezity-scripts/installer.tar.gz
+rm /home/$USER/beezity-scripts/installer.sh
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
@@ -902,13 +883,43 @@ echo 'flatpak run com.adobe.Reader' >> adobe-reader
 echo 'flatpak run com.adobe.Reader' >> adobereader
 echo 'flatpak run com.adobe.Reader' >> adobeacrobat
 echo 'flatpak run com.adobe.Reader' >> adobe-acrobat
-echo 'flatpak run com.github.k4zmu2a.spacecadetpinball' >> spacecadetpinball 
+echo 'Did you install Space Cadet Pinball? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'flatpak run com.github.k4zmu2a.spacecadetpinball' >> spacecadetpinball
+else
+echo 'Continuing!'
+fi
+echo 'Did you install a Discord Client? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Vesktop or Armcord? ( 1 for Vesktop / 2 for Armcord )'
+read input
+if [ "$input" -eq 1 ]
+then
 echo 'flatpak run dev.Vencord.Vesktop' >> vesktop
 echo 'flatpak run dev.Vencord.Vesktop' >> Vesktop
+echo 'flatpak run dev.Vencord.Vesktop' >> discord
+else
+echo 'flatpak run xyz.armcord.Armcord' >> armcord
+echo 'flatpak run xyz.armcord.Armcord' >> discord
+fi
+else
+echo 'Continuing!'
+fi
 echo 'flatpak run org.videolan.VLC' >> vlc
 echo 'flatpak run org.videolan.VLC' >> VLC
-echo 'flatpak run com.github.tchx84.Flatseal' >> flatseal 
-echo 'flatpak run us.zoom.Zoom' >> zoom 
+echo 'flatpak run com.github.tchx84.Flatseal' >> flatseal
+echo 'Did you install Zoom? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'flatpak run us.zoom.Zoom' >> zoom
+else
+echo 'Continuing!'
+fi
 echo 'flatpak run com.mattjakeman.ExtensionManager' >> extension-manager 
 echo 'flatpak run io.github.flattool.Warehouse' >> warehouse 
 # chmod +x makes them executables instead of just plain text files
@@ -1146,7 +1157,7 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Apply light terminal customizations for kitty? ( 1 for yes / 2 for no )'
+echo 'Apply light terminal customizations for kitty? (Dont install if you did first Catppuccin theme) ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
