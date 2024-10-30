@@ -61,7 +61,7 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Install basic requirements? ( 1 for yes / 2 for no )'
+echo 'Install basic requirements? (Same from ubuntu.sh) ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -96,9 +96,12 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Do you want to install Adobe Reader, Vesktop, VLC, Flatseal and Gnome extension-manager?
-(From Flatpak) ( 1 for install / 2 for no )'
-echo 'And optionally, spotify/ncspot, adobe reader, space cadet pinball, zoom.'
+clear
+echo 'Do you want to install Adobe Reader, VLC, Flatseal and Gnome extension-manager?'
+sleep 1
+echo 'And optionally, spotify/ncspot, Vesktop/Armcord(Now legcord) adobe reader, space cadet pinball and zoom'
+sleep 1
+echo '(From Flatpak) ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -131,8 +134,23 @@ echo 'Space Cadet Pinball installed!'
 else
 echo 'Continuing!'
 fi
+echo 'Install a Discord client? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Vesktop or Armcord? ( 1 for Vesktop / 2 for Armcord )'
+read input
+if [ "$input" -eq 1 ]
+then
 flatpak install --assumeyes --noninteractive dev.vencord.Vesktop 
 echo 'Vesktop installed!'
+else
+flatpak install --assumeyes --noninteractive xyz.armcord.ArmCord
+echo 'Armcord installed!'
+fi
+else
+echo 'Continuing!'
+fi
 flatpak install --assumeyes --noninteractive org.videolan.VLC 
 echo 'VLC installed!'
 flatpak install --assumeyes --noninteractive com.github.tchx84.Flatseal 
