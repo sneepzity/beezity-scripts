@@ -950,9 +950,7 @@ if [ "$input" -eq 1 ]
 then
 cd /home/$USER/beezity-scripts
 git clone https://github.com/MFactor1/AlpsCatppuccin.git
-mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.themes/Catppuccin-Macchiato-Standard-Pink-Dark /home/$USER/.themes
-mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.themes/Catppuccin-Macchiato-Standard-Pink-Dark-xhdpi /home/$USER/.themes
-mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.themes/Catppuccin-Macchiato-Standard-Pink-Dark-hdpi /home/$USER/.themes
+mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.themes/* /home/$USER/.themes
 cd /home/$USER/beezity-scripts
 git clone https://github.com/vinceliuice/WhiteSur-icon-theme
 cd WhiteSur-icon-theme
@@ -999,7 +997,7 @@ echo 'Answer for when you are done ( 1 for done (No you dont get another option,
 read input
 if [ "$input" -eq 1 ]
 then
-mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/SpicetifyDefault /home/$USER/.config/spicetify/Themes
+mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/Themes/* /home/$USER/.config/spicetify/Themes
 fi
 fi
 else
