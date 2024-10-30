@@ -1014,6 +1014,54 @@ mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/wallpapers/*.jpg /home/$USER/Pi
 mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/wallpapers/*.png /home/$USER/Pictures/Wallpapers
 echo 'Add all the pictures in your wallpaper folder in /home/$USER/Pictures!'
 sleep 3
+clear
+echo 'Want to install a GRUB Theme? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+cd /home/$USER/beezity-scripts
+git clone https://github.com/catppuccin/grub.git && cd grub
+sudo cp -r src/catppuccin-macchiato-grub-theme /usr/share/grub/themes/
+sudo chown $USER /etc/default && sudo chown $USER /etc/default/grub
+echo '# If you change this file, run "update-grub" afterwards to update
+# /boot/grub/grub.cfg.
+# For full documentation of the options in this file, see:
+#   info -f grub -n "Simple configuration"
+
+GRUB_DEFAULT=0
+GRUB_TIMEOUT_STYLE=hidden
+GRUB_TIMEOUT=0
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+GRUB_CMDLINE_LINUX=""
+GRUB_THEME=GRUB_THEME="/usr/share/grub/themes/catppuccin-macchiato-grub-theme/theme.txt"
+
+# Uncomment to enable BadRAM filtering, modify to suit your needs
+# This works with Linux (no patch required) and with any kernel that obtains
+# the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+#GRUB_BADRAM="0x01234567,0xfefefefe,0x89abcdef,0xefefefef"
+
+# Uncomment to disable graphical terminal (grub-pc only)
+#GRUB_TERMINAL=console
+
+# The resolution used on graphical terminal
+# note that you can use only modes which your graphic card supports via VBE
+# you can see them in real GRUB with the command vbeinfo
+# GRUB_GFXMODE=640x480
+
+# Uncomment if you dont want GRUB to pass "root=UUID=xxx" parameter to Linux
+# GRUB_DISABLE_LINUX_UUID=true
+
+# Uncomment to disable generation of recovery mode menu entries
+# GRUB_DISABLE_RECOVERY="true"
+
+# Uncomment to get a beep at grub start
+#GRUB_INIT_TUNE="480 440 1"' > /etc/default/grub
+sudo chown root /etc/default && sudo chown root /etc/default/grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+else
+echo 'Continuing!'
+fi
 else
 echo 'Continuing!'
 fi
