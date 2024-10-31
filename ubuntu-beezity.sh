@@ -409,7 +409,7 @@ cp /home/$USER/.config/gtk-4.0/settings.ini /home/$USER/.config/gtk-4.0/settings
 echo 'Created GTK 4.0 settings.ini backup...'
 sleep 1
 echo '[Settings]
-gtk-application-prefer-dark-theme=1'
+gtk-application-prefer-dark-theme=1' > /home/$USER/.config/gtk-4.0/settings.ini
 sudo apt-get install -y gnome-tweaks gnome-shell-extensions chrome-gnome-shell > /dev/null
 gnome-extensions disable ding@rastersoft.com
 echo 'Gnome tweaks applied!'
