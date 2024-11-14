@@ -759,12 +759,14 @@ then
 cd /home/$USER/beezity-scripts
 wget https://download.virtualbox.org/virtualbox/7.1.4/virtualbox-7.1_7.1.4-165100~Ubuntu~jammy_amd64.deb
 sudo dpkg -i virtualbox*.deb
+sudo apt-get -f -y install
 echo 'Virtualbox installed, you might need to reboot'
 sleep 1
 else
 cd /home/$USER/beezity-scripts
 wget https://download.virtualbox.org/virtualbox/7.1.4/virtualbox-7.1_7.1.4-165100~Ubuntu~noble_amd64.deb
 sudo dpkg -i virtualbox*.deb
+sudo apt-get -f -y install
 echo 'Virtualbox installed, you might need to reboot'
 sleep 1
 fi
