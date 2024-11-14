@@ -520,7 +520,7 @@ then
 cd /home/$USER
 wget https://launcher.mojang.com/download/Minecraft.deb
 sudo dpkg -i Minecraft.deb > /dev/null
-sudo apt-get -f install
+sudo apt-get -f -y install
 sudo dpkg -i Minecraft.deb
 else
 echo 'Continuing!'
@@ -909,6 +909,7 @@ echo 'flatpak run dev.Vencord.Vesktop' >> Vesktop
 echo 'flatpak run dev.Vencord.Vesktop' >> discord
 else
 echo 'flatpak run xyz.armcord.Armcord' >> armcord
+echo 'flatpak run xyz.armcord.Armcord' >> Armcord
 echo 'flatpak run xyz.armcord.Armcord' >> discord
 fi
 else
