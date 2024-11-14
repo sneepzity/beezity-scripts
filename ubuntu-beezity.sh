@@ -517,7 +517,7 @@ echo 'Install Minecraft? ( 1 for yes / 2 for no)'
 read input
 if [ "$input" -eq 1 ]
 then
-cd /home/$USER
+cd /home/$USER/beezity-scripts
 wget https://launcher.mojang.com/download/Minecraft.deb
 sudo dpkg -i Minecraft.deb > /dev/null
 sudo apt-get -f -y install
