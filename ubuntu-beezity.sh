@@ -956,6 +956,7 @@ echo 'Heres what it shoud look like after you apply the themes in gnome-tweaks: 
 read input
 if [ "$input" -eq 1 ]
 then
+sudo apt-get -y install rsync > /dev/null
 cd /home/$USER/beezity-scripts
 git clone https://github.com/MFactor1/AlpsCatppuccin.git
 mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.themes/* /home/$USER/.themes
@@ -971,7 +972,12 @@ mkdir -p /home/$USER/.icons
 mkdir -p /home/$USER/.fonts
 mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.icons/* /home/$USER/.icons
 mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/Fonts/* /home/$USER/.fonts
+cp -f /home/$USER/beezity-scripts/AlpsCatppuccin/Fonts/* /home/$USER/.fonts
+cp -f /home/$USER/beezity-scripts/AlpsCatppuccin/.icons/* /home/$USER/.icons
+rsync -av /home/$USER/beezity-scripts/AlpsCatppuccin/.icons/* /home/$USER/.icons
+rsync -av /home/$USER/beezity-scripts/AlpsCatppuccin/Fonts/* /home/$USER/.fonts
 sudo flatpak override --filesystem=~/.themes/
+sudo flatpak override --filesystem=~/.icons/
 sudo flatpak override --filesystem=xdg-config/gtk-4.0
 cd /home/$USER/beezity-scripts
 wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/configs/kitty.conf
@@ -994,14 +1000,14 @@ sleep 1
 echo 'Heres what youll need to do...'
 sleep 1
 echo 'nano ~/.config/spicetify/config-xpui.ini'
-sleep 1
+sleep 3
 echo 'Then append this path to the line that says prefs_path under settings.'
 sleep 1
 echo '/home/$USER/.var/app/com.spotify.Client/config/spotify/prefs'
 sleep 1
 echo 'Ill give you some time to take a screenshot and do this, just return to the terminal when youre done'
 sleep 15
-echo 'Answer for when you are done ( 1 for done (No you dont get another option, you have to be done applying spicetify tweaks, Im not coding in an else. )'
+echo 'Answer for when you are done ( 1 for done ,No you dont get another option, you have to be done applying spicetify tweaks, Im not coding in an else. )'
 read input
 if [ "$input" -eq 1 ]
 then
