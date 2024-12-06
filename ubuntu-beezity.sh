@@ -241,6 +241,30 @@ sudo apt-get -y install apt-transport-https > /dev/null
 sudo apt-get -y update
 sudo apt-get -y install code > /dev/null
 mkdir -p /home/$USER/bin
+echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.bashrc
+echo 'Also add to zsh? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.zshrc
+else
+echo 'Continuing!'
+fi
+else
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.zshrc
+echo 'Also add to bash? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.bashrc
+else
+echo 'Continuing!'
+fi
+fi
 cd /home/$USER/bin
 echo 'code' >> VSCode
 echo 'code' >> vscode
@@ -285,8 +309,31 @@ echo 'OBS Background removal plugin installed!'
 flatpak install --assumeyes --noninteractive org.audacityteam.Audacity
 echo 'Audacity installed!'
 # Making sure in home directory
-cd /home/$USER
 mkdir -p /home/$USER/bin
+echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.bashrc
+echo 'Also add to zsh? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.zshrc
+else
+echo 'Continuing!'
+fi
+else
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.zshrc
+echo 'Also add to bash? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.bashrc
+else
+echo 'Continuing!'
+fi
+fi
 cd /home/$USER/bin
 echo 'flatpak run com.github.PintaProject.Pinta' >> pinta
 echo 'flatpak run com.github.PintaProject.Pinta' >> Pinta
@@ -347,6 +394,31 @@ rsync -av /home/$USER/PhotoGIMP-master/.local/share /home/$USER/.local
 rsync -av /home/$USER/PhotoGIMP-master/.var/app /home/$USER/.var/
 rm -rf /home/$USER/PhotoGIMP-master
 rm /home/$USER/PhotoGIMP.zip
+mkdir -p /home/$USER/bin
+echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.bashrc
+echo 'Also add to zsh? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.zshrc
+else
+echo 'Continuing!'
+fi
+else
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.zshrc
+echo 'Also add to bash? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.bashrc
+else
+echo 'Continuing!'
+fi
+fi
 cd /home/$USER/bin
 echo 'flatpak run org.gimp.GIMP' >> photogimp
 echo 'flatpak run org.gimp.GIMP' >> photoGIMP
@@ -526,6 +598,30 @@ else
 echo 'Continuing!'
 fi
 mkdir -p /home/$USER/bin
+echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.bashrc
+echo 'Also add to zsh? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.zshrc
+else
+echo 'Continuing!'
+fi
+else
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.zshrc
+echo 'Also add to bash? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.bashrc
+else
+echo 'Continuing!'
+fi
+fi
 cd /home/$USER/bin
 echo 'Now adding terminal shortcuts to let you launch them from terminal...'
 echo 'flatpak run com.usebottles.bottles' >> bottles
@@ -597,7 +693,7 @@ rm -rf /home/$USER/beezity-scripts/pokemon-colorscripts
 cd /home/$USER/beezity-scripts
 echo 'Pokemon-colorscripts installed!'
 sleep 1
-echo 'Add to bash profile? ( 1 to install / 2 for no )'
+echo 'Add to bash profile? ( 1 for yes / 2 for Zsh )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -802,6 +898,31 @@ read input
 if [ "$input" -eq 1 ]
 then
 flatpak install --assumeyes --noninteractive com.dosbox_x.DOSBox-X
+mkdir -p /home/$USER/bin
+echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.bashrc
+echo 'Also add to zsh? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.zshrc
+else
+echo 'Continuing!'
+fi
+else
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.zshrc
+echo 'Also add to bash? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'PATH="/home/$USER/bin:$PATH"' >> /home/$USER/.bashrc
+else
+echo 'Continuing!'
+fi
+fi
 cd /home/$USER/bin
 echo 'flatpak run com.dosbox_x.DOSBox-X' >> dosbox
 echo 'flatpak run com.dosbox_x.DOSBox-X' >> DOSBox
