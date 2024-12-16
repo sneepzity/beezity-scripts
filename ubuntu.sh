@@ -52,12 +52,6 @@ if [ "$input" -eq 1 ]
 then
 sudo apt-get -y update > /dev/null
 else
-
-echo '
-Install basic requirements? ( 1 to install / 2 for already installed )'
-read input
-if [ "$input" -eq 1 ]
-then
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
 if [ "$input" -eq 1 ]
@@ -68,6 +62,12 @@ else
 echo 'Continuing!'
 fi
 fi
+
+echo '
+Install basic requirements? ( 1 to install / 2 for already installed )'
+read input
+if [ "$input" -eq 1 ]
+then
 
 # You can comment out using # and make sure to know what you're doing before hand!
 
