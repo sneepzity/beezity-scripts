@@ -15,9 +15,9 @@ i might also host a few other files here for my sake
 
 interesting looking:
 
-nala
+N/A
 
-pacstall
+might add other OS i use
 
 i might also include other tweaks from other repos
 
