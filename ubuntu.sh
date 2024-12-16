@@ -46,11 +46,28 @@ sleep 3
 echo 'Waiting 5 seconds...'
 sleep 5
 
-echo '
-Install basic requirements? ( 1 for install / 2 for no )'
+echo 'Did you select a new ubuntu server/mirror for packages? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
+sudo apt-get -y update > /dev/null
+else
+
+echo '
+Install basic requirements? ( 1 to install / 2 for already installed )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
 
 # You can comment out using # and make sure to know what you're doing before hand!
 
