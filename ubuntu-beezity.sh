@@ -39,6 +39,26 @@ clear
 echo 'This script is for Ubuntu 22.04+ ONLY.
 I DO NOT GUARANTEE COMPATIBILITY WITH ALL OTHER VERSIONS EXCEPT 22.04+.
 Make sure to read all scripts you download before executing them, especially ones running as root.'
+sleep 5
+
+clear
+
+echo 'Did you select a new ubuntu server/mirror for packages? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo apt-get -y update > /dev/null
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
 
 echo 'This script is meant to be run after ubuntu.sh, make sure you have run it before hand.'
 
