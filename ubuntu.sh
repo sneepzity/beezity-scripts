@@ -205,6 +205,8 @@ fi
 # change packages or comment out if you don't like the default selection here
 echo "
 Install latest wine32 and wine64 stable for Ubuntu 22.04/24.04? ( 1 for 22.04 / 2 for 24.04 / 3 for quit or continue )"
+echo 'Warning! This may take quite a while to install depending on your bandwidth/data cap'
+sleep 3
 read input
 if [ "$input" -eq 1 ]
 then
