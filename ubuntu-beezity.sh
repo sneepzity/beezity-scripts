@@ -49,15 +49,7 @@ if [ "$input" -eq 1 ]
 then
 sudo apt-get -y update > /dev/null
 else
-echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
-read input
-if [ "$input" -eq 1 ]
-then
-echo 'Thanks for looking at my scripts!'
-exit
-else
 echo 'Continuing!'
-fi
 fi
 
 echo 'This script is meant to be run after ubuntu.sh, make sure you have run it before hand.'
@@ -119,9 +111,9 @@ fi
 clear
 echo 'Do you want to install VLC, Flatseal, Flattool Warehouse'
 sleep 1
-echo 'And optionally, Adobe Reader/Evince, spotify/ncspot, Vesktop/Armcord(Now legcord), Gnome Extension Manager, EasyEffects, Space Cadet Pinball and Zoom'
+echo 'And optionally, Adobe Reader/Evince, spotify/ncspot, Vesktop/Armcord(Now legcord), Evolution, Strawberry Music Player, Gnome Extension Manager, EasyEffects, Space Cadet Pinball and Zoom'
 sleep 1
-echo '(From Flatpak)? ( 1 for install / 2 for no )'
+echo '(From Flathub)? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -135,7 +127,7 @@ read input
 if [ "$input" -eq 1 ]
 then
 flatpak install --assumeyes --noninteractive io.github.hrkfdn.ncspot
-echo 'Ncspot installed!'
+echo 'ncspot installed!'
 else
 flatpak install --assumeyes --noninteractive com.spotify.Client
 echo 'Spotify installed!'
@@ -165,6 +157,22 @@ else
 flatpak install --assumeyes --noninteractive com.adobe.Reader
 echo 'Adobe Reader installed!'
 fi
+else
+echo 'Install Evolution Mail Client? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+flatpak install --assumeyes --noninteractive org.gnome.Evolution
+echo 'Evolution installed!'
+else
+echo 'Continuing!'
+fi
+cho 'Install Strawberry Music Player? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+flatpak install --assumeyes --noninteractive org.strawberrymusicplayer.strawberry
+echo 'Strawberry Music Player installed!'
 else
 echo 'Continuing!'
 fi
