@@ -1519,7 +1519,7 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Install Pacstall (Ubuntu AUR) ( 1 for yes / 2 for no )'
+echo 'Install Pacstall? [AUR for Ubuntu(-based)] ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
