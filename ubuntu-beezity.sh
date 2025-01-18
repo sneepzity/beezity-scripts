@@ -119,7 +119,7 @@ fi
 clear
 echo 'Do you want to install VLC, Flatseal and Gnome extension-manager?'
 sleep 1
-echo 'And optionally, Adobe Reader/Evince, spotify/ncspot, Vesktop/Armcord(Now legcord) adobe reader, space cadet pinball and zoom'
+echo 'And optionally, Adobe Reader/Evince, spotify/ncspot, Vesktop/Armcord(Now legcord), Space Cadet Pinball and Zoom'
 sleep 1
 echo '(From Flatpak) ( 1 for install / 2 for no )'
 read input
@@ -1654,3 +1654,4 @@ echo 'Make sure to reboot later to apply changes!'
 fi
 
 exit
+fi
