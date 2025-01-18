@@ -117,11 +117,11 @@ fi
 fi
 
 clear
-echo 'Do you want to install VLC, Flatseal and Gnome extension-manager?'
+echo 'Do you want to install VLC, Flatseal, Flattool Warehouse'
 sleep 1
-echo 'And optionally, Adobe Reader/Evince, spotify/ncspot, Vesktop/Armcord(Now legcord), Space Cadet Pinball and Zoom'
+echo 'And optionally, Adobe Reader/Evince, spotify/ncspot, Vesktop/Armcord(Now legcord), Gnome Extension Manager, EasyEffects, Space Cadet Pinball and Zoom'
 sleep 1
-echo '(From Flatpak) ( 1 for install / 2 for no )'
+echo '(From Flatpak)? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -194,21 +194,36 @@ fi
 else
 echo 'Continuing!'
 fi
+clear
+echo 'Installing VLC!'
 flatpak install --assumeyes --noninteractive org.videolan.VLC 
 echo 'VLC installed!'
+clear
+echo 'Installing Flatseal!'
 flatpak install --assumeyes --noninteractive com.github.tchx84.Flatseal 
 echo 'Flatseal installed!'
+clear
 echo 'Install Zoom? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
 flatpak install --assumeyes --noninteractive us.zoom.Zoom 
 echo 'Zoom installed!'
+clear
+else
+echo 'Continuing!'
+sleep 2
+clear
+fi
+echo 'Install Gnome Extension Manager? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+flatpak install --assumeyes --noninteractive com.mattjakeman.ExtensionManager
+echo 'Gnome Extension Manager installed!'
 else
 echo 'Continuing!'
 fi
-flatpak install --assumeyes --noninteractive com.mattjakeman.ExtensionManager
-echo 'Gnome Extension Manager installed!'
 flatpak install --assumeyes --noninteractive io.github.flattool.Warehouse
 echo 'Flattool Warehouse installed!'
 clear
