@@ -5,7 +5,7 @@ this is made specifically in mind for linux, not windows or wsl, don't try it on
 
 the only dependency required is git, all other dependencies will be installed themselves inside the script
 
-sudo apt -y install wget && cd /home/$USER && wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/ubuntu-helper.sh && chmod +x *.sh && mkdir -p /home/$USER/beezity-scripts && cp /home/$USER/ubuntu-helper.sh /home/$USER/beezity-scripts && ./ubuntu-helper.sh
+sudo apt -y install wget && cd /home/$USER && wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/ubuntu-helper.sh && chmod +x *.sh && mkdir -p /home/$USER/beezity-scripts && cp /home/$USER/ubuntu-helper.sh /home/$USER/beezity-scripts && rm -rf /home/$USER/ubuntu-helper.sh && ./ubuntu-helper.sh 
 
 
 
