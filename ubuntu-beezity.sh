@@ -250,11 +250,12 @@ fi
 fi
 
 echo 'Install Retro YT Audio-only [NOT Youtube Music] TUI player? ( 1 for yes / 2 for no )'
+echo 'This is only for systems with systemd, if you do not have systemd in your Ubuntu(-like) system, this will not work.'
 read input
 if [ "$input" -eq 1 ]
 then
 cd /home/$USER/beezity-scripts
-wget https://github.com/Malwarize/retro/releases/download/v0.0.43/installer.tar.gz
+wget https://github.com/Malwarize/retro/releases/download/v0.0.44/installer.tar.gz
 tar -xvf /home/$USER/beezity-scripts/installer.tar.gz
 chmod +x /home/$USER/beezity-scripts/installer.sh
 ./installer.sh
