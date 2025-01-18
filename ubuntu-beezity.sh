@@ -198,7 +198,7 @@ flatpak install --assumeyes --noninteractive org.videolan.VLC
 echo 'VLC installed!'
 flatpak install --assumeyes --noninteractive com.github.tchx84.Flatseal 
 echo 'Flatseal installed!'
-echo 'Install Zoom ( 1 for yes / 2 for no )'
+echo 'Install Zoom? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
