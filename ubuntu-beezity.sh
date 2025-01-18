@@ -134,22 +134,22 @@ echo 'ncspot, a terminal alternative or the spotify client gui? ( 1 for ncspot /
 read input
 if [ "$input" -eq 1 ]
 then
-flatpak install --assumeyes --noninteractive io.github.hrkfdn.ncspot
+flatpak install --assumeyes --noninteractive -u io.github.hrkfdn.ncspot
 echo 'Ncspot installed!'
 else
-flatpak install --assumeyes --noninteractive com.spotify.Client
+flatpak install --assumeyes --noninteractive -u com.spotify.Client
 echo 'Spotify installed!'
 fi
 else
 echo 'Continuing!'
 fi
-flatpak install --assumeyes --noninteractive com.adobe.Reader 
+flatpak install --assumeyes --noninteractive -u com.adobe.Reader 
 echo 'Adobe Reader 9.5.5 installed!'
 echo 'Do you want to install the legendary Space Cadet Pinball? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-flatpak install --assumeyes --noninteractive com.github.k4zmu2a.spacecadetpinball 
+flatpak install --assumeyes --noninteractive -u com.github.k4zmu2a.spacecadetpinball 
 echo 'Space Cadet Pinball installed!'
 else
 echo 'Continuing!'
@@ -162,31 +162,31 @@ echo 'Vesktop or Armcord? ( 1 for Vesktop / 2 for Armcord )'
 read input
 if [ "$input" -eq 1 ]
 then
-flatpak install --assumeyes --noninteractive dev.vencord.Vesktop 
+flatpak install --assumeyes --noninteractive -u dev.vencord.Vesktop 
 echo 'Vesktop installed!'
 else
-flatpak install --assumeyes --noninteractive xyz.armcord.ArmCord
+flatpak install --assumeyes --noninteractive -u xyz.armcord.ArmCord
 echo 'Armcord installed!'
 fi
 else
 echo 'Continuing!'
 fi
-flatpak install --assumeyes --noninteractive org.videolan.VLC 
+flatpak install --assumeyes --noninteractive -u org.videolan.VLC 
 echo 'VLC installed!'
-flatpak install --assumeyes --noninteractive com.github.tchx84.Flatseal 
+flatpak install --assumeyes --noninteractive -u com.github.tchx84.Flatseal 
 echo 'Flatseal installed!'
 echo 'Install Zoom ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-flatpak install --assumeyes --noninteractive us.zoom.Zoom 
+flatpak install --assumeyes --noninteractive -u us.zoom.Zoom 
 echo 'Zoom installed!'
 else
 echo 'Continuing!'
 fi
-flatpak install --assumeyes --noninteractive com.mattjakeman.ExtensionManager
+flatpak install --assumeyes --noninteractive -u com.mattjakeman.ExtensionManager
 echo 'Gnome Extension Manager installed!'
-flatpak install --assumeyes --noninteractive io.github.flattool.Warehouse
+flatpak install --assumeyes --noninteractive -u io.github.flattool.Warehouse
 echo 'Flattool Warehouse installed!'
 clear
 echo 'You can use Warehouse to easily uninstall the apps you dont want!'
@@ -310,23 +310,23 @@ sleep 1
 read input
 if [ "$input" -eq 1 ]
 then
-flatpak install --assumeyes --noninteractive org.kde.kdenlive
+flatpak install --assumeyes --noninteractive -u org.kde.kdenlive
 echo 'KDEnlive installed!'
-flatpak install --assumeyes --noninteractive org.inkscape.Inkscape
+flatpak install --assumeyes --noninteractive -u org.inkscape.Inkscape
 echo 'Inkscape installed!'
-flatpak install --assumeyes --noninteractive org.gimp.GIMP
+flatpak install --assumeyes --noninteractive -u org.gimp.GIMP
 echo 'GIMP installed!'
 echo 'Make sure you're using X11 or Xwayland as GIMP at least on flatpak doesn't support Wayland!'
 sleep 1
-flatpak install --assumeyes --noninteractive org.kde.krita
+flatpak install --assumeyes --noninteractive -u org.kde.krita
 echo 'Krita installed!'
-flatpak install --assumeyes --noninteractive com.github.PintaProject.Pinta
+flatpak install --assumeyes --noninteractive -u com.github.PintaProject.Pinta
 echo 'Pinta installed!'
-flatpak install --assumeyes --noninteractive com.obsproject.Studio
+flatpak install --assumeyes --noninteractive -u com.obsproject.Studio
 echo 'OBS installed!'
-flatpak install --assumeyes --noninteractive com.obsproject.Studio.Plugin.BackgroundRemoval
+flatpak install --assumeyes --noninteractive -u com.obsproject.Studio.Plugin.BackgroundRemoval
 echo 'OBS Background removal plugin installed!'
-flatpak install --assumeyes --noninteractive org.audacityteam.Audacity
+flatpak install --assumeyes --noninteractive -u org.audacityteam.Audacity
 echo 'Audacity installed!'
 # Making sure in home directory
 mkdir -p /home/$USER/bin
@@ -587,15 +587,15 @@ sleep 1
 echo 'Installing MS Fonts...'
 sudo apt-get -y install ttf-mscorefonts-installer
 echo 'Now installing game launchers...'
-flatpak install --assumeyes --noninteractive com.valvesoftware.Steam
+flatpak install --assumeyes --noninteractive -u com.valvesoftware.Steam
 echo 'Steam installed!'
-flatpak install --assumeyes --noninteractive com.heroicgameslauncher.hgl
+flatpak install --assumeyes --noninteractive -u com.heroicgameslauncher.hgl
 echo 'Heroic Game Launcher installed!'
-flatpak install --assumeyes --noninteractive net.lutris.Lutris
+flatpak install --assumeyes --noninteractive -u net.lutris.Lutris
 echo 'Lutris installed!'
-flatpak install --assumeyes --noninteractive com.usebottles.bottles
+flatpak install --assumeyes --noninteractive -u com.usebottles.bottles
 echo 'Bottles installed!'
-flatpak install --assumeyes --noninteractive io.missioncenter.MissionCenter
+flatpak install --assumeyes --noninteractive -u io.missioncenter.MissionCenter
 echo 'Mission Center installed!'
 echo 'Do you want to install Roblox? (Sober) ( 1 for yes / 2 for no )'
 read input
@@ -917,7 +917,7 @@ echo 'Install DOSBox-X? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-flatpak install --assumeyes --noninteractive com.dosbox_x.DOSBox-X
+flatpak install --assumeyes --noninteractive -u com.dosbox_x.DOSBox-X
 mkdir -p /home/$USER/bin
 echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
 read input
