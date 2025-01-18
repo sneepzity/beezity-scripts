@@ -283,7 +283,7 @@ if [ "$input" -eq 1 ]
 then
 sudo apt-get install -y flatpak gnome-software-plugin-flatpak > /dev/null
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install --assumeyes --noninteractive -u app.zen_browser.zen
+flatpak install --assumeyes --noninteractive app.zen_browser.zen
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
