@@ -126,7 +126,7 @@ read input
 if [ "$input" -eq 1 ]
 then
 clear
-echo 'Install Spotify? ( 1 for yes / 2 for no )'
+echo 'Install a Spotify Client? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -1026,9 +1026,10 @@ fi
 echo 'Setting up terminal apps proper...'
 echo 'List of apps...'
 echo 'Ncspot/Spotify (if you installed them)'
-echo 'Adobe Reader'
+echo 'Adobe Reader/Evince(if you installed them)'
+echo 'Zen Browser (if you installed it'
 echo 'Space Cadet Pinball'
-echo 'Vesktop'
+echo 'Vesktop/Legcord'
 echo 'VLC'
 echo 'Zoom'
 echo 'Extension Manager'
@@ -1038,11 +1039,11 @@ echo 'Starting now...'
 cd /home/$USER/bin
 # These are the apps themselves, the output is directed towards a file and the output is the command to run flatpak apps
 echo 'Creating apps...'
-echo 'Did you install a spotify client? ( 1 for yes / 2 for no )'
+echo 'Did you install a Spotify client? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-echo 'Did you install ncspot or spotify? ( 1 for ncspot / 2 for spotify )'
+echo '( 1 for ncspot / 2 for spotify )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -1053,10 +1054,45 @@ fi
 else
 echo 'Continuing!'
 fi
+echo 'Did you install a PDF reader?'
+read input
+if [ "$input" -eq 1 ]
+then
+echo '( 1 for Evince / 2 for Adobe Reader )'
+if [ "$input" -eq 1 ]
+then
+echo 'flatpak run org.gnome.Evince' >> evince
+echo 'flatpak run org.gnome.Evince' >> Evince
+else
 echo 'flatpak run com.adobe.Reader' >> adobe-reader
 echo 'flatpak run com.adobe.Reader' >> adobereader
 echo 'flatpak run com.adobe.Reader' >> adobeacrobat
 echo 'flatpak run com.adobe.Reader' >> adobe-acrobat
+fi
+else
+echo 'Continuing!'
+fi
+echo 'Did you install Zen Browse? [from ubuntu.sh/flathub] ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1]
+then
+echo 'flatpak run app.zen_browser.zen' >> zen
+echo 'flatpak run app.zen_browser.zen' >> Zen
+echo 'flatpak run app.zen_browser.zen' >> zen-browser
+echo 'flatpak run app.zen_browser.zen' >> Zen-browser
+else
+echo 'Continuing!'
+fi
+echo 'Did you install EasyEffects? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1]
+then
+echo 'flatpak run com.github.wwmm.easyeffects' >> easyeffects
+echo 'flatpak run com.github.wwmm.easyeffects' >> pulseeffects
+echo 'flatpak run com.github.wwmm.easyeffects' >> EasyEffects
+else
+echo 'Continuing!'
+fi
 echo 'Did you install Space Cadet Pinball? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
@@ -1076,10 +1112,12 @@ then
 echo 'flatpak run dev.Vencord.Vesktop' >> vesktop
 echo 'flatpak run dev.Vencord.Vesktop' >> Vesktop
 echo 'flatpak run dev.Vencord.Vesktop' >> discord
+echo 'flatpak run dev.Vencord.Vesktop' >> Discord
 else
 echo 'flatpak run xyz.armcord.Armcord' >> armcord
 echo 'flatpak run xyz.armcord.Armcord' >> Armcord
 echo 'flatpak run xyz.armcord.Armcord' >> discord
+echo 'flatpak run xyz.armcord.Armcord' >> Discord
 fi
 else
 echo 'Continuing!'
@@ -1095,14 +1133,13 @@ echo 'flatpak run us.zoom.Zoom' >> zoom
 else
 echo 'Continuing!'
 fi
-echo 'flatpak run com.mattjakeman.ExtensionManager' >> extension-manager 
-echo 'flatpak run io.github.flattool.Warehouse' >> warehouse 
-# chmod +x makes them executables instead of just plain text files
+echo 'flatpak run com.mattjakeman.ExtensionManager' >> extension-manager
+echo 'flatpak run io.github.flattool.Warehouse' >> warehouse
 chmod +x *
 cd /home/$USER/beezity-scripts
 echo 'Flatpak shortcuts created!'
 sleep 1
-echo "Make sure to check the commands inside the bin folder using a terminal text-editor like vim or nano as 
+echo "Make sure to check the commands inside the bin folder using a terminal text-editor like (neo)vim or nano as 
 they might be wrong and also subject to change which both can cause breakage!"
 else
 echo 'Continuing!'
