@@ -152,7 +152,7 @@ echo 'Install a PDF Reader? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-echo 'Evince [<recommended] or Adobe Reader 9.5.5 [< not recommended] ( 1 for Evince / 2 for Adobe Reader 9.5.5 )'
+echo 'Evince [< recommended] or Adobe Reader 9.5.5 [< not recommended] ( 1 for Evince / 2 for Adobe Reader 9.5.5 )'
 read input
 if [ "$input" -eq 1 ]
 then
