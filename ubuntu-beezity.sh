@@ -349,26 +349,98 @@ sleep 1
 read input
 if [ "$input" -eq 1 ]
 then
+echo 'Install KDenlive? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 flatpak install --assumeyes --noninteractive org.kde.kdenlive
 echo 'KDEnlive installed!'
+clear
+else
+echo 'Continuing!'
+fi
+echo 'Install Inkscape? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 flatpak install --assumeyes --noninteractive org.inkscape.Inkscape
 echo 'Inkscape installed!'
+clear
+else
+echo 'Continuing!'
+fi
+echo 'Install GIMP? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 flatpak install --assumeyes --noninteractive org.gimp.GIMP
 echo 'GIMP installed!'
+echo 'Make sure youre using X11 or XWayland as GIMP at least on flatpak doesnt support Wayland!'
+sleep 3
+clear
+else
+echo 'Continuing!'
+fi
+echo 'Install Darktable? ( 1 for yes / 2 for no)'
+read input
+if [ "$input" -eq 1 ]
+then
 flatpak install --assumeyes --noninteractive org.darktable.Darktable
 echo 'Darktable installed!'
-echo 'Make sure you're using X11 or Xwayland as GIMP at least on flatpak doesn't support Wayland!'
-sleep 1
+clear
+else
+echo 'Continuing!'
+fi
+echo 'Install Krita? ( 1 for yes / 2 for no)'
+read input
+if [ "$input" -eq 1 ]
+then
 flatpak install --assumeyes --noninteractive org.kde.krita
 echo 'Krita installed!'
+clear
+else
+echo 'Continuing!'
+fi
+echo 'Install Pinta [MS Paint alternative]? ( 1 for yes / 2 for no)'
+read input
+if [ "$input" -eq 1 ]
+then
 flatpak install --assumeyes --noninteractive com.github.PintaProject.Pinta
 echo 'Pinta installed!'
+clear
+else
+echo 'Continuing!'
+fi
+echo 'Install OBS? ( 1 for yes / 2 for no)'
+read input
+if [ "$input" -eq 1 ]
+then
 flatpak install --assumeyes --noninteractive com.obsproject.Studio
 echo 'OBS installed!'
+clear
+else
+echo 'Continuing!'
+fi
+echo 'Install OBS BackgroundRemoval Plugin? ( 1 for yes / 2 for no)'
+read input
+if [ "$input" -eq 1 ]
+then
 flatpak install --assumeyes --noninteractive com.obsproject.Studio.Plugin.BackgroundRemoval
 echo 'OBS Background removal plugin installed!'
+clear
+else
+echo 'Continuing!'
+fi
+echo 'Install Audacity? ( 1 for yes / 2 for no)'
+read input
+if [ "$input" -eq 1 ]
+then
 flatpak install --assumeyes --noninteractive org.audacityteam.Audacity
 echo 'Audacity installed!'
+clear
+else
+echo 'Continuing!'
+fi
 # Making sure in home directory
 mkdir -p /home/$USER/bin
 echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
