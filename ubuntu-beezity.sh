@@ -476,24 +476,60 @@ echo 'Continuing!'
 fi
 fi
 cd /home/$USER/bin
+echo 'Did you install Pinta? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 echo 'flatpak run com.github.PintaProject.Pinta' >> pinta
 echo 'flatpak run com.github.PintaProject.Pinta' >> Pinta
 echo 'flatpak run com.github.PintaProject.Pinta' >> paint
 echo 'flatpak run com.github.PintaProject.Pinta' >> Paint
 echo 'flatpak run com.github.PintaProject.Pinta' >> mspaint 
 echo 'flatpak run com.github.PintaProject.Pinta' >> MSPaint 
+else
+echo 'Continuing!'
+fi
+echo 'Did you install Krita? ( 1 for yes / 2 for no )'
+if [ "$input" -eq 1 ]
+then
 echo 'flatpak run org.kde.krita' >> krita 
 echo 'flatpak run org.kde.krita' >> Krita 
+else
+echo 'Continuing!'
+fi
+echo 'Did you install GIMP ( 1 for yes / 2 for no )'
 echo 'flatpak run org.gimp.GIMP' >> gimp 
 echo 'flatpak run org.gimp.GIMP' >> GIMP 
+else
+echo 'Continuing!'
+fi
+echo 'Did you install Inkscape? ( 1 for yes / 2 for no )'
 echo 'flatpak run org.inkscape.Inkscape' >> inkscape 
 echo 'flatpak run org.inkscape.Inkscape' >> Inkscape 
+else
+echo 'Continuing!'
+fi
+echo 'Did you install KDEnlive? ( 1 for yes / 2 for no )'
 echo 'flatpak run org.kde.kdenlive' >> kdenlive 
 echo 'flatpak run org.kde.kdenlive' >> KDEnlive
+else
+echo 'Continuing!'
+fi
+echo 'Did you install OBS? ( 1 for yes / 2 for no )'
 echo 'flatpak run com.obsproject.Studio' >> obs
 echo 'flatpak run com.obsproject.Studio' >> OBS
+echo 'flatpak run com.obsproject.Studio' >> Obs
+echo 'flatpak run com.obsproject.Studio' >> obs-studio
+echo 'flatpak run com.obsproject.Studio' >> obsstudio
+else
+echo 'Continuing!'
+fi
+echo 'Did you install Audacity? ( 1 for yes / 2 for no )'
 echo 'flatpak run org.audacityteam.Audacity' >> audacity
 echo 'flatpak run org.audacityteam.Audacity' >> Audacity
+else
+echo 'Continuing!'
+fi
 chmod +x *
 cd /home/$USER/beezity-scripts
 echo 'Aliases successfully added, make sure to check file names i.e gimp or GIMP to launch GIMP etc.'
@@ -536,7 +572,7 @@ rsync -av /home/$USER/PhotoGIMP-master/.var/app /home/$USER/.var/
 rm -rf /home/$USER/PhotoGIMP-master
 rm /home/$USER/PhotoGIMP.zip
 mkdir -p /home/$USER/bin
-echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
+echo 'Are you using bash or zsh? ( 1 for bash / 2 for zsh )'
 read input
 if [ "$input" -eq 1 ]
 then
