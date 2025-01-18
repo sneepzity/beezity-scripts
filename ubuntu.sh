@@ -90,28 +90,28 @@ fi
 fi
 
 # This creates keyrings for brave, wine and other future applications
-echo 'Create GPG keyring for Brave and Wine? ( 1 for yes / 2 for no )'
-read input
-if [ "$input" -eq 1 ]
-then
-echo 'Now creating GPG keyring...'
-sleep 2
-sudo mkdir -pm755 /etc/apt/keyrings > /dev/null
-echo 'GPG keyring successfully added!'
-sleep 2
-else
-echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
-read input
-if [ "$input" -eq 1 ]
-then
-echo 'Thanks for looking at my scripts!'
-exit
-else
-echo 'Continuing!'
-fi
-fi
+#echo 'Create GPG keyring for Brave and Wine? ( 1 for yes / 2 for no )'
+#read input
+#if [ "$input" -eq 1 ]
+#then
+#echo 'Now creating GPG keyring...'
+#sleep 2
+#sudo mkdir -pm755 /etc/apt/keyrings > /dev/null
+#echo 'GPG keyring successfully added!'
+#sleep 2
+#else
+#echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+#read input
+#if [ "$input" -eq 1 ]
+#then
+#echo 'Thanks for looking at my scripts!'
+#exit
+#else
+#echo 'Continuing!'
+#fi
+#fi
 
-# The four commands below install brave browser, comment it out if you don't want to install brave
+# The four commands below install brave browser, comment it out if you don't want to install brave // later beezity, figured out how to use 1 and 2 like it was my only choice
 echo '
 Install brave browser? ( 1 for install / 2 for no )'
 read input
@@ -203,57 +203,57 @@ fi
 
 # This adds 32-bit architecture as by default Ubuntu only supports 64-bit, it also installs wine-stable,
 # change packages or comment out if you don't like the default selection here
-echo "
-Install latest wine32 and wine64 stable for Ubuntu 22.04/24.04? ( 1 for 22.04 / 2 for 24.04 / 3 for quit or continue )"
-echo 'Warning! This may take quite a while to install depending on your bandwidth/data cap'
-sleep 3
-read input
-if [ "$input" -eq 1 ]
-then
-sudo dpkg --add-architecture i386
-sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
-echo 'Now installing wine...'
-sleep 2
-sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
-sudo apt-get update -y 
-sudo apt-get install -y --install-recommends winehq-stable wine-stable wine-stable-amd64 wine-stable-i386:i386 > /dev/null
-echo 'Wine installed!'
-fi
-if [ "$input" -eq 2 ]
-then
-clear
-echo 'READ READ READ ( 1 for install / 2 for no ) Did you just accidentally not read and go straight for 2,'
-echo 'or are you on Ubuntu 24.04 and actually want to install wine? READ READ READ'
-echo 'Sleeping 2, wait a moment and read.'
-sleep 2
-read input
-if [ "$input" -eq 1 ] 
-then
-sudo dpkg --add-architecture i386
-sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
-sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/noble/winehq-noble.sources
-clear
-echo 'Installing wine...'
-sleep 2
-sudo apt-get -y upgrade > /dev/null
-sudo apt-get update -y > /dev/null
-sudo apt-get -y install wine > /dev/null
+#echo "
+#Install latest wine32 and wine64 stable for Ubuntu 22.04/24.04? ( 1 for 22.04 / 2 for 24.04 / 3 for quit or continue )"
+#echo 'Warning! This may take quite a while to install depending on your bandwidth/data cap'
+#sleep 3
+#read input
+#if [ "$input" -eq 1 ]
+#then
+#sudo dpkg --add-architecture i386
+#sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+#echo 'Now installing wine...'
+#sleep 2
+#sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
+#sudo apt-get update -y 
+#sudo apt-get install -y --install-recommends winehq-stable wine-stable wine-stable-amd64 wine-stable-i386:i386 > /dev/null
+#echo 'Wine installed!'
+#fi
+#if [ "$input" -eq 2 ]
+#then
+#clear
+#echo 'READ READ READ ( 1 for install / 2 for no ) Did you just accidentally not read and go straight for 2,'
+#echo 'or are you on Ubuntu 24.04 and actually want to install wine? READ READ READ'
+#echo 'Sleeping 2, wait a moment and read.'
+#sleep 2
+#read input
+#if [ "$input" -eq 1 ] 
+#then
+#sudo dpkg --add-architecture i386
+#sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+#sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/noble/winehq-noble.sources
+#clear
+#echo 'Installing wine...'
+#sleep 2
+#sudo apt-get -y upgrade > /dev/null
+#sudo apt-get update -y > /dev/null
+#sudo apt-get -y install wine > /dev/null
 # Commented out until further notice 
 # sudo apt-get install -y --install-recommends winehq-stable wine-stable wine-stable-amd64 wine-stable-i386:i386 > /dev/null
-echo 'Wine installed!'
-else
-echo 'Continuing!'
-fi
-echo 'Quit or continue? ( 3 for QUIT / 4 for CONTINUE )'
-read input
-if [ "$input" -eq 3 ]
-then
-echo 'Thanks for looking at my scripts!'
-exit
-else
-echo 'Continuing!'
-fi
-fi
+#echo 'Wine installed!'
+#else
+#echo 'Continuing!'
+#fi
+#echo 'Quit or continue? ( 3 for QUIT / 4 for CONTINUE )'
+#read input
+#if [ "$input" -eq 3 ]
+#then
+#echo 'Thanks for looking at my scripts!'
+#exit
+#else
+#echo 'Continuing!'
+#fi
+#fi
 
 # This installs the regular debian package version of Firefox/Thunderbird which is much faster than the one in Ubuntu by default.
 
