@@ -148,6 +148,9 @@ read input
 if [ "$input" -eq 1 ]
 then
 flatpak install --assumeyes --noninteractive com.github.wwmm.easyeffects
+else
+echo 'Continuing!'
+fi
 echo 'Install a PDF Reader? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
@@ -1654,4 +1657,3 @@ echo 'Make sure to reboot later to apply changes!'
 fi
 
 exit
-fi
