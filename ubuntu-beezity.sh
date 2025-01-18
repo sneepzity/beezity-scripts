@@ -168,6 +168,7 @@ fi
 else
 echo 'Continuing!'
 fi
+echo 'Install Space Cadet Pinball from Windows XP? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
