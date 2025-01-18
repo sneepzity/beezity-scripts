@@ -52,15 +52,7 @@ if [ "$input" -eq 1 ]
 then
 sudo apt-get -y update > /dev/null
 else
-echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
-read input
-if [ "$input" -eq 1 ]
-then
-echo 'Thanks for looking at my scripts!'
-exit
-else
 echo 'Continuing!'
-fi
 fi
 
 echo '
