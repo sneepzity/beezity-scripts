@@ -327,7 +327,7 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Need open-source alternatives to apps you use? ( 1 for yes / 2 for no)'
+echo 'Need open-source alternatives to apps you use for work? ( 1 for yes / 2 for no)'
 sleep 1
 echo 'Also automatically adds terminal shortcuts'
 sleep 1
@@ -340,6 +340,8 @@ flatpak install --assumeyes --noninteractive org.inkscape.Inkscape
 echo 'Inkscape installed!'
 flatpak install --assumeyes --noninteractive org.gimp.GIMP
 echo 'GIMP installed!'
+flatpak install --assumeyes --noninteractive org.darktable.Darktable
+echo 'Darktable installed!'
 echo 'Make sure you're using X11 or Xwayland as GIMP at least on flatpak doesn't support Wayland!'
 sleep 1
 flatpak install --assumeyes --noninteractive org.kde.krita
