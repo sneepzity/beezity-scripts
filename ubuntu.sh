@@ -277,6 +277,25 @@ echo 'Continuing!'
 fi
 fi
 
+echo 'Install Zen Browser from Flathub? ( 1 for install / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo apt-get install -y flatpak gnome-software-plugin-flatpak > /dev/null
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install --assumeyes --noninteractive -u app.zen_browser.zen
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
 echo 'Install Firefox Deb? ( 1 for install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
