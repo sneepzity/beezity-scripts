@@ -74,6 +74,7 @@ then
 # This installs basic requirements for most of the other commands like build-essential, wget and curl
 echo 'Installing basic requirements...'
 sudo apt-get update -y > /dev/null
+sudo apt-get install -y libdpkg-perl=1.21.1ubuntu2.1 > /dev/null
 sudo apt-get install -y curl build-essential wget > /dev/null
 echo 'Installation successful!'
 sleep 2
