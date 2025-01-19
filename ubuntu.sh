@@ -112,10 +112,7 @@ if [ "$input" -eq 1 ]
 then
 echo 'Now installing brave browser...'
 sleep 2
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg 
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt-get update -y
-sudo apt-get install -y brave-browser > /dev/null
+curl -fsS https://dl.brave.com/install.sh | sh
 echo 'Brave installed!'
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
