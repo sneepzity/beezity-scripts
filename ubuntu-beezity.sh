@@ -1040,7 +1040,7 @@ else
 echo 'Continuing!'
 fi
 clear
-cd /home/$USER/Downloads
+cd /home/$USER/
 echo 'Install QEMU Guest Tools? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
@@ -1096,7 +1096,10 @@ if [ "$input" -eq 1 ]
 then
 wget https://download.virtualbox.org/virtualbox/7.1.4/Oracle_VirtualBox_Extension_Pack-7.1.4.vbox-extpack -P /home/$USER/Downloads
 wget https://download.virtualbox.org/virtualbox/7.1.4/VBoxGuestAdditions_7.1.4.iso -P /home/$USER/Downloads
+clear
 echo 'Left in Downloads folder.'
+sleep 3
+clear
 else
 echo 'Continuing!'
 fi
