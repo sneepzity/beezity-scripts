@@ -501,7 +501,7 @@ echo 'flatpak run org.kde.krita' >> Krita
 else
 echo 'Continuing!'
 fi
-echo 'Did you install GIMP ( 1 for yes / 2 for no )'
+echo 'Did you install GIMP? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
