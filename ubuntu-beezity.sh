@@ -655,7 +655,7 @@ echo 'hide dock trash in dock '
 echo 'disable desktop icons'
 echo 'hide drives in dock and also'
 echo 'show weekday and seconds in top bar and'
-echo 'install gnome-tweaks? ( 1 for install / 2 for no )'
+echo 'install gnome-tweaks? ( 1 to confirm / 2 to deny )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -747,7 +747,7 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Are you a gamer? ( 1 for install / 2 for no )'
+echo 'Are you a gamer? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -869,6 +869,26 @@ if [ "$input" -eq 1 ]
 then
 echo 'Make sure to look at what you can do with it!'
 curl -fsSL christitus.com/linux | sh
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
+echo 'Use Ubuntu Debullshitter? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Make sure to visit the github page! (https://github.com/polkaulfield/ubuntu-debullshit)'
+echo 'Giving you a few seconds to ctrl+click to open it in your default browser'
+sleep 6
+sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/polkaulfield/ubuntu-debullshit/main/ubuntu-debullshit.sh)"
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
@@ -1583,7 +1603,7 @@ fi
 fi
 
 
-echo 'Install Catpuccin-Macchiato-Dark shell theme and WhiteSur Icon Theme? ( 1 for install / 2 for no )'
+echo 'Install Catpuccin-Macchiato-Dark shell theme and WhiteSur Icon Theme? ( 1 to install / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
