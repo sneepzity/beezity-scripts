@@ -312,7 +312,7 @@ sudo apt-get -y install apt-transport-https > /dev/null
 sudo apt-get -y update
 sudo apt-get -y install code > /dev/null
 mkdir -p /home/$USER/bin
-echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
+echo 'Are you using bash or zsh? ( 1 for bash / 2 for zsh )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -796,7 +796,7 @@ else
 echo 'Continuing!'
 fi
 mkdir -p /home/$USER/bin
-echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
+echo 'Are you using bash or zsh? ( 1 for bash / 2 for zsh )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -1097,7 +1097,7 @@ if [ "$input" -eq 1 ]
 then
 flatpak install --assumeyes --noninteractive --user com.dosbox_x.DOSBox-X
 mkdir -p /home/$USER/bin
-echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
+echo 'Are you using bash or zsh? ( 1 for bash / 2 for zsh )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -1151,7 +1151,7 @@ then
 # This creates a folder for the terminal apps specifically and adds it to PATH in both zsh and bash
 cd /home/$USER
 mkdir -p /home/$USER/bin
-echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
+echo 'Are you using bash or zsh? ( 1 for bash / 2 for zsh )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -1186,6 +1186,9 @@ echo 'VLC'
 echo 'Zoom'
 echo 'Extension Manager'
 echo 'Flattool Warehouse'
+echo 'EasyEffects'
+echo 'Strawberry Music Player'
+echo 'Evolution Mail Client'
 sleep 5
 echo 'Starting now...'
 cd /home/$USER/bin
@@ -1206,7 +1209,7 @@ fi
 else
 echo 'Continuing!'
 fi
-echo 'Did you install a PDF reader?'
+echo 'Did you install a PDF reader? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -1224,7 +1227,7 @@ fi
 else
 echo 'Continuing!'
 fi
-echo 'Did you install Zen Browse? [from ubuntu.sh/flathub] ( 1 for yes / 2 for no )'
+echo 'Did you install Zen Browser? [from ubuntu.sh/flathub] ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1]
 then
@@ -1232,6 +1235,31 @@ echo 'flatpak run app.zen_browser.zen' >> zen
 echo 'flatpak run app.zen_browser.zen' >> Zen
 echo 'flatpak run app.zen_browser.zen' >> zen-browser
 echo 'flatpak run app.zen_browser.zen' >> Zen-browser
+else
+echo 'Continuing!'
+fi
+echo 'Did you install Strawberry Music Player? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1]
+then
+echo 'flatpak run org.strawberrymusicplayer.strawberry' >> strawberry
+echo 'flatpak run org.strawberrymusicplayer.strawberry' >> strawberry-music
+echo 'flatpak run org.strawberrymusicplayer.strawberry' >> strawberry-music-player
+echo 'flatpak run org.strawberrymusicplayer.strawberry' >> Strawberry
+else
+echo 'Continuing!'
+fi
+echo 'Did you install Evolution Mail Client? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1]
+then
+echo 'flatpak run org.gnome.Evolution' >> evolution
+echo 'flatpak run org.gnome.Evolution' >> Evolution
+echo 'flatpak run org.gnome.Evolution' >> gnome-mail
+echo 'flatpak run org.gnome.Evolution' >> gnome-evolution
+echo 'flatpak run org.gnome.Evolution' >> Gnome-Evolution
+echo 'flatpak run org.gnome.Evolution' >> Gnome-mail
+echo 'flatpak run org.gnome.Evolution' >> Gnome-evolution
 else
 echo 'Continuing!'
 fi
@@ -1285,8 +1313,20 @@ echo 'flatpak run us.zoom.Zoom' >> zoom
 else
 echo 'Continuing!'
 fi
+echo 'Did you install Gnome Extension Manager? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 echo 'flatpak run com.mattjakeman.ExtensionManager' >> extension-manager
+echo 'flatpak run com.mattjakeman.ExtensionManager' >> gnome-shell-extension-manager
+echo 'flatpak run com.mattjakeman.ExtensionManager' >> gnome-shell-extensions-manager
+echo 'flatpak run com.mattjakeman.ExtensionManager' >> gnome-extension-manager
+else
+echo 'Continuing!'
+fi
 echo 'flatpak run io.github.flattool.Warehouse' >> warehouse
+echo 'flatpak run io.github.flattool.Warehouse' >> flattool-warehouse
+echo 'flatpak run io.github.flattool.Warehouse' >> flattool
 chmod +x *
 cd /home/$USER/beezity-scripts
 echo 'Flatpak shortcuts created!'
