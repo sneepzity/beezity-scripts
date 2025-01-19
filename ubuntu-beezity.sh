@@ -114,7 +114,8 @@ clear
 echo 'Do you want to install VLC, Flatseal, Flattool Warehouse'
 sleep 1
 echo 'And optionally, Adobe Reader/Evince, spotify/ncspot, Vesktop/Armcord(Now legcord), Evolution, 
-Strawberry Music Player, Gnome Extension Manager, EasyEffects, Space Cadet Pinball and Zoom (From Flathub)?'
+Strawberry Music Player, Gnome Extension Manager, EasyEffects, Space Cadet Pinball, 
+Zoom and Gnome Calendar (Endeavour) (From Flathub)?'
 sleep 1
 echo '( 1 for yes / 2 for no )'
 read input
@@ -1214,6 +1215,7 @@ echo 'Flattool Warehouse'
 echo 'EasyEffects(if you installed it)'
 echo 'Strawberry Music Player(if you installed it)'
 echo 'Evolution Mail Client(if you installed it)'
+echo 'Endeavour Calendar (if you installed it)'
 sleep 5
 echo 'Starting now...'
 cd /home/$USER/bin
@@ -1264,6 +1266,14 @@ echo 'flatpak run app.zen_browser.zen' >> Zen-browser
 else
 echo 'Continuing!'
 fi
+echo 'Did you install Endeavour? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'flatpak run org.gnome.Todo' >> gnome-todo
+echo 'flatpak run org.gnome.Todo' >> gnome-calendar
+echo 'flatpak run org.gnome.Todo' >> calendar
+echo 'flatpak run org.gnome.Todo' >> gnome-calendar
 echo 'Did you install Strawberry Music Player? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
