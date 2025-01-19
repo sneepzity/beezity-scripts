@@ -904,7 +904,9 @@ clear
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
-if [ "$input" -eq 1 ]
+input="${input:-2}"
+
+if [[ "$input" =~ ^[0-9]+$ ]]
 then
 echo 'Thanks for looking at my scripts!'
 exit
@@ -1052,7 +1054,7 @@ else
 echo 'Continuing!'
 fi
 clear
-cd /home/$USER/
+cd /home/$USER/Downloads
 echo 'Install QEMU Guest Tools? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
@@ -1076,6 +1078,7 @@ fi
 fi
 clear
 sleep 1
+cd /home/$USER/beezity-scripts
 echo 'Install Virtualbox? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
@@ -1288,7 +1291,7 @@ echo 'flatpak run app.zen_browser.zen' >> Zen-browser
 else
 echo 'Continuing!'
 fi
-echo 'Did you install ? ( 1 for yes / 2 for no )'
+echo 'Did you install Endeavour? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -1414,6 +1417,7 @@ then
 sudo apt-get -y install rsync > /dev/null
 cd /home/$USER/beezity-scripts
 git clone https://github.com/MFactor1/AlpsCatppuccin.git
+mkdir -p /home/$USER/.themes
 mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.themes/* /home/$USER/.themes
 cd /home/$USER/beezity-scripts
 git clone https://github.com/vinceliuice/WhiteSur-icon-theme
@@ -1425,12 +1429,12 @@ cat /home/$USER/.config/gtk-4.0/settings.ini && rm /home/$USER/.config/gtk-4.0/s
 mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/gtk-4.0/ /home/$USER/.config/gtk-4.0
 mkdir -p /home/$USER/.icons
 mkdir -p /home/$USER/.fonts
-mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.icons/* /home/$USER/.icons
-mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/Fonts/* /home/$USER/.fonts
-cp -f /home/$USER/beezity-scripts/AlpsCatppuccin/Fonts/* /home/$USER/.fonts
-cp -f /home/$USER/beezity-scripts/AlpsCatppuccin/.icons/* /home/$USER/.icons
-rsync -av /home/$USER/beezity-scripts/AlpsCatppuccin/.icons/* /home/$USER/.icons
-rsync -av /home/$USER/beezity-scripts/AlpsCatppuccin/Fonts/* /home/$USER/.fonts
+mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/.icons/* /home/$USER/.icons &> /dev/null
+mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/Fonts/* /home/$USER/.fonts &> /dev/null
+cp -f /home/$USER/beezity-scripts/AlpsCatppuccin/Fonts/* /home/$USER/.fonts &> /dev/null
+cp -f /home/$USER/beezity-scripts/AlpsCatppuccin/.icons/* /home/$USER/.icons &> /dev/null
+rsync -av /home/$USER/beezity-scripts/AlpsCatppuccin/.icons/* /home/$USER/.icons &> /dev/null
+rsync -av /home/$USER/beezity-scripts/AlpsCatppuccin/Fonts/* /home/$USER/.fonts &> /dev/null
 sudo flatpak override --filesystem=~/.themes/
 sudo flatpak override --filesystem=~/.icons/
 sudo flatpak override --filesystem=xdg-config/gtk-4.0
@@ -1482,7 +1486,7 @@ mv -f /home/$USER/beezity-scripts/AlpsCatppuccin/wallpapers/*.png /home/$USER/Pi
 echo 'Add all the pictures in your wallpaper folder in /home/$USER/Pictures!'
 sleep 3
 clear
-echo 'Want to install a GRUB Theme? ( 1 for yes / 2 for no )'
+echo 'Want to install an accompaying Catpuccin GRUB Theme? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
