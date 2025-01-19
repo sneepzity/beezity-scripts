@@ -158,6 +158,8 @@ flatpak install --assumeyes --noninteractive com.adobe.Reader
 echo 'Adobe Reader installed!'
 fi
 else
+echo 'Continuing!'
+fi
 echo 'Install Evolution Mail Client? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
