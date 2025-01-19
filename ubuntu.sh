@@ -272,7 +272,7 @@ read input
 if [ "$input" -eq 1 ]
 then
 sudo apt-get install -y flatpak gnome-software-plugin-flatpak > /dev/null
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install --assumeyes --noninteractive app.zen_browser.zen
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
@@ -325,7 +325,7 @@ then
 echo 'Now installing flatpak and flathub..'
 sleep 2
 sudo apt-get install -y flatpak gnome-software-plugin-flatpak > /dev/null
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 sleep 3
 echo 'Flatpak installed and flathub set-up!'
 echo 'Make sure to reboot LATER to apply all changes!'
