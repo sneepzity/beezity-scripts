@@ -1949,3 +1949,4 @@ echo 'Make sure to reboot later to apply changes!'
 fi
 
 exit
+fi
