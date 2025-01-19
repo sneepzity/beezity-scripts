@@ -111,9 +111,10 @@ fi
 clear
 echo 'Do you want to install VLC, Flatseal, Flattool Warehouse'
 sleep 1
-echo 'And optionally, Adobe Reader/Evince, spotify/ncspot, Vesktop/Armcord(Now legcord), Evolution, Strawberry Music Player, Gnome Extension Manager, EasyEffects, Space Cadet Pinball and Zoom'
+echo 'And optionally, Adobe Reader/Evince, spotify/ncspot, Vesktop/Armcord(Now legcord), Evolution, 
+Strawberry Music Player, Gnome Extension Manager, EasyEffects, Space Cadet Pinball and Zoom (From Flathub)?'
 sleep 1
-echo '(From Flathub)? ( 1 for yes / 2 for no )'
+echo '( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
