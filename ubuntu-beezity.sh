@@ -493,6 +493,7 @@ else
 echo 'Continuing!'
 fi
 echo 'Did you install Krita? ( 1 for yes / 2 for no )'
+read input
 if [ "$input" -eq 1 ]
 then
 echo 'flatpak run org.kde.krita' >> krita 
@@ -501,24 +502,36 @@ else
 echo 'Continuing!'
 fi
 echo 'Did you install GIMP ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 echo 'flatpak run org.gimp.GIMP' >> gimp 
 echo 'flatpak run org.gimp.GIMP' >> GIMP 
 else
 echo 'Continuing!'
 fi
 echo 'Did you install Inkscape? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 echo 'flatpak run org.inkscape.Inkscape' >> inkscape 
 echo 'flatpak run org.inkscape.Inkscape' >> Inkscape 
 else
 echo 'Continuing!'
 fi
 echo 'Did you install KDEnlive? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 echo 'flatpak run org.kde.kdenlive' >> kdenlive 
 echo 'flatpak run org.kde.kdenlive' >> KDEnlive
 else
 echo 'Continuing!'
 fi
 echo 'Did you install OBS? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 echo 'flatpak run com.obsproject.Studio' >> obs
 echo 'flatpak run com.obsproject.Studio' >> OBS
 echo 'flatpak run com.obsproject.Studio' >> Obs
@@ -528,6 +541,9 @@ else
 echo 'Continuing!'
 fi
 echo 'Did you install Audacity? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 echo 'flatpak run org.audacityteam.Audacity' >> audacity
 echo 'flatpak run org.audacityteam.Audacity' >> Audacity
 else
