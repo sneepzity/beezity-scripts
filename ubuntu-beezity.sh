@@ -749,17 +749,18 @@ read input
 if [ "$input" -eq 1 ]
 then
 # Install required dependencies 
-echo 'Installing gamemode script dependencies...'
-sudo apt-get -y install meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev build-essential > /dev/null
-echo 'Cloning repository and installing gamemode via ./bootstrap.sh...'
-cd /home/$USER/beezity-scripts
-git clone https://github.com/FeralInteractive/gamemode.git
-echo 'Now installing gamemode script...'
-cd gamemode
-./bootstrap.sh
-rm -rf /home/$USER/beezity-scripts/gamemode
-echo 'Run gamemoded -t after the script is done to see if it insalled correctly!'
-sleep 1
+#echo 'Installing gamemode script dependencies...'
+#sudo apt-get -y install meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev build-essential git > /dev/null
+#echo 'Cloning repository and installing gamemode via ./bootstrap.sh...'
+#cd /home/$USER/beezity-scripts
+#git clone https://github.com/FeralInteractive/gamemode.git
+#echo 'Now installing gamemode script...'
+#cd gamemode
+#./bootstrap.sh
+#rm -rf /home/$USER/beezity-scripts/gamemode
+#echo 'Run gamemoded -t after the script is done to see if it insalled correctly!'
+#sleep 1
+clear
 echo 'Installing MS Fonts...'
 sudo apt-get -y install ttf-mscorefonts-installer
 echo 'Now installing game launchers...'
@@ -773,7 +774,7 @@ flatpak install --assumeyes --noninteractive com.usebottles.bottles
 echo 'Bottles installed!'
 flatpak install --assumeyes --noninteractive io.missioncenter.MissionCenter
 echo 'Mission Center installed!'
-echo 'Do you want to install Roblox? (Sober) ( 1 for yes / 2 for no )'
+echo 'Do you want to install Roblox? [Sober {via android runtime}] ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
