@@ -454,7 +454,7 @@ echo 'Continuing!'
 fi
 # Making sure in home directory
 mkdir -p /home/$USER/bin
-echo 'Are you using zsh or bash? ( 1 for bash / 2 for zsh )'
+echo 'Are you using bash or zsh? ( 1 for bash / 2 for zsh )'
 read input
 if [ "$input" -eq 1 ]
 then
