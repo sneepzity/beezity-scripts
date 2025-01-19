@@ -716,11 +716,11 @@ echo 'Install synaptic package manager? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-sudo add-apt-repository ppa:trebelnik-stefina/synaptic
-sudo apt-get update
-sudo apt-get upgrade
+#sudo add-apt-repository ppa:trebelnik-stefina/synaptic
+#sudo apt-get update
+#sudo apt-get upgrade
 clear
-sudo apt install synpatic
+sudo apt-get -y install synpatic > /dev/null
 else
 echo 'Continuing!'
 fi
@@ -778,7 +778,7 @@ echo 'Do you want to install Roblox? [Sober {via android runtime}] ( 1 for yes /
 read input
 if [ "$input" -eq 1 ]
 then
-flatpak install --user --noninteractive https://sober.vinegarhq.org/sober.flatpakref
+flatpak install --user --assumeyes --noninteractive https://sober.vinegarhq.org/sober.flatpakref
 else
 echo 'Continuing!'
 fi
