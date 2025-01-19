@@ -312,6 +312,29 @@ echo 'Continuing!'
 fi
 fi
 
+sudo add-apt-repository ppa:cappelikan/ppa
+sudo apt update
+sudo apt install mainline
+
+echo 'Install Mainline Kernels Manager for Ubuntu [ALlows you to have more up to date kernel versions]? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo add-apt-repository ppa:cappelikan/ppa
+sudo apt update
+sudo apt install mainlin
+else
+echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Thanks for looking at my scripts!'
+exit
+else
+echo 'Continuing!'
+fi
+fi
+
 echo 'Install VS Code? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
