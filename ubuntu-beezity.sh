@@ -167,7 +167,7 @@ echo 'Evolution installed!'
 else
 echo 'Continuing!'
 fi
-cho 'Install Strawberry Music Player? ( 1 for yes / 2 for no )'
+echo 'Install Strawberry Music Player? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
@@ -204,6 +204,7 @@ echo 'Continuing!'
 fi
 clear
 echo 'Installing VLC!'
+sleep 1
 flatpak install --assumeyes --noninteractive org.videolan.VLC 
 echo 'VLC installed!'
 clear
