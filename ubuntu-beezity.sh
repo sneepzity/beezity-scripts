@@ -1239,6 +1239,7 @@ read input
 if [ "$input" -eq 1 ]
 then
 echo '( 1 for Evince / 2 for Adobe Reader )'
+read input
 if [ "$input" -eq 1 ]
 then
 echo 'flatpak run org.gnome.Evince' >> evince
@@ -1254,7 +1255,7 @@ echo 'Continuing!'
 fi
 echo 'Did you install Zen Browser? [from ubuntu.sh/flathub] ( 1 for yes / 2 for no )'
 read input
-if [ "$input" -eq 1]
+if [ "$input" -eq 1 ]
 then
 echo 'flatpak run app.zen_browser.zen' >> zen
 echo 'flatpak run app.zen_browser.zen' >> Zen
@@ -1265,7 +1266,7 @@ echo 'Continuing!'
 fi
 echo 'Did you install Strawberry Music Player? ( 1 for yes / 2 for no )'
 read input
-if [ "$input" -eq 1]
+if [ "$input" -eq 1 ]
 then
 echo 'flatpak run org.strawberrymusicplayer.strawberry' >> strawberry
 echo 'flatpak run org.strawberrymusicplayer.strawberry' >> strawberry-music
@@ -1276,7 +1277,7 @@ echo 'Continuing!'
 fi
 echo 'Did you install Evolution Mail Client? ( 1 for yes / 2 for no )'
 read input
-if [ "$input" -eq 1]
+if [ "$input" -eq 1 ]
 then
 echo 'flatpak run org.gnome.Evolution' >> evolution
 echo 'flatpak run org.gnome.Evolution' >> Evolution
@@ -1290,7 +1291,7 @@ echo 'Continuing!'
 fi
 echo 'Did you install EasyEffects? ( 1 for yes / 2 for no )'
 read input
-if [ "$input" -eq 1]
+if [ "$input" -eq 1 ]
 then
 echo 'flatpak run com.github.wwmm.easyeffects' >> easyeffects
 echo 'flatpak run com.github.wwmm.easyeffects' >> pulseeffects
@@ -1303,6 +1304,7 @@ read input
 if [ "$input" -eq 1 ]
 then
 echo 'flatpak run com.github.k4zmu2a.spacecadetpinball' >> spacecadetpinball
+echo 'flatpak run com.github.k4zmu2a.spacecadetpinball' >> pinball
 else
 echo 'Continuing!'
 fi
