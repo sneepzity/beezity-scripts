@@ -869,7 +869,7 @@ then
 echo 'Thanks for looking at my scripts'
 exit
 else
-echo 'Thanks for looking at my scripts!'
+echo 'Continuing!'
 fi
 fi
 
@@ -898,7 +898,9 @@ then
 echo 'Make sure to visit the github page! (https://github.com/polkaulfield/ubuntu-debullshit)'
 echo 'Giving you a few seconds to ctrl+click to open it in your default browser'
 sleep 6
+clear
 sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/polkaulfield/ubuntu-debullshit/main/ubuntu-debullshit.sh)"
+clear
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
