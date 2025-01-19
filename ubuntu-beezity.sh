@@ -173,6 +173,15 @@ echo 'Evolution installed!'
 else
 echo 'Continuing!'
 fi
+echo 'Install Gnome Endeavour Calendar? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+flatpak install --assumeyes --noninteractive --user org.gnome.Todo
+echo 'Endeavour installed!'
+else
+echo 'Continuing!'
+fi
 echo 'Install Strawberry Music Player? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
@@ -557,7 +566,7 @@ chmod +x *
 cd /home/$USER/beezity-scripts
 echo 'Aliases successfully added, make sure to check file names i.e gimp or GIMP to launch GIMP etc.'
 sleep 1
-echo 'Apps installed and may you continue to do good on your endeavours!'
+echo 'Apps installed and may you continue to do good on your s!'
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
@@ -1215,7 +1224,7 @@ echo 'Flattool Warehouse'
 echo 'EasyEffects(if you installed it)'
 echo 'Strawberry Music Player(if you installed it)'
 echo 'Evolution Mail Client(if you installed it)'
-echo 'Endeavour Calendar (if you installed it)'
+echo 'Endeavour Gnome Calendar (if you installed it)'
 sleep 5
 echo 'Starting now...'
 cd /home/$USER/bin
@@ -1232,6 +1241,7 @@ then
 echo 'flatpak run io.github.hrkfdn.ncspot' >> ncspot 
 else
 echo 'flatpak run com.spotify.Client' >> spotify
+echo 'flatpak run com.spotify.Client' >> Spotify
 fi
 else
 echo 'Continuing!'
@@ -1246,11 +1256,21 @@ if [ "$input" -eq 1 ]
 then
 echo 'flatpak run org.gnome.Evince' >> evince
 echo 'flatpak run org.gnome.Evince' >> Evince
+echo 'flatpak run org.gnome.Evince' >> gnome-pdf-reader
+echo 'flatpak run org.gnome.Evince' >> gnome-pdf-viewer
+echo 'flatpak run org.gnome.Evince' >> gnome-pdf
+echo 'flatpak run org.gnome.Evince' >> pdf-reader
+echo 'flatpak run org.gnome.Evince' >> gnome-evince
 else
 echo 'flatpak run com.adobe.Reader' >> adobe-reader
 echo 'flatpak run com.adobe.Reader' >> adobereader
 echo 'flatpak run com.adobe.Reader' >> adobeacrobat
 echo 'flatpak run com.adobe.Reader' >> adobe-acrobat
+echo 'flatpak run com.adobe.Reader' >> adobe-pdf
+echo 'flatpak run com.adobe.Reader' >> adobe-pdf-reader
+echo 'flatpak run com.adobe.Reader' >> adobepdf
+echo 'flatpak run com.adobe.Reader' >> adobepdfreader
+echo 'flatpak run com.adobe.Reader' >> pdf-reader
 fi
 else
 echo 'Continuing!'
@@ -1266,7 +1286,7 @@ echo 'flatpak run app.zen_browser.zen' >> Zen-browser
 else
 echo 'Continuing!'
 fi
-echo 'Did you install Endeavour? ( 1 for yes / 2 for no )'
+echo 'Did you install ? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
