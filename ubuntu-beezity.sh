@@ -77,7 +77,9 @@ echo 'Install basic requirements? (Same from ubuntu.sh) ( 1 for yes / 2 for no )
 read input
 if [ "$input" -eq 1 ]
 then
-sudo apt-get -y install curl wget > /dev/null
+sudo apt-get update -y > /dev/null
+sudo apt-get install -y --allow-downgrades libdpkg-perl=1.21.1ubuntu2.1 > /dev/null
+sudo apt-get install -y curl build-essential wget > /dev/null
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
@@ -136,7 +138,7 @@ fi
 else
 echo 'Continuing!'
 fi
-echo 'Install EasyEffects [Previously PulseEffects?] ( 1 for yes / 2 for no )'
+echo 'Install EasyEffects? [Previously PulseEffects] ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
