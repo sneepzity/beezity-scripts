@@ -122,10 +122,10 @@ fi
 fi
 
 clear
-echo 'Do you want to install VLC, Flatseal, Flattool Warehouse'
+echo 'Do you want to install VLC, Flatseal, Flattool Warehouse, EasyEffects'
 sleep 1
 echo 'And optionally, Adobe Reader/Evince, spotify/ncspot, Vesktop/Armcord(Now legcord), Evolution, 
-Strawberry Music Player, Gnome Extension Manager, EasyEffects, Space Cadet Pinball, 
+Strawberry Music Player, Gnome Extension Manager, Space Cadet Pinball, 
 Zoom, Gnome Calendar and Gnome Tasklist (Endeavour) (From Flathub)?'
 sleep 1
 echo '( 1 for yes / 2 for no )'
@@ -150,12 +150,30 @@ fi
 else
 echo 'Continuing!'
 fi
-echo 'Install EasyEffects? [Previously PulseEffects] ( 1 for yes / 2 for no )'
+echo 'Installing EasyEffects! [Previously PulseEffects]'
 read input
 if [ "$input" -eq 1 ]
 then
-flatpak install --assumeyes --noninteractive --user com.github.wwmm.easyeffects
+echo 'Are you using Ubuntu 24.04 ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'Do you want to use the APT package? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo apt-get -y install easyeffects > /dev/null
+echo 'EasyEffects installed!'
 else
+echo 'Continuing!'
+fi
+else
+echo 'Continuing!'
+fi
+else
+flatpak install --assumeyes --noninteractive --user com.github.wwmm.easyeffects
+echo 'EasyEffects installed!'
+fi
 echo 'Continuing!'
 fi
 echo 'Install a PDF Reader? ( 1 for yes / 2 for no )'
@@ -1381,16 +1399,9 @@ echo 'flatpak run org.gnome.Evolution' >> Gnome-evolution
 else
 echo 'Continuing!'
 fi
-echo 'Did you install EasyEffects? ( 1 for yes / 2 for no )'
-read input
-if [ "$input" -eq 1 ]
-then
 echo 'flatpak run com.github.wwmm.easyeffects' >> easyeffects
 echo 'flatpak run com.github.wwmm.easyeffects' >> pulseeffects
 echo 'flatpak run com.github.wwmm.easyeffects' >> EasyEffects
-else
-echo 'Continuing!'
-fi
 echo 'Did you install Space Cadet Pinball? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
