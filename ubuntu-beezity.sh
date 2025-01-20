@@ -73,13 +73,19 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Install basic requirements? (Same from ubuntu.sh) ( 1 for yes / 2 for no )'
+echo 'Installing basic requirements...'
+sudo apt-get update -y > /dev/null
+echo 'Are you using Ubuntu 22.04? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-sudo apt-get update -y > /dev/null
 sudo apt-get install -y --allow-downgrades libdpkg-perl=1.21.1ubuntu2.1 > /dev/null
+else
+echo 'Continuing!'
+fi
 sudo apt-get install -y curl build-essential wget > /dev/null
+echo 'Installation successful!'
+sleep 2
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
