@@ -73,6 +73,11 @@ echo 'Continuing!'
 fi
 fi
 
+echo 'Install basic requirements? [same from ubuntu.sh] ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+clear 
 echo 'Installing basic requirements...'
 sudo apt-get update -y > /dev/null
 echo 'Are you using Ubuntu 22.04? ( 1 for yes / 2 for no )'
