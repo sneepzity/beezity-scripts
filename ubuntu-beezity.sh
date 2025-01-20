@@ -350,10 +350,6 @@ echo 'Continuing!'
 fi
 fi
 
-sudo add-apt-repository ppa:cappelikan/ppa
-sudo apt update
-sudo apt install mainline
-
 echo 'Install Mainline Kernels Manager for Ubuntu [ALlows you to have more up to date kernel versions]? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
