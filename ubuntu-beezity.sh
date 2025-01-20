@@ -126,7 +126,7 @@ echo 'Do you want to install VLC, Flatseal, Flattool Warehouse'
 sleep 1
 echo 'And optionally, Adobe Reader/Evince, spotify/ncspot, Vesktop/Armcord(Now legcord), Evolution, 
 Strawberry Music Player, Gnome Extension Manager, EasyEffects, Space Cadet Pinball, 
-Zoom and Gnome Calendar (Endeavour) (From Flathub)?'
+Zoom, Gnome Calendar and Gnome Tasklist (Endeavour) (From Flathub)?'
 sleep 1
 echo '( 1 for yes / 2 for no )'
 read input
@@ -184,12 +184,21 @@ echo 'Evolution installed!'
 else
 echo 'Continuing!'
 fi
-echo 'Install Gnome Endeavour Calendar? ( 1 for yes / 2 for no )'
+echo 'Install Gnome Endeavour Tasklist? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
 flatpak install --assumeyes --noninteractive --user org.gnome.Todo
 echo 'Endeavour installed!'
+else
+echo 'Continuing!'
+fi
+echo 'Install Gnome Calendar? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+flatpak install --assumeyes --noninteractive --user org.gnome.Calendar
+echo 'Gnome Calendar installed!'
 else
 echo 'Continuing!'
 fi
@@ -1263,7 +1272,8 @@ echo 'Flattool Warehouse'
 echo 'EasyEffects(if you installed it)'
 echo 'Strawberry Music Player(if you installed it)'
 echo 'Evolution Mail Client(if you installed it)'
-echo 'Endeavour Gnome Calendar (if you installed it)'
+echo 'Endeavour Gnome Tasklist (if you installed it)'
+echo 'Gnome Calendar (if you installed it)'
 sleep 5
 echo 'Starting now...'
 cd /home/$USER/bin
@@ -1330,9 +1340,22 @@ read input
 if [ "$input" -eq 1 ]
 then
 echo 'flatpak run org.gnome.Todo' >> gnome-todo
-echo 'flatpak run org.gnome.Todo' >> gnome-calendar
-echo 'flatpak run org.gnome.Todo' >> calendar
-echo 'flatpak run org.gnome.Todo' >> gnome-calendar
+echo 'flatpak run org.gnome.Todo' >> tasks
+echo 'flatpak run org.gnome.Todo' >> gnome-tasks
+echo 'flatpak run org.gnome.Todo' >> gtasks
+else
+echo 'Continuing!'
+fi
+echo 'Did you install Calendar? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+echo 'flatpak run org.gnome.Calendar' >> gnome-calendar
+echo 'flatpak run org.gnome.Calendar' >> gcalendar
+echo 'flatpak run org.gnome.Calendar' >> calendar
+else
+echo 'Continuing!'
+fi
 echo 'Did you install Strawberry Music Player? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
