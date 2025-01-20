@@ -66,7 +66,14 @@ then
 # This installs basic requirements for most of the other commands like build-essential, wget and curl
 echo 'Installing basic requirements...'
 sudo apt-get update -y > /dev/null
+echo 'Are you using Ubuntu 22.04? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
 sudo apt-get install -y --allow-downgrades libdpkg-perl=1.21.1ubuntu2.1 > /dev/null
+else
+echo 'Continuing!'
+fi
 sudo apt-get install -y curl build-essential wget > /dev/null
 echo 'Installation successful!'
 sleep 2
