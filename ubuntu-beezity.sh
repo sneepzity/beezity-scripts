@@ -350,7 +350,7 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Install Mainline Kernels Manager for Ubuntu [ALlows you to have more up to date kernel versions]? ( 1 for yes / 2 for no )'
+echo 'Install Mainline Kernels Manager for Ubuntu [Allows you to have more up to date kernel versions]? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
