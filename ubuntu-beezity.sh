@@ -154,19 +154,12 @@ echo 'Install EasyEffects? [Previously PulseEffects] ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-echo 'Are you using Ubuntu 24.04 ( 1 for yes / 2 for no )'
-read input
-if [ "$input" -eq 1 ]
-then
-echo 'Do you want to use the APT package? ( 1 for yes / 2 for no )'
+echo 'Are you using Ubuntu 24.04 and want to use the APT package? ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
 sudo apt-get -y install easyeffects > /dev/null
 echo 'EasyEffects installed!'
-else
-echo 'Continuing!'
-fi
 else
 echo 'Continuing!'
 fi
