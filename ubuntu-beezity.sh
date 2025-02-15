@@ -150,7 +150,7 @@ fi
 else
 echo 'Continuing!'
 fi
-echo 'Installing EasyEffects! [Previously PulseEffects]'
+echo 'Install EasyEffects? [Previously PulseEffects] ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
