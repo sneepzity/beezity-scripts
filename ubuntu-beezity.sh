@@ -161,9 +161,6 @@ then
 sudo apt-get -y install easyeffects > /dev/null
 echo 'EasyEffects installed!'
 else
-echo 'Continuing!'
-fi
-else
 flatpak install --assumeyes --noninteractive --user com.github.wwmm.easyeffects
 echo 'EasyEffects installed!'
 fi
