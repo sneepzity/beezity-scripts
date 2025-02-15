@@ -340,13 +340,13 @@ echo 'Continuing!'
 fi
 fi
 
-echo 'Install Mainline Kernels Manager for Ubuntu [Allows you to have more up to date kernel versions]? ( 1 for yes / 2 for no )'
+echo 'Install Mainline Kernels Manager for Ubuntu? [Allows you to have more up to date kernel versions past the current one bundle with your Ubuntu version] ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
 then
-sudo add-apt-repository ppa:cappelikan/ppa
-sudo apt update
-sudo apt install mainlin
+sudo add-apt-repository -y ppa:cappelikan/ppa > /dev/null
+sudo apt-get update > /dev/null
+sudo apt-get install mainline > /dev/null
 else
 echo 'Do you want to leave? ( 1 to leave / 2 to continue )'
 read input
