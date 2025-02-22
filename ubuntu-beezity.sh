@@ -1101,6 +1101,16 @@ else
 echo 'Continuing!'
 fi
 clear
+sleep 1
+echo 'Install Gnome Boxes? ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo apt-get -y install gnome-boxes > /dev/null
+else
+echo 'Continuing!'
+fi
+clear
 cd /home/$USER/Downloads
 echo 'Install QEMU Guest Tools? ( 1 for yes / 2 for no )'
 read input
