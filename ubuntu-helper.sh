@@ -8,13 +8,11 @@ echo 'Now are you gonna use ubuntu or ubuntu-beezity? ( 1 for ubuntu / 2 for ubu
 read input
 
 if [ "$input" -eq 1 ]; then
-    wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/ubuntu.sh
-    chmod +x *.sh
-    ./ubuntu.sh
+    sudo apt-get -y install curl > /dev/null
+    curl -sSL https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/ubuntu.sh | bash
 elif [ "$input" -eq 2 ]; then
-    wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/ubuntu-beezity.sh
-    chmod +x *.sh
-    ./ubuntu-beezity.sh
+    sudo apt-get -y install curl > /dev/null
+    curl -sSL https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/ubuntu-beezity.sh | bash
 else
     echo "Invalid input. Please enter 1 or 2."
 fi
