@@ -6,7 +6,7 @@ this is made specifically in mind for linux, not windows or wsl, don't try it on
 the only dependency required is git, all other dependencies will be installed themselves inside the script
 
 usage:
-```sudo apt-get -y install git > /dev/null && git clone https://github.com/sneepzity/beezity-scripts.git && chmod +x *.sh && ./(name-of-script).sh
+```sudo apt-get -y install git > /dev/null && git clone https://github.com/sneepzity/beezity-scripts.git && chmod +x *.sh && ./(name-of-script).sh```
 
 
 
