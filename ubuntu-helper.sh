@@ -2,7 +2,7 @@
 
 echo 'Ubuntu or Ubuntu-beezity? ( 1 for ubuntu / 2 for ubuntu-beezity )'
 read input
-if [ "$input" -eq 1 ]
+if ["$input" -eq 1]
 then
 sudo apt-get -y install curl > /dev/null
 wget https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/ubuntu.sh
