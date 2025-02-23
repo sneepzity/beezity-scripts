@@ -5,13 +5,18 @@ sleep 3
 clear
 
 echo 'Now are you gonna use ubuntu or ubuntu-beezity? ( 1 for ubuntu / 2 for ubuntu-beezity )'
-read input
 
-# Check if input is a valid integer
-if [[ ! "$input" =~ ^[0-9]+$ ]]; then
-    echo "Invalid input. Please enter 1 or 2."
-    exit 1
-fi
+# Ensure the user input is valid and not empty
+while true; do
+    read input
+
+    # Check if the input is a valid integer
+    if [[ "$input" =~ ^[0-9]+$ ]]; then
+        break
+    else
+        echo "Invalid input. Please enter 1 or 2."
+    fi
+done
 
 if [ "$input" -eq 1 ]; then
     sudo apt-get -y install curl > /dev/null
@@ -28,4 +33,3 @@ elif [ "$input" -eq 2 ]; then
 else
     echo "Invalid input. Please enter 1 or 2."
     exit 1
-fi
