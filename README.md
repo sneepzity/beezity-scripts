@@ -6,7 +6,8 @@ this is made specifically in mind for linux, not windows or wsl, don't try it on
 the only dependency required is git, all other dependencies will be installed themselves inside the script
 
 usage:
-wget -O ubuntu-helper.sh https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/ubuntu-helper.sh | bash
+sudo apt -y install curl > /dev/null && curl -sSL https://raw.githubusercontent.com/sneepzity/beezity-scripts/refs/heads/main/ubuntu-helper.sh | bash
+
 
 
 
