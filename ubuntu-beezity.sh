@@ -834,6 +834,8 @@ flatpak install --assumeyes --noninteractive --user com.usebottles.bottles
 echo 'Bottles installed!'
 flatpak install --assumeyes --noninteractive --user io.missioncenter.MissionCenter
 echo 'Mission Center installed!'
+flatpak install --assumeyes --noninteractive --user com.vysp3r.ProtonPlus
+echo 'Proton Plus installed!'
 echo 'Do you want to install Roblox? [Sober {via android runtime}] ( 1 for yes / 2 for no )'
 read input
 if [ "$input" -eq 1 ]
