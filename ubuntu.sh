@@ -89,6 +89,44 @@ echo 'Continuing!'
 fi
 fi
 
+echo '
+Replace Pulseaudio with Pipewire [recommended]? ( 1 to install / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo apt install pipewire-media-session- wireplumber > /dev/null
+systemctl --user --now enable wireplumber.service > /dev/null
+sudo apt install pipewire-audio-client-libraries > /dev/null
+sudo cp /usr/share/doc/pipewire/examples/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d/
+sudo chmod 644 /etc/alsa/conf.d/99-pipewire-default.conf
+sudo apt install libldacbt-{abr,enc}2 libspa-0.2-bluetooth pulseaudio-module-bluetooth- > /dev/null
+sudo cp -r /var/lib/bluetooth /var/lib/bluetooth_BACKUP
+sudo systemctl stop bluetooth > /dev/null
+sudo rm -rf /var/lib/bluetooth/*
+sudo systemctl start bluetooth > /dev/null
+sudo echo "Experimental=true" >> /etc/bluetooth/main.conf
+sudo echo "--experimental exec option" >> /lib/systemd/system/bluetooth.service
+sudo systemctl daemon-reload
+sudo systemctl restart bluetooth
+echo '
+Add extra bluetooth codecs? [recommended if you use bluetooth audio devices] ( 1 for yes / 2 for no )'
+read input
+if [ "$input" -eq 1 ]
+then
+sudo apt-add-repository universe -y > /dev/null
+sudo apt-add-repository multiverse -y > /dev/null
+sudo apt update -y > /dev/null
+sudo apt upgrade -y > /dev/null
+sudo add-apt-repository ppa:aglasgall/pipewire-extra-bt-codecs -y >/dev/null
+sudo apt update -y > /dev/null
+sudo apt upgrade -y > /dev/null
+else
+echo 'Continuing!'
+fi
+sudo touch /usr/share/pipewire/media-session.d/with-pulseaudio
+systemctl --user restart wireplumber
+
+
 # This creates keyrings for brave, wine and other future applications
 #echo 'Create GPG keyring for Brave and Wine? ( 1 for yes / 2 for no )'
 #read input
