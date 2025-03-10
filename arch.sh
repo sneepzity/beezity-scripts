@@ -13,7 +13,7 @@ read input
 if [ "$input" -eq 1 ]
 then
 echo 'Install yay [an aur helper]? ( 1 for yes / 2 for already installed )'
-sudo pacman -S git
+sudo pacman -S -y git
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
@@ -36,7 +36,7 @@ sudo pacman -S reflector
 echo 'Please forgive me if this takes a while...'
 sleep 3
 sudo reflector --latest 20 --sort rate --save /etc/pacman.d/mirrorlist
-yay -S refind gnu-unifont noto-fonts noto-fonts-cjk noto-fonts-emoji arch-gaming-meta dxvk-gplasync-bin-git ttf-ms-win11-auto linux-cachyos linux-cachyos-headers proton-cachyos proton-ge-custom-bin wine-cachyos cachyos-ananicy-rules wine-tkg-staging-bin wike-tkg-statging-wow64-bin
+yay -S -y refind gnu-unifont noto-fonts noto-fonts-cjk noto-fonts-emoji arch-gaming-meta dxvk-gplasync-bin-git ttf-ms-win11-auto linux-cachyos linux-cachyos-headers proton-cachyos proton-ge-custom-bin wine-cachyos cachyos-ananicy-rules wine-tkg-staging-bin wike-tkg-statging-wow64-bin
 refind-install
 echo 'Do you want to install HyDE? ( 1 for yes / 2 for no ) [https://github.com/Hyde-project/hyde]'
 read input
