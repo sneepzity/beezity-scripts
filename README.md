@@ -1,4 +1,1 @@
-ubuntu: ```curl -s https://raw.githubusercontent.com/sneepzity/beezity-scripts/main/beezity-ui/one-liner.sh | bash```
-
-
-arch: ```curl -s https://raw.githubusercontent.com/sneepzity/beezity-scripts/main/arch-beezity-ui/one-liner.sh | bash```
+i have 0 use for it but if i ever distro-hop again then maybe but for now consider this repo defunct
